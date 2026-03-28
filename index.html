@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0e1a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>AML/CFT 試験勉強</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header"><span>AML/CFT 試験勉強</span></div>
+
+<!-- Badge Toast -->
+<div class="badge-toast" id="badge-toast"></div>
+<!-- Confetti Container -->
+<div class="confetti-container" id="confetti"></div>
+
+<nav class="tab-bar">
+  <button class="tab-btn active" data-tab="quiz"><span>&#x270D;&#xFE0F;</span>クイズ</button>
+  <button class="tab-btn" data-tab="progress"><span>&#x1F4CA;</span>進捗</button>
+  <button class="tab-btn" data-tab="reference"><span>&#x1F4D6;</span>リファレンス</button>
+  <button class="tab-btn" data-tab="badges"><span>&#x1F3C6;</span>実績</button>
+</nav>
+
+<!-- ===== クイズ ===== -->
+<section id="quiz" class="panel active">
+  <div id="quiz-home">
+    <h3 class="mb-12">試験を選択</h3>
+    <div id="quiz-exam-list" class="quiz-select"></div>
+    <div class="quiz-mode-btns mb-12">
+      <button class="active" data-mode="random">ランダム</button>
+      <button data-mode="chapter">章別</button>
+      <button data-mode="weak">苦手のみ</button>
+      <button data-mode="flash">フラッシュカード</button>
+      <button data-mode="timer">タイマー</button>
+    </div>
+    <div id="quiz-chapter-select" class="hidden quiz-select"></div>
+    <div id="timer-config" class="hidden card">
+      <h3 class="mb-8">タイマー設定</h3>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-ghost" data-sec="60" style="flex:1">1分/問</button>
+        <button class="btn btn-ghost" data-sec="90" style="flex:1">1.5分/問</button>
+        <button class="btn btn-ghost selected" data-sec="120" style="flex:1">2分/問</button>
+      </div>
+    </div>
+    <div style="margin-top:16px">
+      <button id="quiz-start-btn" class="btn btn-primary" style="width:100%">スタート</button>
+    </div>
+  </div>
+
+  <div id="quiz-play" class="hidden">
+    <div class="timer-bar hidden" id="timer-bar">
+      <div class="timer-display" id="timer-display">2:00</div>
+      <div class="timer-progress"><div class="timer-fill" id="timer-fill"></div></div>
+    </div>
+    <div class="stats-bar" id="quiz-stats"></div>
+    <div class="card">
+      <div class="card-muted mb-8" id="quiz-progress-label"></div>
+      <div class="question-box" id="quiz-question"></div>
+      <div class="options" id="quiz-options"></div>
+      <div class="explanation hidden" id="quiz-explanation"></div>
+    </div>
+    <div class="quiz-nav">
+      <button id="quiz-next-btn" class="btn btn-primary" disabled>次の問題</button>
+      <button id="quiz-end-btn" class="btn btn-ghost">終了</button>
+    </div>
+  </div>
+
+  <div id="quiz-flash" class="hidden">
+    <div class="card-muted text-center mb-12" id="flash-progress"></div>
+    <div class="flashcard" id="flashcard">
+      <div class="flashcard-inner">
+        <div class="flashcard-front" id="flash-front"></div>
+        <div class="flashcard-back" id="flash-back"></div>
+      </div>
+    </div>
+    <div class="quiz-nav">
+      <button id="flash-prev" class="btn btn-ghost">前へ</button>
+      <button id="flash-next" class="btn btn-primary">次へ</button>
+      <button id="flash-end" class="btn btn-ghost">終了</button>
+    </div>
+  </div>
+
+  <div id="quiz-result" class="hidden">
+    <div class="card text-center">
+      <h3 class="mb-12">結果</h3>
+      <div id="result-ring" class="score-ring" style="position:relative">
+        <svg viewBox="0 0 120 120">
+          <circle class="bg" cx="60" cy="60" r="52"/>
+          <circle class="fg" id="ring-fg" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73"/>
+        </svg>
+        <div class="score-text" id="result-score">0%</div>
+      </div>
+      <div id="result-detail" class="card-muted mb-16"></div>
+      <button id="quiz-retry-btn" class="btn btn-primary">もう一度</button>
+    </div>
+    <div id="result-wrong-list"></div>
+  </div>
+</section>
+
+<!-- ===== 進捗 ===== -->
+<section id="progress" class="panel">
+  <div class="countdown" id="countdown"></div>
+  <div class="card">
+    <h3 class="mb-8">今日の学習を記録</h3>
+    <div class="log-input"><select id="log-exam"></select></div>
+    <div class="time-btns">
+      <button data-min="15">+15分</button>
+      <button data-min="30">+30分</button>
+      <button data-min="60">+60分</button>
+      <button data-min="custom">カスタム</button>
+    </div>
+    <input type="text" id="log-note" placeholder="メモ（任意）" class="search-box" style="margin-bottom:8px">
+    <div id="log-today" class="card-muted text-sm"></div>
+  </div>
+  <div class="card">
+    <h3 class="mb-8">学習カレンダー（過去28日）</h3>
+    <div class="heatmap-labels"><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span><span>日</span></div>
+    <div class="heatmap" id="heatmap"></div>
+    <div class="card-muted text-sm" id="heatmap-summary"></div>
+  </div>
+  <div class="card">
+    <h3 class="mb-12">章別進捗</h3>
+    <div id="chapter-progress"></div>
+  </div>
+</section>
+
+<!-- ===== リファレンス ===== -->
+<section id="reference" class="panel">
+  <input type="text" class="search-box" id="ref-search" placeholder="用語・キーワードを検索...">
+  <div class="ref-tabs" id="ref-tabs">
+    <button class="ref-tab active" data-ref="glossary">用語辞典</button>
+    <button class="ref-tab" data-ref="fatf40">FATF 40勧告</button>
+    <button class="ref-tab" data-ref="regulations">規制一覧</button>
+    <button class="ref-tab" data-ref="comparisons">三地域比較</button>
+  </div>
+  <div id="ref-content"></div>
+</section>
+
+<!-- ===== 実績 ===== -->
+<section id="badges" class="panel">
+  <div class="card">
+    <h3 class="mb-12">実績バッジ</h3>
+    <div class="badge-grid" id="badge-grid"></div>
+  </div>
+  <div class="card">
+    <h3 class="mb-8">統計</h3>
+    <div id="overall-stats"></div>
+  </div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>

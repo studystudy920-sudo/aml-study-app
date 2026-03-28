@@ -1,0 +1,124 @@
+{
+  "exams": [
+    {
+      "id": "standard",
+      "name": "AML/CFTスタンダードコース",
+      "org": "きんざい",
+      "date": "2026-05-02",
+      "format": "四答択一式 / 100分 / 正答率70%",
+      "cost": "8,140円",
+      "studyHours": "7-15時間",
+      "materials": "AML/CFTスタンダードコース試験問題集（きんざい、2,640円）",
+      "tips": [
+        "問題集を5周以上回す",
+        "解説を隅々まで読む（解説からそのまま出題される）",
+        "配点上位3章（第4章20点、第6章18点、第7章18点）で計56点"
+      ],
+      "chapters": [
+        {"id": "ch1", "name": "第1章 金融犯罪", "points": 10},
+        {"id": "ch2", "name": "第2章 FATF", "points": 12},
+        {"id": "ch3", "name": "第3章 国内法規制", "points": 12},
+        {"id": "ch4", "name": "第4章 リスクベース・アプローチ", "points": 20},
+        {"id": "ch5", "name": "第5章 管理態勢", "points": 10},
+        {"id": "ch6", "name": "第6章 顧客管理", "points": 18},
+        {"id": "ch7", "name": "第7章 疑わしい取引", "points": 18}
+      ]
+    },
+    {
+      "id": "sco",
+      "name": "SCO検定",
+      "org": "金融検定協会",
+      "date": "2026-05-17",
+      "format": "五答択一式 50問 / 150分 / 60点以上",
+      "cost": "29,900円",
+      "studyHours": "100-150時間",
+      "materials": "SCO検定試験模擬問題集 + SCOマスター講座",
+      "tips": [
+        "マスター講座で体系学習",
+        "五択のため消去法が効きにくい→正確な知識が必要",
+        "実務事例ベースの判断問題が多い"
+      ],
+      "chapters": [
+        {"id": "law", "name": "業法（銀行法等）", "points": null},
+        {"id": "civil", "name": "民法・会社法", "points": null},
+        {"id": "fsa", "name": "金商法", "points": null},
+        {"id": "privacy", "name": "個人情報保護法", "points": null},
+        {"id": "antitrust", "name": "独占禁止法", "points": null},
+        {"id": "criminal", "name": "刑法", "points": null},
+        {"id": "labor", "name": "労働法", "points": null}
+      ]
+    },
+    {
+      "id": "jcoa-torihiki",
+      "name": "金融AMLオフィサー【取引時確認】",
+      "org": "JCOA",
+      "date": null,
+      "format": "三答択一 50問 / 90分",
+      "cost": "約6,000円",
+      "studyHours": "7-10時間",
+      "materials": "金融AMLオフィサー[取引時確認] 対策問題集（1,540円）",
+      "tips": ["問題集3周で十分", "迷ったら安全側を選ぶ"],
+      "chapters": []
+    },
+    {
+      "id": "jcoa-basic",
+      "name": "金融AMLオフィサー【基本】",
+      "org": "JCOA",
+      "date": null,
+      "format": "三答択一 50問 / 90分",
+      "cost": "約7,000円",
+      "studyHours": "7-15時間",
+      "materials": "金融AMLオフィサー[基本][実践] 対策問題集（2,200円）",
+      "tips": ["問題集3周", "巻末の過去問で仕上げ"],
+      "chapters": []
+    },
+    {
+      "id": "jcoa-practice",
+      "name": "金融AMLオフィサー【実践】",
+      "org": "JCOA",
+      "date": null,
+      "format": "三答択一 50問 / 90分",
+      "cost": "約5,000円",
+      "studyHours": "10-15時間",
+      "materials": "基本と共通の問題集",
+      "tips": ["事例文が長い→「何の取引か」「リスク要因は何か」の視点で読む"],
+      "chapters": []
+    },
+    {
+      "id": "officer",
+      "name": "AML/CFTオフィサー検定",
+      "org": "きんざい",
+      "date": null,
+      "format": "四答択一 75問 / 150分 / 76%合格",
+      "cost": "99,000円",
+      "studyHours": "40-60時間",
+      "materials": "Web講義PDF（12h） + スタンダード問題集併用",
+      "tips": ["講義動画2-3周", "PDF3周以上熟読", "合格ライン76%と高め"],
+      "chapters": []
+    },
+    {
+      "id": "auditor",
+      "name": "AML/CFTオーディター検定",
+      "org": "きんざい",
+      "date": null,
+      "format": "記述式 / 120分 / 75点以上",
+      "cost": "55,000円",
+      "studyHours": "35-65時間",
+      "materials": "養成講座資料＋設例（持込可）",
+      "tips": ["講義資料に付箋・インデックスを貼る", "設例を徹底分析", "オフィサー合格が前提"],
+      "chapters": []
+    },
+    {
+      "id": "cams",
+      "name": "CAMS",
+      "org": "ACAMS",
+      "date": null,
+      "format": "多肢選択 120問 / 210分 / 75点以上",
+      "cost": "約40万円",
+      "studyHours": "50-150時間",
+      "materials": "ACAMS公式スタディガイド、フラッシュカード、Exam Simulator",
+      "tips": ["丸暗記より原理原則の理解", "日本語翻訳に難あり→英語原文も参照"],
+      "chapters": []
+    }
+  ]
+}
