@@ -61,7 +61,11 @@
     {"term": "Integration", "full": "Integration", "ja": "統合", "category": "その他", "description": "マネロンの第3段階。洗浄された資金を合法経済に戻す過程。不動産購入・事業投資等に利用。"},
     {"term": "AML", "full": "Anti-Money Laundering", "ja": "資金洗浄防止", "category": "リスク管理", "description": "マネー・ローンダリングを防止するための法規制・手続き・施策の総称。"},
     {"term": "CFT", "full": "Combating the Financing of Terrorism", "ja": "テロ資金供与対策", "category": "リスク管理", "description": "テロ資金供与を防止・抑止するための法規制・手続き・施策の総称。"},
-    {"term": "CPF", "full": "Counter-Proliferation Financing", "ja": "拡散金融対策", "category": "リスク管理", "description": "大量破壊兵器の拡散に関する資金供与を防止するための措置。FATF第4次相互審査で重点項目。"}
+    {"term": "CPF", "full": "Counter-Proliferation Financing", "ja": "拡散金融対策", "category": "リスク管理", "description": "大量破壊兵器の拡散に関する資金供与を防止するための措置。FATF第4次相互審査で重点項目。"},
+    {"term": "BOI", "full": "Beneficial Ownership Information", "ja": "実質的支配者情報", "category": "法律・規制", "description": "米国CTAに基づくFinCENへの実質的支配者届出情報。2025年3月改訂により、米国国内企業・米国人は報告義務から除外。外国企業のみ届出義務継続。"},
+    {"term": "AMLA 2020", "full": "Anti-Money Laundering Act of 2020", "ja": "2020年マネーロンダリング防止法", "category": "法律・規制", "description": "米国BSAの大幅改正法。FinCENの権限強化、内部告発者報奨金制度の創設、暗号資産への適用明確化等を規定。"},
+    {"term": "AMLID", "full": "AML/CFT Increased Monitoring (FATF Grey List)", "ja": "FATFグレーリスト（監視強化対象リスト）", "category": "組織・機関", "description": "AML/CFT体制に戦略的欠陥があり行動計画にコミットした国・地域のリスト。2026年2月時点：クウェート・パプアニューギニア追加を含む21か国・地域。"},
+    {"term": "匿名・流動型犯罪グループ", "full": "Anonymous Mobile Crime Groups", "ja": "匿名・流動型犯罪グループ", "category": "その他", "description": "SNS等で匿名かつ流動的に構成員を募集して犯罪を実行する組織形態。特殊詐欺の実行犯や闇バイト等として悪用される。AML/CFTの新たなリスク類型として注目。"}
   ],
   "fatf40": [
     {"number": 1, "title": "リスク評価とリスクベース・アプローチ", "summary": "各国はML/TF/PFリスクを特定・評価し、リスクに応じた措置を講じること。RBAがFATF基準の基盤。"},
@@ -113,7 +117,7 @@
     {"name": "Bank Secrecy Act（BSA）", "jurisdiction": "米国", "year": "1970", "summary": "米国AMLの基本法。金融機関にCTR・SAR報告、記録保存、AMLプログラム整備を義務付け。"},
     {"name": "USA PATRIOT Act", "jurisdiction": "米国", "year": "2001", "summary": "9.11後のBSA強化法。CIP義務化、Section 314情報共有、シェルバンク禁止、コルレスDD強化。"},
     {"name": "Anti-Money Laundering Act of 2020（AMLA）", "jurisdiction": "米国", "year": "2020", "summary": "BSAの大幅改正。FinCENの権限強化、内部告発者報奨金制度、暗号資産への適用明確化。"},
-    {"name": "Corporate Transparency Act（CTA）", "jurisdiction": "米国", "year": "2021", "summary": "法人の実質的支配者情報のFinCENへの届出を義務化。ペーパーカンパニー悪用防止が目的。"},
+    {"name": "Corporate Transparency Act（CTA）", "jurisdiction": "米国", "year": "2021", "summary": "法人の実質的支配者情報（BOI）のFinCENへの届出を義務化。ペーパーカンパニー悪用防止が目的。2025年3月改訂で米国国内企業・米国人の報告義務を全面除外。外国企業のみ届出義務継続。"},
     {"name": "EU Anti-Money Laundering Regulation（AMLR）", "jurisdiction": "EU", "year": "2024", "summary": "EU初の直接適用AML規則（2027年適用）。CDD統一基準、現金支払上限1万ユーロ、UBO登録等。"},
     {"name": "6th Anti-Money Laundering Directive（6AMLD）", "jurisdiction": "EU", "year": "2024", "summary": "第6次AML指令。FIUの権限強化、UBO登録の公開範囲、監督当局間の協力を規定。"},
     {"name": "AMLA設立規則", "jurisdiction": "EU", "year": "2024", "summary": "EU AML/CFT監督機関（AMLA）をフランクフルトに設立。高リスク金融機関の直接監督権限を付与。"},
@@ -164,7 +168,7 @@
       "aspect": "実質的支配者",
       "japan": "犯収法で特定事業者にUBO確認義務。25%超の議決権保有者等。中央登録制度は未整備（検討中）。",
       "eu": "AMLR/6AMLDでUBO中央登録簿を義務化。正当な利益を有する者にアクセス権。しきい値25%。",
-      "us": "CTA（2021年）でFinCENへのBOI届出を義務化。25%超の所有者・実質的支配者が対象。"
+      "us": "CTA（2021年）でFinCENへのBOI届出を義務化。ただし2025年3月改訂で米国国内企業・米国人は全面除外。外国企業のみ届出義務継続（登録後30日以内等）。"
     }
   ]
 }
