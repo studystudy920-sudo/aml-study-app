@@ -64,8 +64,11 @@
     {"term": "CPF", "full": "Counter-Proliferation Financing", "ja": "拡散金融対策", "category": "リスク管理", "description": "大量破壊兵器の拡散に関する資金供与を防止するための措置。FATF第4次相互審査で重点項目。"},
     {"term": "BOI", "full": "Beneficial Ownership Information", "ja": "実質的支配者情報", "category": "法律・規制", "description": "米国CTAに基づくFinCENへの実質的支配者届出情報。2025年3月改訂により、米国国内企業・米国人は報告義務から除外。外国企業のみ届出義務継続。"},
     {"term": "AMLA 2020", "full": "Anti-Money Laundering Act of 2020", "ja": "2020年マネーロンダリング防止法", "category": "法律・規制", "description": "米国BSAの大幅改正法。FinCENの権限強化、内部告発者報奨金制度の創設、暗号資産への適用明確化等を規定。"},
-    {"term": "AMLID", "full": "AML/CFT Increased Monitoring (FATF Grey List)", "ja": "FATFグレーリスト（監視強化対象リスト）", "category": "組織・機関", "description": "AML/CFT体制に戦略的欠陥があり行動計画にコミットした国・地域のリスト。2026年2月時点：クウェート・パプアニューギニア追加を含む21か国・地域。"},
-    {"term": "匿名・流動型犯罪グループ", "full": "Anonymous Mobile Crime Groups", "ja": "匿名・流動型犯罪グループ", "category": "その他", "description": "SNS等で匿名かつ流動的に構成員を募集して犯罪を実行する組織形態。特殊詐欺の実行犯や闇バイト等として悪用される。AML/CFTの新たなリスク類型として注目。"}
+    {"term": "AMLID", "full": "AML/CFT Increased Monitoring (FATF Grey List)", "ja": "FATFグレーリスト（監視強化対象リスト）", "category": "組織・機関", "description": "AML/CFT体制に戦略的欠陥があり行動計画にコミットした国・地域のリスト。2026年2月時点：クウェート・パプアニューギニア追加を含む22か国・地域。"},
+    {"term": "匿名・流動型犯罪グループ", "full": "Anonymous Mobile Crime Groups", "ja": "匿名・流動型犯罪グループ", "category": "その他", "description": "SNS等で匿名かつ流動的に構成員を募集して犯罪を実行する組織形態。特殊詐欺の実行犯や闇バイト等として悪用される。AML/CFTの新たなリスク類型として注目。"},
+    {"term": "Unhosted Wallet", "full": "Unhosted Wallet / Non-custodial Wallet", "ja": "アンホストウォレット（非カストディアル）", "category": "その他", "description": "秘密鍵を利用者自身が管理する暗号資産ウォレット。VASPを介さないP2P取引が可能なため、追跡・KYCが困難。FATFは2026年にステーブルコイン・アンホストウォレット報告書を公表し、リスクベースでの管理を要求。"},
+    {"term": "Stablecoin", "full": "Stablecoin", "ja": "ステーブルコイン", "category": "その他", "description": "法定通貨等に価値が連動するよう設計された暗号資産。MiCA・FATFの規制対象。FATFは2026年プレナリーでステーブルコインとアンホストウォレットに関する標的型報告書を承認。P2P取引のMLリスクを重点的に検討。"},
+    {"term": "Offshore VASP", "full": "Offshore Virtual Asset Service Provider", "ja": "オフショアVASP", "category": "その他", "description": "規制の緩い国・地域を拠点とする暗号資産サービスプロバイダー。規制の抜け穴として犯罪者に悪用されるリスクが高い。FATFが2026年2月プレナリーで「オフショアVASPのリスクへの理解と軽減」報告書を承認。"}
   ],
   "fatf40": [
     {"number": 1, "title": "リスク評価とリスクベース・アプローチ", "summary": "各国はML/TF/PFリスクを特定・評価し、リスクに応じた措置を講じること。RBAがFATF基準の基盤。"},
@@ -125,7 +128,9 @@
     {"name": "Digital Operational Resilience Act（DORA）", "jurisdiction": "EU", "year": "2023", "summary": "金融機関のICTリスク管理規制（2025年適用）。サイバーレジリエンス、サードパーティ管理を規定。"},
     {"name": "Transfer of Funds Regulation（TFR改正）", "jurisdiction": "EU", "year": "2023", "summary": "送金時の情報付随義務を暗号資産移転にも拡大。VASPへのトラベルルール適用を規定。"},
     {"name": "SWIFT Customer Security Programme（CSP）", "jurisdiction": "国際", "year": "2017", "summary": "SWIFT加盟金融機関向けのサイバーセキュリティ基準。必須・推奨統制の遵守状況を年次で自己評価。"},
-    {"name": "個人情報保護法", "jurisdiction": "日本", "year": "2003", "summary": "個人情報の取扱いを規定。AML/CFTにおけるデータ利活用との両立が実務上の課題。2022年改正施行。"}
+    {"name": "個人情報保護法", "jurisdiction": "日本", "year": "2003", "summary": "個人情報の取扱いを規定。AML/CFTにおけるデータ利活用との両立が実務上の課題。2022年改正施行。"},
+    {"name": "金融庁AML/CFTガイドライン改正（案）", "jurisdiction": "日本", "year": "2026", "summary": "2026年1月19日公表。預貯金口座の不正利用等防止の強化、FATF第5次対日相互審査（2028年オンサイト予定）への対応を目的とした改正案。RBAの高度化と金融機関のリスク管理態勢の維持・向上を促進する内容。"},
+    {"name": "FinCEN Investment Adviser AML Rule（延期）", "jurisdiction": "米国", "year": "2026", "summary": "投資顧問業者（IA）へのAMLプログラム整備・SAR申告義務の適用開始を2026年1月から2028年1月へ2年延期。多様なビジネスモデルへの規則の適切な調整を検討するための猶予期間。トランプ政権の規制見直し方針を反映。"}
   ],
   "comparisons": [
     {
@@ -142,7 +147,7 @@
     },
     {
       "aspect": "FATF評価",
-      "japan": "第4次相互審査（2021年）：重点フォローアップ（強化観察）。勧告24・25等に不備指摘。",
+      "japan": "第4次相互審査（2021年）：重点フォローアップ（強化観察）。勧告24・25等に不備指摘。2028年に第5次オンサイト審査予定。行動計画（2024-2026年度）を推進中。",
       "eu": "加盟国ごとに評価。ドイツ（2022年）等で重点フォローアップの事例あり。",
       "us": "第4次相互審査（2016年）：通常フォローアップ。法人透明性（旧勧告24）に不備指摘 → CTA制定。"
     },
