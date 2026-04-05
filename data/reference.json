@@ -68,7 +68,8 @@
     {"term": "匿名・流動型犯罪グループ", "full": "Anonymous Mobile Crime Groups", "ja": "匿名・流動型犯罪グループ", "category": "その他", "description": "SNS等で匿名かつ流動的に構成員を募集して犯罪を実行する組織形態。特殊詐欺の実行犯や闇バイト等として悪用される。AML/CFTの新たなリスク類型として注目。"},
     {"term": "Unhosted Wallet", "full": "Unhosted Wallet / Non-custodial Wallet", "ja": "アンホストウォレット（非カストディアル）", "category": "その他", "description": "秘密鍵を利用者自身が管理する暗号資産ウォレット。VASPを介さないP2P取引が可能なため、追跡・KYCが困難。FATFは2026年にステーブルコイン・アンホストウォレット報告書を公表し、リスクベースでの管理を要求。"},
     {"term": "Stablecoin", "full": "Stablecoin", "ja": "ステーブルコイン", "category": "その他", "description": "法定通貨等に価値が連動するよう設計された暗号資産。MiCA・FATFの規制対象。FATFは2026年プレナリーでステーブルコインとアンホストウォレットに関する標的型報告書を承認。P2P取引のMLリスクを重点的に検討。"},
-    {"term": "Offshore VASP", "full": "Offshore Virtual Asset Service Provider", "ja": "オフショアVASP", "category": "その他", "description": "規制の緩い国・地域を拠点とする暗号資産サービスプロバイダー。規制の抜け穴として犯罪者に悪用されるリスクが高い。FATFが2026年2月プレナリーで「オフショアVASPのリスクへの理解と軽減」報告書を承認。"}
+    {"term": "Offshore VASP", "full": "Offshore Virtual Asset Service Provider", "ja": "オフショアVASP", "category": "その他", "description": "規制の緩い国・地域を拠点とする暗号資産サービスプロバイダー。規制の抜け穴として犯罪者に悪用されるリスクが高い。FATFが2026年2月プレナリーで「オフショアVASPのリスクへの理解と軽減」報告書を承認。"},
+    {"term": "Cyber-enabled Fraud", "full": "Cyber-enabled Fraud", "ja": "サイバー手段を用いた詐欺", "category": "その他", "description": "インターネット・デジタル技術を悪用した詐欺行為の総称。AIやディープフェイク等を活用した本人確認の偽造・不正アクセス・SNS詐欺等が含まれる。FATFは2026年2月プレナリーで「サイバー手段を用いた詐欺と仮想資産」に関する報告書を承認し、犯罪収益のAML経路として国際的に注目されている。"}
   ],
   "fatf40": [
     {"number": 1, "title": "リスク評価とリスクベース・アプローチ", "summary": "各国はML/TF/PFリスクを特定・評価し、リスクに応じた措置を講じること。RBAがFATF基準の基盤。"},
