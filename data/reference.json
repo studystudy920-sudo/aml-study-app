@@ -21,7 +21,7 @@
     {"term": "JAFIC", "full": "Japan Financial Intelligence Center", "ja": "犯罪収益移転防止対策室", "category": "組織・機関", "description": "日本のFIU（資金情報機関）。国家公安委員会・警察庁に設置。STRの受理・分析を担当。"},
     {"term": "FinCEN", "full": "Financial Crimes Enforcement Network", "ja": "金融犯罪取締ネットワーク", "category": "組織・機関", "description": "米国財務省の局。米国のFIUとしてSAR/CTRの受理・分析、BSAの執行を担当。"},
     {"term": "OFAC", "full": "Office of Foreign Assets Control", "ja": "外国資産管理局", "category": "組織・機関", "description": "米国財務省の局。経済制裁プログラムの管理・執行、SDNリストの管理を担当。"},
-    {"term": "AMLA", "full": "Anti-Money Laundering Authority", "ja": "EU資金洗浄防止機関", "category": "組織・機関", "description": "2025年設立のEU AML/CFT監督機関（フランクフルト所在）。高リスク金融機関の直接監督を担当。"},
+    {"term": "AMLA", "full": "Anti-Money Laundering Authority", "ja": "EU資金洗浄防止機関", "category": "組織・機関", "description": "2025年7月設立のEU AML/CFT監督機関（フランクフルト所在）。2026年3月24日に初の公聴会を開催し、AMLRに基づく顧客デューデリジェンス（CDD）等の技術基準（RTS）草案を公表。2028年からEU内の高リスク金融機関約40社の直接監督を開始予定。"},
     {"term": "EBA", "full": "European Banking Authority", "ja": "欧州銀行監督機構", "category": "組織・機関", "description": "EU銀行部門の規制・監督機関。AML/CFTガイドラインの策定にも関与。AMIAへ一部機能移管。"},
     {"term": "BCBS", "full": "Basel Committee on Banking Supervision", "ja": "バーゼル銀行監督委員会", "category": "組織・機関", "description": "銀行監督に関する国際基準策定機関。健全性規制（バーゼルIII）の他、AML/CFTガイドラインも発出。"},
     {"term": "BSA", "full": "Bank Secrecy Act", "ja": "銀行秘密法", "category": "法律・規制", "description": "1970年制定の米国AML基本法。金融機関にCTR・SAR等の報告義務、記録保存義務を課す。"},
@@ -69,7 +69,9 @@
     {"term": "Unhosted Wallet", "full": "Unhosted Wallet / Non-custodial Wallet", "ja": "アンホストウォレット（非カストディアル）", "category": "その他", "description": "秘密鍵を利用者自身が管理する暗号資産ウォレット。VASPを介さないP2P取引が可能なため、追跡・KYCが困難。FATFは2026年にステーブルコイン・アンホストウォレット報告書を公表し、リスクベースでの管理を要求。"},
     {"term": "Stablecoin", "full": "Stablecoin", "ja": "ステーブルコイン", "category": "その他", "description": "法定通貨等に価値が連動するよう設計された暗号資産。MiCA・FATFの規制対象。FATFは2026年プレナリーでステーブルコインとアンホストウォレットに関する標的型報告書を承認。P2P取引のMLリスクを重点的に検討。"},
     {"term": "Offshore VASP", "full": "Offshore Virtual Asset Service Provider", "ja": "オフショアVASP", "category": "その他", "description": "規制の緩い国・地域を拠点とする暗号資産サービスプロバイダー。規制の抜け穴として犯罪者に悪用されるリスクが高い。FATFが2026年2月プレナリーで「オフショアVASPのリスクへの理解と軽減」報告書を承認。"},
-    {"term": "Cyber-enabled Fraud", "full": "Cyber-enabled Fraud", "ja": "サイバー手段を用いた詐欺", "category": "その他", "description": "インターネット・デジタル技術を悪用した詐欺行為の総称。AIやディープフェイク等を活用した本人確認の偽造・不正アクセス・SNS詐欺等が含まれる。FATFは2026年2月プレナリーで「サイバー手段を用いた詐欺と仮想資産」に関する報告書を承認し、犯罪収益のAML経路として国際的に注目されている。"}
+    {"term": "Cyber-enabled Fraud", "full": "Cyber-enabled Fraud", "ja": "サイバー手段を用いた詐欺", "category": "その他", "description": "インターネット・デジタル技術を悪用した詐欺行為の総称。AIやディープフェイク等を活用した本人確認の偽造・不正アクセス・SNS詐欺等が含まれる。FATFは2026年2月プレナリーで「サイバー手段を用いた詐欺と仮想資産」に関する報告書を承認し、犯罪収益のAML経路として国際的に注目されている。"},
+    {"term": "GENIUS Act", "full": "Guiding and Establishing National Innovation for U.S. Stablecoins Act", "ja": "GENIUSステーブルコイン法", "category": "法律・規制", "description": "米国のステーブルコイン包括規制法。FinCENとOFACは2026年4月8日に同法実施規則案を共同公表し、ステーブルコイン発行者（PPSI）をBSA上の金融機関として位置付け、AML/CFTプログラム・SAR申告・制裁コンプライアンス・取引ブロック機能を義務付けた。"},
+    {"term": "PPSI", "full": "Permitted Payment Stablecoin Issuer", "ja": "許可済ペイメント・ステーブルコイン発行者", "category": "組織・機関", "description": "GENIUS法に基づく米国のステーブルコイン発行者。2026年4月のFinCEN/OFAC共同規則案によりBSA上の金融機関として規制対象となり、AML/CFTプログラムの整備・SAR申告・OFACの制裁コンプライアンスプログラム・技術的ブロック/凍結能力の実装が義務付けられた。"}
   ],
   "fatf40": [
     {"number": 1, "title": "リスク評価とリスクベース・アプローチ", "summary": "各国はML/TF/PFリスクを特定・評価し、リスクに応じた措置を講じること。RBAがFATF基準の基盤。"},
@@ -131,7 +133,9 @@
     {"name": "SWIFT Customer Security Programme（CSP）", "jurisdiction": "国際", "year": "2017", "summary": "SWIFT加盟金融機関向けのサイバーセキュリティ基準。必須・推奨統制の遵守状況を年次で自己評価。"},
     {"name": "個人情報保護法", "jurisdiction": "日本", "year": "2003", "summary": "個人情報の取扱いを規定。AML/CFTにおけるデータ利活用との両立が実務上の課題。2022年改正施行。"},
     {"name": "金融庁AML/CFTガイドライン改正（案）", "jurisdiction": "日本", "year": "2026", "summary": "2026年1月19日公表。預貯金口座の不正利用等防止の強化、FATF第5次対日相互審査（2028年オンサイト予定）への対応を目的とした改正案。RBAの高度化と金融機関のリスク管理態勢の維持・向上を促進する内容。"},
-    {"name": "FinCEN Investment Adviser AML Rule（延期）", "jurisdiction": "米国", "year": "2026", "summary": "投資顧問業者（IA）へのAMLプログラム整備・SAR申告義務の適用開始を2026年1月から2028年1月へ2年延期。多様なビジネスモデルへの規則の適切な調整を検討するための猶予期間。トランプ政権の規制見直し方針を反映。"}
+    {"name": "FinCEN Investment Adviser AML Rule（延期）", "jurisdiction": "米国", "year": "2026", "summary": "投資顧問業者（IA）へのAMLプログラム整備・SAR申告義務の適用開始を2026年1月から2028年1月へ2年延期。多様なビジネスモデルへの規則の適切な調整を検討するための猶予期間。トランプ政権の規制見直し方針を反映。"},
+    {"name": "GENIUS Act AML/CFT実施規則案（FinCEN/OFAC）", "jurisdiction": "米国", "year": "2026", "summary": "2026年4月8日公表。GENIUS法に基づきFinCENとOFACが共同提案。ステーブルコイン発行者（PPSI）をBSA上の金融機関と位置付け、AML/CFTプログラム整備（リスク評価・内部統制・独立テスト・研修・米国在住コンプライアンスオフィサー）、SAR申告、制裁コンプライアンス、取引ブロック/凍結の技術的能力を義務付け。60日間のパブリックコメント募集。"},
+    {"name": "FinCEN AML/CFTプログラム要件規則案（NPRM）", "jurisdiction": "米国", "year": "2026", "summary": "2026年4月7日公表。BSAに基づく全金融機関のAML/CFTプログラム要件を大幅改正。リスク評価プロセスの明示的義務化、有効性重視（技術的コンプライアンスから実効性への転換）、米国在住コンプライアンスオフィサー要件を追加。FDIC・OCC・NCUAと共同発出。パブリックコメント期限は2026年6月9日。最終規則後12か月の実施猶予期間。"}
   ],
   "comparisons": [
     {
