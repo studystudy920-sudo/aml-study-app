@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>犯収法施行規則改正 eKYC方式 詳細判定フロー</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: #f0f2f5; color: #1a1a2e; }
+
+  .slide {
+    width: 1280px;
+    min-height: 960px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    padding-bottom: 60px;
+  }
+
+  /* Title bars */
+  .title-bar {
+    padding: 18px 36px;
+    color: #fff;
+  }
+  .title-bar h1 { font-size: 24px; font-weight: 900; }
+  .title-bar .sub { font-size: 13px; opacity: 0.85; margin-top: 3px; }
+  .slide1 .title-bar { background: linear-gradient(135deg, #1e3a5f, #2c5f8a); }
+  .slide2 .title-bar { background: linear-gradient(135deg, #1b5e20, #2e7d32); }
+
+  .slide-body { padding: 20px 30px; }
+
+  /* Flow elements */
+  .flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .node {
+    border-radius: 8px;
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .node-start {
+    background: #1e3a5f;
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px 24px;
+    font-size: 14px;
+  }
+  .slide2 .node-start { background: #1b5e20; }
+
+  .node-decision {
+    background: #e8f0fe;
+    border: 2px solid #1e3a5f;
+    color: #1e3a5f;
+    min-width: 180px;
+    clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0% 50%);
+    padding: 12px 24px;
+  }
+  .slide2 .node-decision {
+    background: #e8f5e9;
+    border-color: #2e7d32;
+    color: #1b5e20;
+  }
+
+  .node-goal {
+    border-radius: 10px;
+    padding: 10px 14px;
+    min-width: 120px;
+    font-size: 12px;
+  }
+  .node-goal .name { font-size: 15px; font-weight: 900; margin-bottom: 2px; }
+  .node-goal .desc { font-size: 11px; font-weight: 500; opacity: 0.85; line-height: 1.4; }
+  .node-goal .icon { font-size: 22px; margin-bottom: 4px; }
+
+  .goal-ho { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; border: 3px solid #f59e0b; box-shadow: 0 0 10px rgba(245,158,11,0.3); }
+  .goal-he { background: #e0f2fe; color: #0c4a6e; border: 2px solid #38bdf8; }
+  .goal-wa { background: #dcfce7; color: #14532d; border: 2px solid #4ade80; }
+  .goal-to { background: #fff7ed; color: #9a3412; border: 2px solid #fb923c; }
+  .goal-mail { background: #f5f5f5; color: #737373; border: 2px solid #d4d4d4; }
+  .goal-doc2 { background: #fafafa; color: #737373; border: 2px solid #d4d4d4; }
+  .goal-edd { background: #fef3c7; color: #92400e; border: 2px solid #fbbf24; }
+
+  .goal-ka { background: linear-gradient(135deg, #16a34a, #15803d); color: #fff; border: 3px solid #fbbf24; box-shadow: 0 0 12px rgba(251,191,36,0.3); }
+  .goal-he2 { background: #f0fdf4; color: #166534; border: 2px solid #4ade80; }
+  .goal-to2 { background: #f0fdf4; color: #166534; border: 2px solid #86efac; }
+  .goal-abolished { background: #fef2f2; color: #b91c1c; border: 2px solid #fca5a5; opacity: 0.6; text-decoration: line-through; }
+
+  .badge {
+    position: absolute;
+    top: -10px;
+    left: -6px;
+    font-size: 10px;
+    font-weight: 900;
+    padding: 2px 8px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  .badge-popular { background: #f59e0b; color: #1a1a2e; }
+  .badge-primary { background: #fbbf24; color: #1a1a2e; }
+  .badge-edd { background: #dc2626; color: #fff; }
+
+  /* Connector system */
+  .row { display: flex; align-items: flex-start; justify-content: center; gap: 0; position: relative; }
+  .col { display: flex; flex-direction: column; align-items: center; }
+
+  .vline { width: 2px; background: #94a3b8; margin: 0 auto; }
+  .vline-h { height: 20px; }
+  .vline-m { height: 16px; }
+  .vline-s { height: 12px; }
+  .slide2 .vline { background: #4ade80; }
+
+  .arrow-d {
+    width: 0; height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #94a3b8;
+  }
+  .slide2 .arrow-d { border-top-color: #4ade80; }
+
+  .label-tag {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 1px 8px;
+    border-radius: 8px;
+    margin: 4px 0;
+  }
+  .tag-yes { background: #dcfce7; color: #166534; }
+  .tag-no { background: #fee2e2; color: #991b1b; }
+  .tag-either { background: #e0e7ff; color: #3730a3; }
+
+  /* Horizontal connector */
+  .hconn {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+  }
+  .hline { height: 2px; background: #94a3b8; }
+  .slide2 .hline { background: #4ade80; }
+
+  /* Branch container */
+  .branches {
+    display: flex;
+    gap: 0;
+    position: relative;
+  }
+  .branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  /* T-connector: horizontal line spanning branches with vertical drops */
+  .t-conn {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+  }
+  .t-conn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background: #94a3b8;
+  }
+
+  /* Tree layout */
+  .tree { position: relative; }
+  .tree-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+  }
+  .tree-row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 2px;
+    background: #94a3b8;
+  }
+  .slide2 .tree-row::before { background: #4ade80; }
+
+  .tree-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .tree-branch::before {
+    content: '';
+    width: 2px;
+    height: 12px;
+    background: #94a3b8;
+  }
+  .slide2 .tree-branch::before { background: #4ade80; }
+
+  /* Special sections */
+  .edd-section {
+    margin-top: 16px;
+    border: 2px dashed #f59e0b;
+    border-radius: 10px;
+    padding: 12px 20px;
+    background: #fffbeb;
+    width: 100%;
+  }
+  .edd-section h3 { font-size: 13px; color: #b45309; margin-bottom: 6px; }
+  .edd-section ul { font-size: 11px; color: #92400e; margin-left: 16px; line-height: 1.8; }
+
+  .note-box {
+    font-size: 11px;
+    color: #666;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 6px 12px;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  /* Layout helpers */
+  .flex-center { display: flex; justify-content: center; align-items: center; }
+  .gap-8 { gap: 8px; }
+  .gap-12 { gap: 12px; }
+  .gap-16 { gap: 16px; }
+  .gap-20 { gap: 20px; }
+  .gap-24 { gap: 24px; }
+  .mt-4 { margin-top: 4px; }
+  .mt-8 { margin-top: 8px; }
+  .mt-12 { margin-top: 12px; }
+  .mt-16 { margin-top: 16px; }
+  .w-full { width: 100%; }
+
+  /* Main flow layout using SVG lines */
+  .flow-wrapper { position: relative; }
+
+  /* Specific layout for slide 1 */
+  .s1-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .s1-first-split {
+    display: flex;
+    gap: 80px;
+    margin-top: 0;
+    position: relative;
+  }
+  .s1-first-split::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% - 180px);
+    width: 360px;
+    height: 2px;
+    background: #94a3b8;
+  }
+
+  .s1-second-split {
+    display: flex;
+    gap: 30px;
+    margin-top: 0;
+    position: relative;
+  }
+  .s1-second-split::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% - 100px);
+    width: 200px;
+    height: 2px;
+    background: #94a3b8;
+  }
+
+  .s1-nonface-split {
+    display: flex;
+    gap: 40px;
+    position: relative;
+  }
+  .s1-nonface-split::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% - 240px);
+    width: 480px;
+    height: 2px;
+    background: #94a3b8;
+  }
+
+  .s1-ic-split {
+    display: flex;
+    gap: 24px;
+    position: relative;
+  }
+  .s1-ic-split::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% - 80px);
+    width: 160px;
+    height: 2px;
+    background: #94a3b8;
+  }
+
+  .s1-noic-split {
+    display: flex;
+    gap: 20px;
+    position: relative;
+  }
+  .s1-noic-split::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% - 80px);
+    width: 160px;
+    height: 2px;
+    background: #94a3b8;
+  }
+
+  /* Specific layout for slide 2 */
+  .s2-main-split {
+    display: flex;
+    gap: 80px;
+    position: relative;
+  }
+  .s2-main-split::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% - 180px);
+    width: 360px;
+    height: 2px;
+    background: #4ade80;
+  }
+
+  .s2-nonface-split {
+    display: flex;
+    gap: 50px;
+    position: relative;
+  }
+  .s2-nonface-split::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% - 200px);
+    width: 400px;
+    height: 2px;
+    background: #4ade80;
+  }
+
+  .s2-yes-split {
+    display: flex;
+    gap: 20px;
+    position: relative;
+  }
+  .s2-yes-split::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% - 80px);
+    width: 160px;
+    height: 2px;
+    background: #4ade80;
+  }
+
+  .s2-no-split {
+    display: flex;
+    gap: 20px;
+    position: relative;
+  }
+  .s2-no-split::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% - 80px);
+    width: 160px;
+    height: 2px;
+    background: #4ade80;
+  }
+
+  /* Abolished overlay */
+  .abolished-overlay {
+    position: absolute;
+    bottom: 70px;
+    right: 30px;
+    background: #fef2f2;
+    border: 2px solid #fca5a5;
+    border-radius: 10px;
+    padding: 12px 16px;
+    max-width: 240px;
+  }
+  .abolished-overlay h4 { font-size: 13px; color: #dc2626; margin-bottom: 6px; }
+  .abolished-overlay .item {
+    font-size: 11px;
+    color: #999;
+    text-decoration: line-through;
+    margin-bottom: 3px;
+  }
+  .abolished-overlay .reason { font-size: 10px; color: #b91c1c; margin-top: 6px; line-height: 1.5; }
+
+  .footnote {
+    position: absolute;
+    bottom: 12px;
+    left: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #999;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 6px;
+  }
+  .footnote strong { color: #dc2626; }
+
+  .legend {
+    display: flex;
+    gap: 16px;
+    margin-top: 4px;
+    justify-content: center;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    color: #666;
+  }
+  .legend-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  .side-note {
+    position: absolute;
+    font-size: 10px;
+    color: #888;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+    line-height: 1.4;
+  }
+
+  .node-face {
+    background: #f0f4ff;
+    color: #1e3a5f;
+    border: 1.5px solid #93a5cf;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+
+  .node-corp {
+    background: #faf5ff;
+    color: #6b21a8;
+    border: 1.5px solid #c084fc;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .slide { box-shadow: none; margin: 0; border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== SLIDE 1: BEFORE ==================== -->
+<div class="slide slide1">
+  <div class="title-bar">
+    <h1>現行：オンライン本人確認（eKYC）詳細判定フロー</h1>
+    <div class="sub">犯収法施行規則 第6条1項1号 ｜ 〜2027年3月31日 ｜ 実務レベル</div>
+  </div>
+
+  <div class="slide-body">
+    <div class="s1-main">
+
+      <!-- START -->
+      <div class="node node-start">特定取引の発生（口座開設・送金・保険契約等）</div>
+      <div class="vline vline-h"></div>
+      <div class="arrow-d"></div>
+
+      <!-- 個人 or 法人 -->
+      <div class="node node-decision">個人か法人か？</div>
+      <div class="vline vline-s"></div>
+
+      <!-- Split: 個人 / 法人 -->
+      <div class="s1-first-split">
+
+        <!-- 個人 branch -->
+        <div class="branch">
+          <div class="vline vline-s"></div>
+          <div class="label-tag tag-yes">個人</div>
+          <div class="vline vline-s"></div>
+          <div class="arrow-d"></div>
+
+          <!-- 対面 or 非対面 -->
+          <div class="node node-decision" style="font-size:12px;">対面か非対面か？</div>
+          <div class="vline vline-s"></div>
+
+          <div class="s1-second-split">
+
+            <!-- 対面 -->
+            <div class="branch">
+              <div class="vline vline-s"></div>
+              <div class="label-tag tag-either">対面</div>
+              <div class="vline vline-s"></div>
+              <div class="node node-face">本人確認書類の提示<br><span style="font-size:10px;">（写真付き1点 or 写真なし2点）</span></div>
+            </div>
+
+            <!-- 非対面 -->
+            <div class="branch">
+              <div class="vline vline-s"></div>
+              <div class="label-tag tag-either">非対面</div>
+              <div class="vline vline-s"></div>
+              <div class="arrow-d"></div>
+
+              <!-- ICチップ判定 -->
+              <div class="node node-decision" style="font-size:11px;">ICチップ付き書類<br>があるか？</div>
+              <div class="vline vline-s"></div>
+
+              <div class="s1-nonface-split">
+
+                <!-- YES: ICあり -->
+                <div class="branch">
+                  <div class="vline vline-s"></div>
+                  <div class="label-tag tag-yes">YES</div>
+                  <div class="vline vline-s"></div>
+                  <div class="arrow-d"></div>
+
+                  <div class="node node-decision" style="font-size:11px;">JPKI利用<br>可能か？</div>
+                  <div class="vline vline-s"></div>
+
+                  <div class="s1-ic-split">
+                    <div class="branch">
+                      <div class="vline vline-s"></div>
+                      <div class="label-tag tag-yes">YES</div>
+                      <div class="vline vline-s"></div>
+                      <div class="node node-goal goal-wa">
+                        <div class="icon">🔐</div>
+                        <div class="name">ワ方式</div>
+                        <div class="desc">JPKI<br>電子証明書</div>
+                      </div>
+                    </div>
+                    <div class="branch">
+                      <div class="vline vline-s"></div>
+                      <div class="label-tag tag-no">NO</div>
+                      <div class="vline vline-s"></div>
+                      <div class="node node-goal goal-he">
+                        <div class="icon">📱💳</div>
+                        <div class="name">ヘ方式</div>
+                        <div class="desc">ICチップ読取<br>＋容貌画像</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- NO: ICなし -->
+                <div class="branch">
+                  <div class="vline vline-s"></div>
+                  <div class="label-tag tag-no">NO</div>
+                  <div class="vline vline-s"></div>
+                  <div class="arrow-d"></div>
+
+                  <div class="node node-decision" style="font-size:11px;">顔写真付き<br>書類があるか？</div>
+                  <div class="vline vline-s"></div>
+
+                  <div class="s1-noic-split">
+                    <div class="branch">
+                      <div class="vline vline-s"></div>
+                      <div class="label-tag tag-yes">YES</div>
+                      <div class="vline vline-s"></div>
+                      <div class="node node-goal goal-ho">
+                        <div class="badge badge-popular">★ 主流（7〜8割）</div>
+                        <div class="icon">📸🤳</div>
+                        <div class="name">ホ方式</div>
+                        <div class="desc">書類撮影画像<br>＋セルフィー</div>
+                      </div>
+                    </div>
+                    <div class="branch">
+                      <div class="vline vline-s"></div>
+                      <div class="label-tag tag-no">NO</div>
+                      <div class="vline vline-s"></div>
+                      <div class="node node-goal goal-doc2">
+                        <div class="icon">📄📄</div>
+                        <div class="name">書類2点</div>
+                        <div class="desc">写真なし書類2点<br>＋転送不要郵便</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ト方式（代替） -->
+                <div class="branch">
+                  <div class="vline vline-s"></div>
+                  <div class="label-tag tag-either">代替</div>
+                  <div class="vline vline-s"></div>
+                  <div class="node node-goal goal-to">
+                    <div class="icon">🏦</div>
+                    <div class="name">ト方式</div>
+                    <div class="desc">他の特定事業者<br>（銀行等）へ照会</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 法人 branch -->
+        <div class="branch">
+          <div class="vline vline-s"></div>
+          <div class="label-tag" style="background:#f3e8ff;color:#6b21a8;">法人</div>
+          <div class="vline vline-s"></div>
+          <div class="node node-corp">
+            <strong>法人確認</strong><br>
+            ① 登記事項証明書等で法人確認<br>
+            ② 実質的支配者（UBO）の確認<br>
+            <span style="font-size:10px;">（議決権25%超の自然人を特定）</span><br>
+            ③ 取引担当者の本人確認<br>
+            <span style="font-size:10px;">（左記個人フローに準じる）</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- EDD section -->
+      <div class="edd-section mt-16">
+        <h3>⚠ ハイリスク取引の場合 → EDD（強化された顧客管理）が追加で必要</h3>
+        <ul>
+          <li><strong>なりすましの疑い</strong>がある取引 / <strong>偽り</strong>が疑われる取引</li>
+          <li><strong>特定国等</strong>（イラン・北朝鮮等）に関連する取引</li>
+          <li><strong>外国PEP</strong>（外国の重要な公的地位を有する者）との取引</li>
+          <li>上記に該当 → 通常のCDDに加え、<strong>統括管理者の承認</strong>・<strong>資産及び収入の確認</strong>等が必要</li>
+        </ul>
+      </div>
+
+      <!-- Legend -->
+      <div class="legend mt-8">
+        <div class="legend-item"><div class="legend-color" style="background:#2563eb;"></div>ホ方式（主流）</div>
+        <div class="legend-item"><div class="legend-color" style="background:#e0f2fe;"></div>ヘ方式</div>
+        <div class="legend-item"><div class="legend-color" style="background:#dcfce7;"></div>ワ方式（JPKI）</div>
+        <div class="legend-item"><div class="legend-color" style="background:#fff7ed;"></div>ト方式</div>
+        <div class="legend-item"><div class="legend-color" style="background:#f5f5f5;"></div>書類＋郵送</div>
+        <div class="legend-item"><div class="legend-color" style="background:#faf5ff;"></div>法人確認</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footnote">
+    <div>犯収法施行規則 第6条1項1号 ホ〜ワ方式 ｜ 選択肢が多く事業者ごとに採用方式が異なる</div>
+    <div>出典：犯罪収益移転防止法施行規則（令和9年4月1日施行改正）</div>
+  </div>
+</div>
+
+
+<!-- ==================== SLIDE 2: AFTER ==================== -->
+<div class="slide slide2">
+  <div class="title-bar">
+    <h1>改正後：オンライン本人確認（eKYC）詳細判定フロー</h1>
+    <div class="sub">2027年（令和9年）4月1日施行 ｜ 実務レベル</div>
+  </div>
+
+  <div style="background:linear-gradient(90deg,#fff8e1,#fffde7);text-align:center;padding:6px;font-size:14px;font-weight:700;color:#e65100;border-bottom:2px solid #ffcc80;">
+    JPKI原則一本化 → ホ方式廃止・ICチップ読取の原則化
+  </div>
+
+  <div class="slide-body">
+    <div class="s1-main">
+
+      <!-- START -->
+      <div class="node node-start">特定取引の発生（口座開設・送金・保険契約等）</div>
+      <div class="vline vline-h"></div>
+      <div class="arrow-d"></div>
+
+      <!-- 個人 or 法人 -->
+      <div class="node node-decision">個人か法人か？</div>
+      <div class="vline vline-s"></div>
+
+      <!-- Split: 個人 / 法人 -->
+      <div class="s2-main-split">
+
+        <!-- 個人 branch -->
+        <div class="branch">
+          <div class="vline vline-s"></div>
+          <div class="label-tag tag-yes">個人</div>
+          <div class="vline vline-s"></div>
+          <div class="arrow-d"></div>
+
+          <div class="node node-decision" style="font-size:12px;">対面か非対面か？</div>
+          <div class="vline vline-s"></div>
+
+          <div class="s1-second-split">
+
+            <!-- 対面 -->
+            <div class="branch">
+              <div class="vline vline-s"></div>
+              <div class="label-tag tag-either">対面</div>
+              <div class="vline vline-s"></div>
+              <div class="node node-face">
+                <strong>ICチップ読取が原則化</strong><br>
+                <span style="font-size:10px;">マイナンバーカード等のIC読取<br>
+                ※目視確認のみは原則不可に</span>
+              </div>
+            </div>
+
+            <!-- 非対面 -->
+            <div class="branch">
+              <div class="vline vline-s"></div>
+              <div class="label-tag tag-either">非対面</div>
+              <div class="vline vline-s"></div>
+              <div class="arrow-d"></div>
+
+              <!-- マイナンバーカード判定 -->
+              <div class="node node-decision" style="font-size:11px;">マイナンバーカードを<br>持っているか？</div>
+              <div class="vline vline-s"></div>
+
+              <div class="s2-nonface-split">
+
+                <!-- YES: マイナあり -->
+                <div class="branch">
+                  <div class="vline vline-s"></div>
+                  <div class="label-tag tag-yes">YES</div>
+                  <div class="vline vline-s"></div>
+                  <div class="arrow-d"></div>
+
+                  <div class="node node-decision" style="font-size:11px;">スマホNFC対応<br>or カードリーダー<br>があるか？</div>
+                  <div class="vline vline-s"></div>
+
+                  <div class="s2-yes-split">
+                    <!-- JPKI可能 -->
+                    <div class="branch">
+                      <div class="vline vline-s"></div>
+                      <div class="label-tag tag-yes">YES</div>
+                      <div class="vline vline-s"></div>
+                      <div class="node node-goal goal-ka" style="min-width:180px;">
+                        <div class="badge badge-primary">◎ 原則方式</div>
+                        <div class="icon">🔐💳</div>
+                        <div class="name">カ方式（旧ワ）</div>
+                        <div class="desc">
+                          JPKI電子証明書<br>
+                          <span style="font-size:10px;">
+                          ✓ ICチップ内証明書を読取<br>
+                          ✓ J-LISが有効性確認<br>
+                          ✓ 偽造が原理的に不可能<br>
+                          ✓ スマホJPKIにも対応
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- JPKI不可 → ヘ方式 -->
+                    <div class="branch">
+                      <div class="vline vline-s"></div>
+                      <div class="label-tag tag-no">NO</div>
+                      <div class="vline vline-s"></div>
+                      <div class="node node-goal goal-he2">
+                        <div class="icon">📱💳</div>
+                        <div class="name">ヘ方式</div>
+                        <div class="desc">ICチップ読取<br>＋容貌画像</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- NO: マイナなし -->
+                <div class="branch">
+                  <div class="vline vline-s"></div>
+                  <div class="label-tag tag-no">NO</div>
+                  <div class="vline vline-s"></div>
+                  <div class="arrow-d"></div>
+
+                  <div class="node node-decision" style="font-size:11px;">他のICチップ付き<br>書類があるか？</div>
+                  <div class="vline vline-s"></div>
+
+                  <div class="s2-no-split">
+                    <div class="branch">
+                      <div class="vline vline-s"></div>
+                      <div class="label-tag tag-yes">YES</div>
+                      <div class="vline vline-s"></div>
+                      <div class="node node-goal goal-he2">
+                        <div class="icon">📱💳</div>
+                        <div class="name">ヘ方式</div>
+                        <div class="desc">ICチップ読取<br>＋容貌画像</div>
+                      </div>
+                    </div>
+                    <div class="branch">
+                      <div class="vline vline-s"></div>
+                      <div class="label-tag tag-no">NO</div>
+                      <div class="vline vline-s"></div>
+                      <div class="node node-goal goal-to2">
+                        <div class="icon">🏦</div>
+                        <div class="name">ト方式</div>
+                        <div class="desc">他の特定事業者<br>（銀行等）へ照会</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 代替: ト方式 -->
+                <div class="branch">
+                  <div class="vline vline-s"></div>
+                  <div class="label-tag tag-either">代替</div>
+                  <div class="vline vline-s"></div>
+                  <div class="node node-goal goal-to2">
+                    <div class="icon">🏦</div>
+                    <div class="name">ト方式</div>
+                    <div class="desc">いずれの場合も<br>代替利用可</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 法人 branch -->
+        <div class="branch">
+          <div class="vline vline-s"></div>
+          <div class="label-tag" style="background:#f3e8ff;color:#6b21a8;">法人</div>
+          <div class="vline vline-s"></div>
+          <div class="node node-corp">
+            <strong>法人確認（変更なし）</strong><br>
+            ① 登記事項証明書等で法人確認<br>
+            ② 実質的支配者（UBO）の確認<br>
+            ③ 取引担当者の本人確認<br>
+            <span style="font-size:10px;">（左記個人フローに準じる）</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- EDD section -->
+      <div class="edd-section mt-16">
+        <h3>⚠ ハイリスク取引の場合 → EDD（変更前と同様＋対応強化）</h3>
+        <ul>
+          <li>なりすまし・偽りの疑い / 特定国等関連取引 / 外国PEP → <strong>統括管理者承認＋資産収入確認</strong></li>
+          <li>メガバンク等は「相対的に高リスク」として<strong>2027年4月を待たず前倒し対応</strong>を推進中</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Abolished overlay -->
+  <div class="abolished-overlay">
+    <h4>🚫 廃止された方式</h4>
+    <div class="item">✕ ホ方式（書類撮影＋セルフィー）</div>
+    <div class="item">✕ 書類の写し郵送</div>
+    <div class="item">✕ 写真なし書類2点＋転送不要郵便</div>
+    <div class="reason">
+      廃止理由：偽造書類の高度化、<br>
+      生成AI・ディープフェイクの脅威、<br>
+      画像ベース検証の限界
+    </div>
+  </div>
+
+  <div class="footnote">
+    <div>公布：2025年6月24日 ／ 施行：<strong>2027年4月1日</strong> ｜ 背景：FATF第4次対日相互審査＋特殊詐欺の深刻化</div>
+    <div>出典：犯罪収益移転防止法施行規則（令和9年4月1日施行改正）</div>
+  </div>
+</div>
+
+</body>
+</html>
