@@ -6,7 +6,9 @@ let state = {
   quizCorrect: 0, quizWrong: 0, streak: 0, maxStreak: 0,
   flashIndex: 0, flashTerms: [],
   refTab: 'glossary',
-  timerSec: 120, timerInterval: null, timerRemaining: 0
+  timerSec: 120, timerInterval: null, timerRemaining: 0,
+  crossTag: null, crossQuestions: [], crossIndex: 0,
+  crossAnswered: false, crossCorrect: 0, crossWrong: 0
 };
 const storage = {
   get(k, d) { try { return JSON.parse(localStorage.getItem(k)) || d } catch { return d } },
@@ -582,5 +584,176 @@ function today() { return formatDate(new Date()) }
 function formatDate(d) { return d.toISOString().slice(0, 10) }
 function diffDays(a, b) { return Math.ceil((new Date(b) - new Date(a)) / 86400000) }
 function shuffle(arr) { for (let i = arr.length - 1; i > 0; i--) { const j = Math.random() * (i + 1) | 0; [arr[i], arr[j]] = [arr[j], arr[i]] } return arr }
+
+/* ===== CROSS-STUDY MODE ===== */
+const TAG_LABELS = {
+  'ml-basics': 'ML基礎', 'fatf': 'FATF', 'rba': 'RBA', 'cdd': 'CDD（顧客管理）',
+  'edd': 'EDD（厳格な確認）', 'sar': '疑わしい取引', 'sanctions': '制裁', 'governance': 'ガバナンス',
+  'tf': 'テロ資金供与', 'monitoring': 'モニタリング', 'correspondent': 'コルレス',
+  'filtering': 'フィルタリング', 'audit': '監査', 'training': '研修', 'data-mgmt': 'データ管理',
+  'it-system': 'ITシステム', 'domestic-law': '国内法規制', 'pf': '拡散金融',
+  'pep': 'PEP', 'corporate-vehicles': '法人悪用', 'ubo': '実質的支配者',
+  'investigation': '調査', 'le-response': '法執行対応', 'international-cooperation': '国際協力',
+  'us-law': '米国法', 'eu-amld': 'EU指令', 'casino': 'カジノ', 'tbml': '貿易型ML',
+  'real-estate': '不動産', 'crypto': '暗号資産', 'privacy-law': 'プライバシー法'
+};
+const EXAM_LABELS = { 'standard': 'AMLスタンダード', 'cams': 'CAMS' };
+const CROSS_EXAM_IDS = ['standard', 'cams'];
+
+function setupCrossStudy() {
+  document.getElementById('cross-start-btn').addEventListener('click', startCrossQuiz);
+  document.getElementById('cross-next-btn').addEventListener('click', nextCrossQuestion);
+  document.getElementById('cross-end-btn').addEventListener('click', endCrossQuiz);
+  document.getElementById('cross-retry-btn').addEventListener('click', () => showCrossView('home'));
+  renderTagSelector();
+}
+
+function getCrossTagMap() {
+  const tagMap = {};
+  (DATA.questions.exams || []).forEach(exam => {
+    if (!CROSS_EXAM_IDS.includes(exam.id)) return;
+    exam.chapters.forEach(ch => ch.questions.forEach(q => {
+      (q.tags || []).forEach(tag => {
+        if (!tagMap[tag]) tagMap[tag] = [];
+        tagMap[tag].push({ ...q, _examId: exam.id });
+      });
+    }));
+  });
+  return tagMap;
+}
+
+function renderTagSelector() {
+  const el = document.getElementById('cross-tag-list');
+  const tagMap = getCrossTagMap();
+  const sortedTags = Object.entries(tagMap)
+    .filter(([, qs]) => qs.length >= 2)
+    .sort((a, b) => b[1].length - a[1].length);
+  el.innerHTML = sortedTags.map(([tag, qs]) => {
+    const examIds = [...new Set(qs.map(q => q._examId))];
+    const bothExams = examIds.length > 1;
+    return `<button data-tag="${tag}" class="${bothExams ? 'cross-both' : ''}">
+      ${TAG_LABELS[tag] || tag}
+      <span class="cross-tag-count">${qs.length}問</span>
+    </button>`;
+  }).join('');
+  el.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      el.querySelectorAll('button').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      state.crossTag = btn.dataset.tag;
+    });
+  });
+}
+
+function startCrossQuiz() {
+  if (!state.crossTag) return;
+  const tagMap = getCrossTagMap();
+  const qs = tagMap[state.crossTag] || [];
+  if (!qs.length) { alert('問題がありません'); return; }
+  // Deduplicate by id
+  const seen = new Set();
+  const unique = qs.filter(q => { if (seen.has(q.id)) return false; seen.add(q.id); return true; });
+  state.crossQuestions = shuffle([...unique]);
+  state.crossIndex = 0; state.crossCorrect = 0; state.crossWrong = 0;
+  state.crossAnswered = false;
+  showCrossView('play');
+  renderCrossQuestion();
+}
+
+function renderCrossQuestion() {
+  const q = state.crossQuestions[state.crossIndex];
+  if (!q) { endCrossQuiz(); return; }
+  state.crossAnswered = false;
+  document.getElementById('cross-next-btn').disabled = true;
+  document.getElementById('cross-explanation').classList.add('hidden');
+  document.getElementById('cross-progress-label').textContent =
+    `問題 ${state.crossIndex + 1} / ${state.crossQuestions.length}`;
+  const examLabel = EXAM_LABELS[q._examId] || q._examId;
+  const badgeClass = q._examId === 'cams' ? 'exam-badge-cams' : 'exam-badge-standard';
+  document.getElementById('cross-question').innerHTML =
+    `<span class="exam-badge ${badgeClass}">${examLabel}</span>` +
+    `<div style="margin-top:8px">${escapeHtml(q.question)}</div>` +
+    (q.questionEn ? `<details class="en-toggle"><summary>English</summary><div class="en-text">${escapeHtml(q.questionEn)}</div></details>` : '');
+  renderCrossStats();
+  const optEl = document.getElementById('cross-options');
+  optEl.innerHTML = q.options.map((o, i) =>
+    `<button class="option-btn" data-idx="${i}">${escapeHtml(o)}</button>`).join('');
+  optEl.querySelectorAll('.option-btn').forEach(btn =>
+    btn.addEventListener('click', () => answerCrossQuestion(parseInt(btn.dataset.idx))));
+}
+
+function renderCrossStats() {
+  const remaining = state.crossQuestions.length - state.crossIndex - (state.crossAnswered ? 1 : 0);
+  document.getElementById('cross-stats').innerHTML =
+    `<span class="stat-chip green">正解 ${state.crossCorrect}</span>` +
+    `<span class="stat-chip red">不正解 ${state.crossWrong}</span>` +
+    `<span class="stat-chip blue">残り ${remaining}</span>`;
+}
+
+function answerCrossQuestion(idx) {
+  if (state.crossAnswered) return;
+  state.crossAnswered = true;
+  const q = state.crossQuestions[state.crossIndex];
+  const correct = idx === q.answer;
+  if (correct) state.crossCorrect++; else state.crossWrong++;
+  totalQuizzes++; if (correct) totalCorrect++;
+  storage.set('totalQuizzes', totalQuizzes); storage.set('totalCorrect', totalCorrect);
+
+  const r = quizResults[q.id] || { correct: 0, wrong: 0 };
+  if (correct) r.correct++; else r.wrong++;
+  r.lastAttempt = today();
+  quizResults[q.id] = r;
+  storage.set('quizResults', quizResults);
+
+  const btns = document.querySelectorAll('#cross-options .option-btn');
+  btns.forEach((btn, i) => {
+    if (i === q.answer) btn.classList.add('correct');
+    else if (i === idx) btn.classList.add('wrong');
+    else btn.classList.add('reveal');
+  });
+  document.getElementById('cross-explanation').textContent = q.explanation;
+  document.getElementById('cross-explanation').classList.remove('hidden');
+  document.getElementById('cross-next-btn').disabled = false;
+  renderCrossStats();
+  checkBadges();
+}
+
+function nextCrossQuestion() {
+  state.crossIndex++;
+  if (state.crossIndex >= state.crossQuestions.length) { endCrossQuiz(); return; }
+  renderCrossQuestion();
+}
+
+function endCrossQuiz() {
+  const total = state.crossCorrect + state.crossWrong;
+  const pct = total > 0 ? Math.round(state.crossCorrect / total * 100) : 0;
+  const color = pct >= 70 ? 'var(--success)' : pct >= 50 ? 'var(--warning)' : 'var(--danger)';
+  document.getElementById('cross-result-score').textContent = `${pct}%`;
+  document.getElementById('cross-result-score').style.color = color;
+  document.getElementById('cross-result-detail').textContent =
+    `${total}問中 ${state.crossCorrect}問正解`;
+  const fg = document.getElementById('cross-ring-fg');
+  fg.style.stroke = color;
+  const circumference = 326.73;
+  requestAnimationFrame(() => {
+    fg.style.strokeDashoffset = circumference;
+    requestAnimationFrame(() => {
+      fg.style.strokeDashoffset = circumference * (1 - pct / 100);
+    });
+  });
+  showCrossView('result');
+  if (pct === 100) spawnConfetti();
+}
+
+function showCrossView(view) {
+  ['cross-home', 'cross-play', 'cross-result'].forEach(id =>
+    document.getElementById(id).classList.add('hidden'));
+  const targetId = view === 'home' ? 'cross-home' : view === 'play' ? 'cross-play' : 'cross-result';
+  document.getElementById(targetId).classList.remove('hidden');
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div'); d.textContent = str; return d.innerHTML;
+}
 
 document.addEventListener('DOMContentLoaded', init);

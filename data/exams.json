@@ -17,7 +17,7 @@
       "chapters": [
         {"id": "ch1", "name": "第1章 金融犯罪", "points": 10},
         {"id": "ch2", "name": "第2章 FATF", "points": 12},
-        {"id": "ch3", "name": "第3章 国内法規制", "points": 12},
+        {"id": "ch3", "name": "第3章 国内法規制等", "points": 12},
         {"id": "ch4", "name": "第4章 リスクベース・アプローチ", "points": 20},
         {"id": "ch5", "name": "第5章 管理態勢", "points": 10},
         {"id": "ch6", "name": "第6章 顧客管理", "points": 18},
@@ -118,7 +118,12 @@
       "studyHours": "50-150時間",
       "materials": "ACAMS公式スタディガイド、フラッシュカード、Exam Simulator",
       "tips": ["丸暗記より原理原則の理解", "日本語翻訳に難あり→英語原文も参照"],
-      "chapters": []
+      "chapters": [
+        {"id": "domain1", "name": "Domain 1: ML/TF Risks and Methods", "points": null},
+        {"id": "domain2", "name": "Domain 2: Compliance Standards", "points": null},
+        {"id": "domain3", "name": "Domain 3: AML/CFT Compliance Programme", "points": null},
+        {"id": "domain4", "name": "Domain 4: Investigation Process", "points": null}
+      ]
     }
   ]
 }
