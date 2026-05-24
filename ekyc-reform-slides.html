@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>犯収法施行規則改正 eKYC方式の変更</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+  }
+
+  .slide {
+    width: 1280px;
+    height: 720px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  /* Slide 1 */
+  .slide1 { padding: 40px 50px 30px; }
+
+  .slide1 .title-bar {
+    background: linear-gradient(135deg, #1e3a5f, #2c5f8a);
+    color: #fff;
+    padding: 16px 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  .slide1 .title-bar h1 { font-size: 26px; font-weight: 700; }
+  .slide1 .title-bar .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+
+  .flow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .start-node {
+    background: #1e3a5f;
+    color: #fff;
+    padding: 10px 28px;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .arrow-down {
+    width: 3px;
+    height: 24px;
+    background: #666;
+    position: relative;
+  }
+  .arrow-down::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: -5px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #666;
+  }
+
+  .diamond {
+    width: 260px;
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 0;
+  }
+  .diamond-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #e8f0fe;
+    border: 2.5px solid #1e3a5f;
+    transform: skewX(-10deg);
+    border-radius: 8px;
+  }
+  .diamond-text {
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    color: #1e3a5f;
+  }
+
+  .branch-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 4px;
+  }
+
+  .branch-label {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  .label-yes { background: #d4edda; color: #155724; }
+  .label-no { background: #f8d7da; color: #721c24; }
+
+  .branch-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .goal-node {
+    border-radius: 12px;
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 150px;
+    position: relative;
+  }
+  .goal-node .method-name {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 4px;
+  }
+  .goal-node .method-icon {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+  .goal-node .method-desc {
+    font-size: 11px;
+    line-height: 1.5;
+    opacity: 0.85;
+  }
+
+  .goal-ho {
+    background: linear-gradient(135deg, #2c7be5, #1e5bb8);
+    color: #fff;
+    border: 3px solid #ffc107;
+    box-shadow: 0 0 12px rgba(255,193,7,0.4);
+  }
+  .goal-ho .badge {
+    position: absolute;
+    top: -12px;
+    left: -8px;
+    background: #ffc107;
+    color: #1a1a2e;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 2px 10px;
+    border-radius: 10px;
+  }
+
+  .goal-he { background: #e3f2fd; color: #0d47a1; border: 2px solid #42a5f5; }
+  .goal-wa { background: #e8f5e9; color: #1b5e20; border: 2px solid #66bb6a; }
+  .goal-to { background: #fff3e0; color: #e65100; border: 2px solid #ffa726; }
+  .goal-mail { background: #f5f5f5; color: #666; border: 2px solid #bbb; }
+
+  .slide1 .footnote {
+    position: absolute;
+    bottom: 16px;
+    left: 50px;
+    right: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .footnote-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .footnote-item {
+    font-size: 12px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .footnote-item .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-blue { background: #2c7be5; }
+  .dot-gray { background: #999; }
+  .source {
+    font-size: 10px;
+    color: #999;
+  }
+
+  /* Slide 1 custom flow layout */
+  .s1-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .s1-decision-area {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 6px;
+  }
+
+  .s1-sub-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .s1-sub-row {
+    display: flex;
+    gap: 20px;
+    margin-top: 4px;
+  }
+
+  .connector-h {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .connector-h .line {
+    width: 40px;
+    height: 2px;
+    background: #666;
+  }
+
+  .s1-to-box {
+    position: absolute;
+    bottom: 80px;
+    right: 60px;
+  }
+
+  /* Slide 2 */
+  .slide2 { padding: 0; }
+
+  .slide2 .title-bar {
+    background: linear-gradient(135deg, #1b5e20, #2e7d32);
+    color: #fff;
+    padding: 16px 30px;
+  }
+  .slide2 .title-bar h1 { font-size: 26px; font-weight: 700; }
+  .slide2 .title-bar .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+
+  .jpki-banner {
+    background: linear-gradient(90deg, #fff8e1, #fffde7);
+    text-align: center;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #e65100;
+    border-bottom: 2px solid #ffcc80;
+  }
+
+  .slide2-body {
+    display: flex;
+    height: 560px;
+    padding: 20px 30px 10px;
+    gap: 24px;
+  }
+
+  .abolished-area {
+    width: 320px;
+    background: #fef2f2;
+    border: 2px solid #fca5a5;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+  }
+  .abolished-area h2 {
+    font-size: 18px;
+    color: #dc2626;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .abolished-item {
+    background: #fff;
+    border: 1.5px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 12px;
+    position: relative;
+    opacity: 0.7;
+  }
+  .abolished-item::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    right: 8px;
+    height: 2.5px;
+    background: #dc2626;
+  }
+  .abolished-item .method-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #999;
+  }
+  .abolished-item .method-desc {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+  }
+  .abolished-item .x-mark {
+    color: #dc2626;
+    font-weight: 900;
+    margin-right: 4px;
+  }
+  .abolished-item .deadline {
+    font-size: 11px;
+    color: #dc2626;
+    font-weight: 700;
+    margin-top: 6px;
+  }
+
+  .abolish-reasons {
+    margin-top: 16px;
+    padding: 14px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #fca5a5;
+  }
+  .abolish-reasons h3 {
+    font-size: 13px;
+    color: #dc2626;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .abolish-reasons li {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 4px;
+    margin-left: 16px;
+    line-height: 1.6;
+  }
+
+  .survive-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .survive-area h2 {
+    font-size: 18px;
+    color: #16a34a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .survive-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    flex: 1;
+  }
+
+  .s2-start {
+    background: #1b5e20;
+    color: #fff;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .s2-diamond {
+    width: 280px;
+    height: 70px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 6px 0;
+  }
+  .s2-diamond .diamond-bg {
+    background: #e8f5e9;
+    border-color: #2e7d32;
+  }
+  .s2-diamond .diamond-text {
+    color: #1b5e20;
+    font-size: 14px;
+  }
+
+  .s2-branch-row {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .s2-branch-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .goal-ka {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    color: #fff;
+    border: 3px solid #fbbf24;
+    box-shadow: 0 0 16px rgba(251,191,36,0.4);
+    min-width: 220px;
+    padding: 16px 20px;
+  }
+  .goal-ka .badge {
+    position: absolute;
+    top: -12px;
+    left: -8px;
+    background: #fbbf24;
+    color: #1a1a2e;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 2px 10px;
+    border-radius: 10px;
+  }
+  .goal-ka .features {
+    text-align: left;
+    margin-top: 8px;
+  }
+  .goal-ka .features li {
+    font-size: 11px;
+    margin-bottom: 3px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .goal-ka .features li::before {
+    content: '✓';
+    color: #bbf7d0;
+    font-weight: 900;
+  }
+
+  .goal-he2 {
+    background: #f0fdf4;
+    color: #166534;
+    border: 2px solid #4ade80;
+    min-width: 140px;
+  }
+  .goal-to2 {
+    background: #f0fdf4;
+    color: #166534;
+    border: 2px solid #86efac;
+    min-width: 140px;
+  }
+
+  .slide2 .footnote {
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 8px;
+  }
+  .footnote-info {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.6;
+  }
+  .footnote-info strong { color: #dc2626; }
+
+  .arrow-down-sm {
+    width: 2px;
+    height: 16px;
+    background: #666;
+    position: relative;
+  }
+  .arrow-down-sm::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: -4px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #666;
+  }
+
+  .arrow-down-green {
+    width: 3px;
+    height: 18px;
+    background: #2e7d32;
+    position: relative;
+  }
+  .arrow-down-green::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: -5px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #2e7d32;
+  }
+
+  .s2-sub-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 4px;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .slide {
+      box-shadow: none;
+      margin: 0;
+      border-radius: 0;
+      page-break-after: always;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Slide 1: Before -->
+<div class="slide slide1">
+  <div class="title-bar">
+    <h1>現行のオンライン本人確認（eKYC）方式</h1>
+    <div class="sub">犯収法施行規則 第6条1項1号 ｜ 〜2027年3月31日</div>
+  </div>
+
+  <div class="s1-flow">
+    <div class="start-node">非対面での本人確認が必要</div>
+    <div class="arrow-down"></div>
+
+    <div class="diamond">
+      <div class="diamond-bg"></div>
+      <div class="diamond-text">本人確認書類は<br>ICチップ付きか？</div>
+    </div>
+
+    <div class="s1-decision-area">
+
+      <!-- YES branch -->
+      <div class="s1-sub-branch">
+        <span class="branch-label label-yes">YES</span>
+        <div class="arrow-down-sm"></div>
+        <div style="display:flex; gap:16px; margin-top:8px;">
+          <div class="branch-col">
+            <div class="goal-node goal-he">
+              <div class="method-icon">📱💳</div>
+              <div class="method-name">ヘ方式</div>
+              <div class="method-desc">ICチップ読取<br>＋ 容貌画像</div>
+            </div>
+          </div>
+          <div class="branch-col">
+            <div class="goal-node goal-wa">
+              <div class="method-icon">🔐</div>
+              <div class="method-name">ワ方式</div>
+              <div class="method-desc">JPKI<br>電子証明書</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NO branch -->
+      <div class="s1-sub-branch">
+        <span class="branch-label label-no">NO</span>
+        <div class="arrow-down-sm"></div>
+
+        <div class="diamond" style="width:240px; height:70px; margin-top:8px;">
+          <div class="diamond-bg"></div>
+          <div class="diamond-text">顔写真付き<br>書類があるか？</div>
+        </div>
+
+        <div style="display:flex; gap:16px; margin-top:8px;">
+          <div class="branch-col">
+            <span class="branch-label label-yes">YES</span>
+            <div class="arrow-down-sm"></div>
+            <div class="goal-node goal-ho" style="margin-top:6px;">
+              <div class="badge">★ 最も普及</div>
+              <div class="method-icon">📸🤳</div>
+              <div class="method-name">ホ方式</div>
+              <div class="method-desc">書類撮影画像<br>＋ セルフィー</div>
+            </div>
+          </div>
+          <div class="branch-col">
+            <span class="branch-label label-no">NO</span>
+            <div class="arrow-down-sm"></div>
+            <div class="goal-node goal-mail" style="margin-top:6px;">
+              <div class="method-icon">📮</div>
+              <div class="method-name">郵送</div>
+              <div class="method-desc">書類の写しを<br>郵送（数日〜）</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ト方式 -->
+  <div class="s1-to-box">
+    <div class="goal-node goal-to">
+      <div class="method-icon">🏦</div>
+      <div class="method-name">ト方式</div>
+      <div class="method-desc">他の特定事業者<br>（銀行等）へ照会</div>
+    </div>
+    <div style="font-size:11px; color:#888; text-align:center; margin-top:4px;">※ いずれの場合も<br>代替として利用可</div>
+  </div>
+
+  <div class="footnote">
+    <div class="footnote-left">
+      <div class="footnote-item"><span class="dot dot-blue"></span> ホ方式が市場シェアの大部分を占める（主流）</div>
+      <div class="footnote-item"><span class="dot dot-gray"></span> 選択肢が多く、事業者ごとに採用方式がバラバラ</div>
+    </div>
+    <div class="source">出典：犯罪収益移転防止法施行規則（令和9年4月1日施行改正）</div>
+  </div>
+</div>
+
+<!-- Slide 2: After -->
+<div class="slide slide2">
+  <div class="title-bar">
+    <h1>改正後のオンライン本人確認（eKYC）方式</h1>
+    <div class="sub">2027年（令和9年）4月1日 施行</div>
+  </div>
+
+  <div class="jpki-banner">
+    JPKI 原則一本化 → セキュリティの大幅強化
+  </div>
+
+  <div class="slide2-body">
+
+    <!-- Left: Abolished -->
+    <div class="abolished-area">
+      <h2>🚫 廃止される方式</h2>
+
+      <div class="abolished-item">
+        <div class="method-name"><span class="x-mark">✕</span> ホ方式</div>
+        <div class="method-desc">書類撮影画像 ＋ セルフィー</div>
+        <div class="deadline">→ 2027年3月末で廃止</div>
+      </div>
+
+      <div class="abolished-item">
+        <div class="method-name"><span class="x-mark">✕</span> 書類の写し郵送</div>
+        <div class="method-desc">本人確認書類の写しを郵送</div>
+        <div class="deadline">→ 2027年3月末で廃止</div>
+      </div>
+
+      <div class="abolish-reasons">
+        <h3>主な廃止理由</h3>
+        <ul>
+          <li>偽造書類の高度化による目視判定の限界</li>
+          <li>生成AI・ディープフェイク技術の脅威</li>
+          <li>画像ベースの検証方式そのものの限界</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right: Surviving flow -->
+    <div class="survive-area">
+      <h2>✅ 存続する方式（判定フロー）</h2>
+
+      <div class="survive-flow">
+        <div class="s2-start">非対面での本人確認が必要</div>
+        <div class="arrow-down-green"></div>
+
+        <div class="s2-diamond">
+          <div class="diamond-bg"></div>
+          <div class="diamond-text">マイナンバーカードを<br>持っているか？</div>
+        </div>
+
+        <div class="s2-branch-row">
+
+          <!-- YES -->
+          <div class="s2-branch-col">
+            <span class="branch-label label-yes">YES</span>
+            <div class="arrow-down-sm"></div>
+            <div class="goal-node goal-ka" style="margin-top:8px;">
+              <div class="badge">◎ 原則方式</div>
+              <div class="method-icon">🔐💳</div>
+              <div class="method-name">カ方式（旧ワ方式）</div>
+              <div class="method-desc">JPKI（公的個人認証）電子証明書</div>
+              <ul class="features">
+                <li>マイナンバーカードのICチップ内電子証明書を読取</li>
+                <li>J-LIS（地方公共団体情報システム機構）が有効性を確認</li>
+                <li>偽造・なりすましが原理的に不可能な高セキュア方式</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- NO -->
+          <div class="s2-branch-col">
+            <span class="branch-label label-no">NO</span>
+            <div class="arrow-down-sm"></div>
+            <div class="s2-sub-row" style="margin-top:8px;">
+              <div class="goal-node goal-he2">
+                <div class="method-icon">📱💳</div>
+                <div class="method-name">ヘ方式</div>
+                <div class="method-desc">ICチップ読取<br>＋ 容貌画像</div>
+              </div>
+              <div class="goal-node goal-to2">
+                <div class="method-icon">🏦</div>
+                <div class="method-name">ト方式</div>
+                <div class="method-desc">他の特定事業者<br>への照会</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footnote">
+    <div class="footnote-info">
+      公布日：2025年6月24日 ／ 施行日：<strong>2027年4月1日</strong><br>
+      改正の背景：FATF第4次対日相互審査での重点フォローアップ評価、および近年の特殊詐欺被害等の深刻化に対応するための厳格化。
+    </div>
+    <div class="source">出典：犯罪収益移転防止法施行規則（令和9年4月1日施行改正）</div>
+  </div>
+</div>
+
+</body>
+</html>
