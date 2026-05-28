@@ -122,14 +122,23 @@
         {"id": "risk", "name": "リスクと手法", "points": null}
       ],
       "importPlan": {
-        "domain": "リスクと手法（金融犯罪のリスクと手法を理解する）",
-        "totalQuestions": 201,
-        "note": "下記4カテゴリの合計(56+59+38+48)=201。「リスクと手法」はこの4カテゴリを統合したテスト。",
-        "categories": [
-          {"name": "マネー・ローンダリングと金融犯罪", "total": 56, "imported": 0},
-          {"name": "金融サービス業におけるマネー・ローンダリングのリスク", "total": 59, "imported": 0},
-          {"name": "ノンバンク金融サービスにおけるマネー・ローンダリングのリスク", "total": 38, "imported": 0},
-          {"name": "DNFBPにおけるマネー・ローンダリングのリスク", "total": 48, "imported": 0}
+        "note": "ACAMS Exam Simulator のカテゴリ別問題数。各ドメインのtotalはサブカテゴリ合計と一致するはず。",
+        "domains": [
+          {
+            "name": "リスクと手法（金融犯罪のリスクと手法を理解する）",
+            "total": 201,
+            "categories": [
+              {"name": "マネー・ローンダリングと金融犯罪", "total": 56, "imported": 0},
+              {"name": "金融サービス業におけるマネー・ローンダリングのリスク", "total": 59, "imported": 0},
+              {"name": "ノンバンク金融サービスにおけるマネー・ローンダリングのリスク", "total": 38, "imported": 0},
+              {"name": "DNFBPにおけるマネー・ローンダリングのリスク", "total": 48, "imported": 0}
+            ]
+          },
+          {
+            "name": "フレームワーク、ガバナンス及び規制（グローバルAFCの枠組み、ガバナンス、規制）",
+            "total": 137,
+            "categories": []
+          }
         ]
       }
     }
