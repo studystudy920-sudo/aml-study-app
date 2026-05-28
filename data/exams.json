@@ -142,6 +142,11 @@
               {"name": "AFCの規制と体制", "total": 50, "imported": 0},
               {"name": "ガイダンスの利用とAFCの協力", "total": 34, "imported": 0}
             ]
+          },
+          {
+            "name": "コンプライアンス・プログラムの構築（AFCコンプライアンス態勢の構築）",
+            "total": 231,
+            "categories": []
           }
         ]
       }
