@@ -2,7 +2,7 @@
 let DATA = { exams: [], questions: { exams: [] }, reference: {} };
 let state = {
   quizExam: null, quizMode: 'random', quizChapter: null,
-  quizQuestions: [], quizIndex: 0, quizAnswered: false,
+  quizQuestions: [], quizIndex: 0, quizAnswered: false, selected: [],
   quizCorrect: 0, quizWrong: 0, streak: 0, maxStreak: 0,
   flashIndex: 0, flashTerms: [],
   refTab: 'glossary',
@@ -163,6 +163,7 @@ function renderQuestion() {
   const q = state.quizQuestions[state.quizIndex];
   if (!q) { endQuiz(); return; }
   state.quizAnswered = false;
+  state.selected = [];
   document.getElementById('quiz-next-btn').disabled = true;
   document.getElementById('quiz-explanation').classList.add('hidden');
   document.getElementById('quiz-progress-label').textContent =
@@ -170,10 +171,19 @@ function renderQuestion() {
   document.getElementById('quiz-question').textContent = q.question;
   renderStats();
   const optEl = document.getElementById('quiz-options');
-  optEl.innerHTML = q.options.map((o, i) =>
-    `<button class="option-btn" data-idx="${i}">${o}</button>`).join('');
-  optEl.querySelectorAll('.option-btn').forEach(btn =>
-    btn.addEventListener('click', () => answerQuestion(parseInt(btn.dataset.idx))));
+  const multi = isMulti(q);
+  const hint = multi ? `<div class="multi-hint">☑️ ${q.answers.length}つ選択して「確定」を押してください</div>` : '';
+  optEl.innerHTML = hint + q.options.map((o, i) =>
+    `<button class="option-btn" data-idx="${i}">${o}</button>`).join('') +
+    (multi ? `<button id="quiz-submit-btn" class="btn btn-primary" style="margin-top:6px" disabled>確定</button>` : '');
+  if (multi) {
+    optEl.querySelectorAll('.option-btn').forEach(btn =>
+      btn.addEventListener('click', () => toggleSelect(parseInt(btn.dataset.idx), btn)));
+    document.getElementById('quiz-submit-btn').addEventListener('click', () => submitMulti(q));
+  } else {
+    optEl.querySelectorAll('.option-btn').forEach(btn =>
+      btn.addEventListener('click', () => answerQuestion(parseInt(btn.dataset.idx))));
+  }
   if (state.quizMode === 'timer') startTimer();
 }
 
@@ -186,34 +196,68 @@ function renderStats() {
     (state.streak >= 3 ? `<span class="stat-chip" style="background:rgba(251,191,36,.12);color:var(--gold);border-color:rgba(251,191,36,.2)">\u{1F525} ${state.streak}連続</span>` : '');
 }
 
+function isMulti(q) { return q.type === 'multi' || Array.isArray(q.answers); }
+
+function recordAnswer(q, correct) {
+  if (correct) { state.quizCorrect++; state.streak++; state.maxStreak = Math.max(state.maxStreak, state.streak); }
+  else { state.quizWrong++; state.streak = 0; }
+  totalQuizzes++; if (correct) totalCorrect++;
+  storage.set('totalQuizzes', totalQuizzes); storage.set('totalCorrect', totalCorrect);
+  const r = quizResults[q.id] || { correct: 0, wrong: 0 };
+  if (correct) r.correct++; else r.wrong++;
+  r.lastAttempt = today();
+  quizResults[q.id] = r;
+  storage.set('quizResults', quizResults);
+}
+
+function revealExplanation(q, prefix) {
+  document.getElementById('quiz-explanation').textContent = (prefix || '') + (q.explanation || '');
+  document.getElementById('quiz-explanation').classList.remove('hidden');
+  document.getElementById('quiz-next-btn').disabled = false;
+  renderStats();
+  checkBadges();
+}
+
 function answerQuestion(idx) {
   if (state.quizAnswered) return;
   state.quizAnswered = true;
   stopTimer();
   const q = state.quizQuestions[state.quizIndex];
   const correct = idx === q.answer;
-  if (correct) { state.quizCorrect++; state.streak++; state.maxStreak = Math.max(state.maxStreak, state.streak); }
-  else { state.quizWrong++; state.streak = 0; }
-  totalQuizzes++; if (correct) totalCorrect++;
-  storage.set('totalQuizzes', totalQuizzes); storage.set('totalCorrect', totalCorrect);
-
-  const r = quizResults[q.id] || { correct: 0, wrong: 0 };
-  if (correct) r.correct++; else r.wrong++;
-  r.lastAttempt = today();
-  quizResults[q.id] = r;
-  storage.set('quizResults', quizResults);
-
-  const btns = document.querySelectorAll('#quiz-options .option-btn');
-  btns.forEach((btn, i) => {
+  recordAnswer(q, correct);
+  document.querySelectorAll('#quiz-options .option-btn').forEach((btn, i) => {
     if (i === q.answer) btn.classList.add('correct');
     else if (i === idx) btn.classList.add('wrong');
     else btn.classList.add('reveal');
   });
-  document.getElementById('quiz-explanation').textContent = q.explanation;
-  document.getElementById('quiz-explanation').classList.remove('hidden');
-  document.getElementById('quiz-next-btn').disabled = false;
-  renderStats();
-  checkBadges();
+  revealExplanation(q);
+}
+
+function toggleSelect(idx, btn) {
+  if (state.quizAnswered) return;
+  const pos = state.selected.indexOf(idx);
+  if (pos >= 0) { state.selected.splice(pos, 1); btn.classList.remove('selected'); }
+  else { state.selected.push(idx); btn.classList.add('selected'); }
+  const submit = document.getElementById('quiz-submit-btn');
+  const q = state.quizQuestions[state.quizIndex];
+  if (submit) submit.disabled = state.selected.length !== q.answers.length;
+}
+
+function submitMulti(q) {
+  if (state.quizAnswered) return;
+  state.quizAnswered = true;
+  stopTimer();
+  const sel = state.selected, ans = q.answers;
+  const correct = sel.length === ans.length && ans.every(a => sel.includes(a));
+  recordAnswer(q, correct);
+  document.querySelectorAll('#quiz-options .option-btn').forEach((btn, i) => {
+    if (ans.includes(i)) btn.classList.add('correct');
+    else if (sel.includes(i)) btn.classList.add('wrong');
+    else btn.classList.add('reveal');
+  });
+  const submit = document.getElementById('quiz-submit-btn');
+  if (submit) submit.disabled = true;
+  revealExplanation(q);
 }
 
 function nextQuestion() {
@@ -296,8 +340,10 @@ function autoAnswer() {
     const q = state.quizQuestions[state.quizIndex];
     const r = quizResults[q.id] || { correct: 0, wrong: 0 }; r.wrong++; r.lastAttempt = today();
     quizResults[q.id] = r; storage.set('quizResults', quizResults);
+    const correctSet = Array.isArray(q.answers) ? q.answers : [q.answer];
     const btns = document.querySelectorAll('#quiz-options .option-btn');
-    btns.forEach((btn, i) => { if (i === q.answer) btn.classList.add('correct'); else btn.classList.add('reveal'); });
+    btns.forEach((btn, i) => { if (correctSet.includes(i)) btn.classList.add('correct'); else btn.classList.add('reveal'); });
+    const submit = document.getElementById('quiz-submit-btn'); if (submit) submit.disabled = true;
     document.getElementById('quiz-explanation').textContent = '\u{23F0} 時間切れ！ ' + q.explanation;
     document.getElementById('quiz-explanation').classList.remove('hidden');
     document.getElementById('quiz-next-btn').disabled = false;

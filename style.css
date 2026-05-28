@@ -140,6 +140,8 @@ body::before{
 }
 .option-btn:hover{border-color:rgba(255,255,255,.25);background:var(--glass-hover)}
 .option-btn:active{transform:scale(.98)}
+.option-btn.selected{border-color:var(--accent);background:var(--glass-hover);box-shadow:0 0 12px rgba(99,102,241,.25)}
+.multi-hint{font-size:.8rem;color:var(--text-secondary);margin-bottom:8px}
 .option-btn.correct{
   border-color:var(--success);background:rgba(16,185,129,.12);
   box-shadow:0 0 20px var(--success-glow);

@@ -118,7 +118,9 @@
       "studyHours": "50-150時間",
       "materials": "ACAMS公式スタディガイド、フラッシュカード、Exam Simulator",
       "tips": ["丸暗記より原理原則の理解", "日本語翻訳に難あり→英語原文も参照"],
-      "chapters": []
+      "chapters": [
+        {"id": "risk", "name": "リスクと手法", "points": null}
+      ]
     }
   ]
 }
