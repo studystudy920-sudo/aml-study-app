@@ -146,7 +146,9 @@
           {
             "name": "コンプライアンス・プログラムの構築（AFCコンプライアンス態勢の構築）",
             "total": 231,
-            "categories": []
+            "categories": [
+              {"name": "リスク評価", "total": 37, "imported": 0}
+            ]
           }
         ]
       }
