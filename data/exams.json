@@ -157,7 +157,12 @@
           {
             "name": "金融犯罪と闘うためのツール及びテクノロジー",
             "total": 181,
-            "categories": []
+            "categories": [
+              {"name": "AFCコンプライアンスのためのテクノロジー", "total": 43, "imported": 0},
+              {"name": "顧客オンボーディングのためのテクノロジー", "total": 46, "imported": 0},
+              {"name": "継続的なモニタリングと調査のためのテクノロジー", "total": 44, "imported": 0},
+              {"name": "データ収集とデータ準備", "total": 48, "imported": 0}
+            ]
           }
         ]
       }
