@@ -147,7 +147,8 @@
             "name": "コンプライアンス・プログラムの構築（AFCコンプライアンス態勢の構築）",
             "total": 231,
             "categories": [
-              {"name": "リスク評価", "total": 37, "imported": 0}
+              {"name": "リスク評価", "total": 37, "imported": 0},
+              {"name": "AML/CFTプログラムと統制の設計", "total": 53, "imported": 0}
             ]
           }
         ]
