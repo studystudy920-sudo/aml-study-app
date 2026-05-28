@@ -138,7 +138,8 @@
             "name": "フレームワーク、ガバナンス及び規制（グローバルAFCの枠組み、ガバナンス、規制）",
             "total": 137,
             "categories": [
-              {"name": "グローバルAFC基準及びガイダンス", "total": 53, "imported": 0}
+              {"name": "グローバルAFC基準及びガイダンス", "total": 53, "imported": 0},
+              {"name": "AFCの規制と体制", "total": 50, "imported": 0}
             ]
           }
         ]
