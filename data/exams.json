@@ -147,6 +147,7 @@
             "name": "コンプライアンス・プログラムの構築（AFCコンプライアンス態勢の構築）",
             "total": 231,
             "categories": [
+              {"name": "AMLリスク管理プログラムの構成要素と義務", "total": 40, "imported": 0},
               {"name": "リスク評価", "total": 37, "imported": 0},
               {"name": "AML/CFTプログラムと統制の設計", "total": 53, "imported": 0},
               {"name": "取引モニタリングと調査", "total": 65, "imported": 0},
