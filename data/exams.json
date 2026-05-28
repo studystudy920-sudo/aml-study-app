@@ -148,7 +148,8 @@
             "total": 231,
             "categories": [
               {"name": "リスク評価", "total": 37, "imported": 0},
-              {"name": "AML/CFTプログラムと統制の設計", "total": 53, "imported": 0}
+              {"name": "AML/CFTプログラムと統制の設計", "total": 53, "imported": 0},
+              {"name": "取引モニタリングと調査", "total": 65, "imported": 0}
             ]
           }
         ]
