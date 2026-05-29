@@ -118,7 +118,56 @@
       "studyHours": "50-150時間",
       "materials": "ACAMS公式スタディガイド、フラッシュカード、Exam Simulator",
       "tips": ["丸暗記より原理原則の理解", "日本語翻訳に難あり→英語原文も参照"],
-      "chapters": []
+      "chapters": [
+        {"id": "risk", "name": "リスクと手法", "points": null},
+        {"id": "ml-crime", "name": "マネー・ローンダリングと金融犯罪", "points": null}
+      ],
+      "importPlan": {
+        "note": "ACAMS Exam Simulator のカテゴリ別問題数。各ドメインのtotalはサブカテゴリ合計と一致するはず。",
+        "domains": [
+          {
+            "name": "リスクと手法（金融犯罪のリスクと手法を理解する）",
+            "total": 201,
+            "categories": [
+              {"name": "マネー・ローンダリングと金融犯罪", "total": 56, "imported": 54},
+              {"name": "金融サービス業におけるマネー・ローンダリングのリスク", "total": 59, "imported": 0},
+              {"name": "ノンバンク金融サービスにおけるマネー・ローンダリングのリスク", "total": 38, "imported": 0},
+              {"name": "DNFBPにおけるマネー・ローンダリングのリスク", "total": 48, "imported": 0}
+            ]
+          },
+          {
+            "name": "フレームワーク、ガバナンス及び規制（グローバルAFCの枠組み、ガバナンス、規制）",
+            "total": 137,
+            "categories": [
+              {"name": "グローバルAFC基準及びガイダンス", "total": 53, "imported": 0},
+              {"name": "AFCの規制と体制", "total": 50, "imported": 0},
+              {"name": "ガイダンスの利用とAFCの協力", "total": 34, "imported": 0}
+            ]
+          },
+          {
+            "name": "コンプライアンス・プログラムの構築（AFCコンプライアンス態勢の構築）",
+            "total": 231,
+            "categories": [
+              {"name": "AMLリスク管理プログラムの構成要素と義務", "total": 40, "imported": 0},
+              {"name": "リスク評価", "total": 37, "imported": 0},
+              {"name": "AML/CFTプログラムと統制の設計", "total": 53, "imported": 0},
+              {"name": "取引モニタリングと調査", "total": 65, "imported": 0},
+              {"name": "調査の終了と法執行機関との情報交換", "total": 36, "imported": 0}
+            ]
+          },
+          {
+            "name": "金融犯罪と闘うためのツール及びテクノロジー",
+            "total": 181,
+            "categories": [
+              {"name": "AFCコンプライアンスのためのテクノロジー", "total": 43, "imported": 0},
+              {"name": "顧客オンボーディングのためのテクノロジー", "total": 46, "imported": 0},
+              {"name": "継続的なモニタリングと調査のためのテクノロジー", "total": 44, "imported": 0},
+              {"name": "データ収集とデータ準備", "total": 48, "imported": 0}
+            ]
+          }
+        ],
+        "pending": []
+      }
     }
   ]
 }
