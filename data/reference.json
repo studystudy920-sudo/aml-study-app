@@ -1,1224 +1,1287 @@
 {
- "glossary": [
-  {
-   "term": "CDD",
-   "full": "Customer Due Diligence",
-   "ja": "顧客デューディリジェンス",
-   "category": "顧客管理",
-   "description": "顧客の身元確認と取引目的の確認を行うプロセス。リスクに応じた顧客情報の収集・検証を実施する。"
-  },
-  {
-   "term": "EDD",
-   "full": "Enhanced Due Diligence",
-   "ja": "強化されたデューディリジェンス",
-   "category": "顧客管理",
-   "description": "高リスク顧客に対して実施する、通常のCDDより詳細な確認手続き。PEPや高リスク国との取引に適用。"
-  },
-  {
-   "term": "SDD",
-   "full": "Simplified Due Diligence",
-   "ja": "簡素化されたデューディリジェンス",
-   "category": "顧客管理",
-   "description": "低リスク顧客に対して適用される、簡略化された確認手続き。上場企業や政府機関等が対象。"
-  },
-  {
-   "term": "KYC",
-   "full": "Know Your Customer",
-   "ja": "顧客確認",
-   "category": "顧客管理",
-   "description": "顧客の身元を確認し、その顧客がどのような人物・法人であるかを把握するプロセス。CDDの中核要素。"
-  },
-  {
-   "term": "PEP",
-   "full": "Politically Exposed Person",
-   "ja": "外国の重要な公的地位を有する者",
-   "category": "顧客管理",
-   "description": "外国政府等において重要な地位にある者（元首、閣僚、裁判官等）及びその家族。高リスク顧客として EDD が必要。"
-  },
-  {
-   "term": "UBO",
-   "full": "Ultimate Beneficial Owner",
-   "ja": "実質的支配者",
-   "category": "顧客管理",
-   "description": "法人の議決権の25%超を保有する等、最終的に法人を支配する自然人。特定・確認が義務付けられている。"
-  },
-  {
-   "term": "CIP",
-   "full": "Customer Identification Program",
-   "ja": "顧客識別プログラム",
-   "category": "顧客管理",
-   "description": "米国BSAに基づき金融機関に義務付けられた顧客身元確認プログラム。口座開設時の本人確認を規定。"
-  },
-  {
-   "term": "Ongoing CDD",
-   "full": "Ongoing Customer Due Diligence",
-   "ja": "継続的顧客デューディリジェンス",
-   "category": "顧客管理",
-   "description": "取引関係の存続期間を通じて行う継続的な顧客情報の更新・取引モニタリング。"
-  },
-  {
-   "term": "RBA",
-   "full": "Risk-Based Approach",
-   "ja": "リスクベース・アプローチ",
-   "category": "リスク管理",
-   "description": "ML/TFリスクの高低に応じて資源配分を最適化する手法。FATF勧告の基本原則。"
-  },
-  {
-   "term": "NRA",
-   "full": "National Risk Assessment",
-   "ja": "国家リスク評価",
-   "category": "リスク管理",
-   "description": "国全体のML/TFリスクを包括的に評価するプロセス。FATF勧告1で各国に義務付け。"
-  },
-  {
-   "term": "ML",
-   "full": "Money Laundering",
-   "ja": "マネー・ローンダリング",
-   "category": "リスク管理",
-   "description": "犯罪収益の出所を隠蔽し、合法的な資金に見せかける行為。3段階：配置・階層化・統合。"
-  },
-  {
-   "term": "TF",
-   "full": "Terrorist Financing",
-   "ja": "テロ資金供与",
-   "category": "リスク管理",
-   "description": "テロ行為またはテロ組織に対して資金を提供・収集する行為。合法資金も対象となる点がMLと異なる。"
-  },
-  {
-   "term": "PF",
-   "full": "Proliferation Financing",
-   "ja": "拡散金融",
-   "category": "リスク管理",
-   "description": "大量破壊兵器の拡散に関する資金供与。国連安保理決議に基づく制裁対象。"
-  },
-  {
-   "term": "STR",
-   "full": "Suspicious Transaction Report",
-   "ja": "疑わしい取引の届出",
-   "category": "リスク管理",
-   "description": "疑わしい取引を発見した場合にFIUに届け出る報告。日本では犯収法に基づきJAFICに届出。"
-  },
-  {
-   "term": "SAR",
-   "full": "Suspicious Activity Report",
-   "ja": "疑わしい活動報告",
-   "category": "リスク管理",
-   "description": "米国で金融機関がFinCENに提出する疑わしい活動の報告書。STRと同義で米国での呼称。"
-  },
-  {
-   "term": "CTR",
-   "full": "Currency Transaction Report",
-   "ja": "通貨取引報告",
-   "category": "リスク管理",
-   "description": "米国で1万ドル超の現金取引について金融機関がFinCENに提出する報告書。"
-  },
-  {
-   "term": "TTF",
-   "full": "Targeted Financial Sanctions",
-   "ja": "対象を特定した金融制裁",
-   "category": "リスク管理",
-   "description": "テロリストや拡散金融に関与する個人・団体の資産凍結等を行う制裁措置。遅滞なく実施が求められる。"
-  },
-  {
-   "term": "FATF",
-   "full": "Financial Action Task Force",
-   "ja": "金融活動作業部会",
-   "category": "組織・機関",
-   "description": "AML/CFT/CPFの国際基準策定機関。40の勧告を策定し、相互審査により各国の遵守状況を評価。"
-  },
-  {
-   "term": "JAFIC",
-   "full": "Japan Financial Intelligence Center",
-   "ja": "犯罪収益移転防止対策室",
-   "category": "組織・機関",
-   "description": "日本のFIU（資金情報機関）。国家公安委員会・警察庁に設置。STRの受理・分析を担当。"
-  },
-  {
-   "term": "FinCEN",
-   "full": "Financial Crimes Enforcement Network",
-   "ja": "金融犯罪取締ネットワーク",
-   "category": "組織・機関",
-   "description": "米国財務省の局。米国のFIUとしてSAR/CTRの受理・分析、BSAの執行を担当。"
-  },
-  {
-   "term": "OFAC",
-   "full": "Office of Foreign Assets Control",
-   "ja": "外国資産管理局",
-   "category": "組織・機関",
-   "description": "米国財務省の局。経済制裁プログラムの管理・執行、SDNリストの管理を担当。"
-  },
-  {
-   "term": "AMLA",
-   "full": "Anti-Money Laundering Authority",
-   "ja": "EU資金洗浄防止機関",
-   "category": "組織・機関",
-   "description": "2025年7月1日設立のEU AML/CFT監督機関（フランクフルト所在）。2026年1月にEBAからAML/CFT関連マンデートを正式移管。2026年3月に初の公聴会を開催しCDD等のRTS草案を公表。2026年7月10日までに23件のLevel 2/3技術基準の公表義務あり。2028年からEU内の高リスク金融機関約40社の直接監督を開始予定。"
-  },
-  {
-   "term": "EBA",
-   "full": "European Banking Authority",
-   "ja": "欧州銀行監督機構",
-   "category": "組織・機関",
-   "description": "EU銀行部門の規制・監督機関。AML/CFTガイドラインの策定にも関与。AMIAへ一部機能移管。"
-  },
-  {
-   "term": "BCBS",
-   "full": "Basel Committee on Banking Supervision",
-   "ja": "バーゼル銀行監督委員会",
-   "category": "組織・機関",
-   "description": "銀行監督に関する国際基準策定機関。健全性規制（バーゼルIII）の他、AML/CFTガイドラインも発出。"
-  },
-  {
-   "term": "BSA",
-   "full": "Bank Secrecy Act",
-   "ja": "銀行秘密法",
-   "category": "法律・規制",
-   "description": "1970年制定の米国AML基本法。金融機関にCTR・SAR等の報告義務、記録保存義務を課す。"
-  },
-  {
-   "term": "PATRIOT Act",
-   "full": "USA PATRIOT Act",
-   "ja": "米国愛国者法",
-   "category": "法律・規制",
-   "description": "2001年9.11後に制定。BSAを強化し、CIP義務、コルレス銀行規制、情報共有（Section 314）等を追加。"
-  },
-  {
-   "term": "犯収法",
-   "full": "犯罪収益移転防止法",
-   "ja": "犯罪収益移転防止法",
-   "category": "法律・規制",
-   "description": "日本のAML/CFT中核法（2007年全面施行）。特定事業者にCDD・STR・取引記録保存を義務付け。"
-  },
-  {
-   "term": "外為法",
-   "full": "外国為替及び外国貿易法",
-   "ja": "外国為替及び外国貿易法",
-   "category": "法律・規制",
-   "description": "日本の経済制裁の根拠法。資産凍結措置・支払規制等を実施。財務省・経済産業省が所管。"
-  },
-  {
-   "term": "AMLR",
-   "full": "Anti-Money Laundering Regulation",
-   "ja": "EU資金洗浄防止規則",
-   "category": "法律・規制",
-   "description": "EU初の直接適用されるAML規則（2024年採択、2027年適用）。CDD・UBO・現金制限等を統一的に規定。"
-  },
-  {
-   "term": "AMLD",
-   "full": "Anti-Money Laundering Directive",
-   "ja": "EU資金洗浄防止指令",
-   "category": "法律・規制",
-   "description": "EUのAML指令。第6次AMLD（6AMLD）までが策定済。加盟国は国内法化が必要。AMLRへ移行中。"
-  },
-  {
-   "term": "MiCA",
-   "full": "Markets in Crypto-Assets Regulation",
-   "ja": "暗号資産市場規則",
-   "category": "法律・規制",
-   "description": "EUの暗号資産包括規制（2023年発効、2024年12月30日に全面適用）。暗号資産サービスプロバイダー（CASP）に単一のEU認可制度・AML義務を課す。既存事業者向けの経過措置（グランドファザリング期間）は2026年7月1日に終了し、以降は全CASPがMiCA認可を要する。"
-  },
-  {
-   "term": "DORA",
-   "full": "Digital Operational Resilience Act",
-   "ja": "デジタル運用レジリエンス法",
-   "category": "法律・規制",
-   "description": "EU金融機関のICTリスク管理を包括的に規制する法律（2025年適用）。サイバーレジリエンスを強化。"
-  },
-  {
-   "term": "NIST CSF",
-   "full": "NIST Cybersecurity Framework",
-   "ja": "NISTサイバーセキュリティフレームワーク",
-   "category": "サイバー",
-   "description": "米国NISTが策定したサイバーセキュリティのフレームワーク。識別・防御・検知・対応・復旧の5機能で構成。"
-  },
-  {
-   "term": "FISC",
-   "full": "Center for Financial Industry Information Systems",
-   "ja": "金融情報システムセンター",
-   "category": "サイバー",
-   "description": "日本の金融機関向けセキュリティ基準を策定する公益財団法人。FISC安全対策基準を発行。"
-  },
-  {
-   "term": "ISO 27001",
-   "full": "ISO/IEC 27001",
-   "ja": "情報セキュリティマネジメントシステム",
-   "category": "サイバー",
-   "description": "情報セキュリティマネジメントの国際規格。リスクアセスメントに基づく管理策の実施を要求。"
-  },
-  {
-   "term": "PCI DSS",
-   "full": "Payment Card Industry Data Security Standard",
-   "ja": "PCIデータセキュリティ基準",
-   "category": "サイバー",
-   "description": "クレジットカード情報保護のためのセキュリティ基準。12の要件で構成。カード取扱事業者に適用。"
-  },
-  {
-   "term": "SWIFT CSP",
-   "full": "SWIFT Customer Security Programme",
-   "ja": "SWIFT顧客セキュリティプログラム",
-   "category": "サイバー",
-   "description": "SWIFTが加盟金融機関に義務付けるセキュリティ基準。必須統制と推奨統制で構成。"
-  },
-  {
-   "term": "Tipping Off",
-   "full": "Tipping Off",
-   "ja": "情報漏洩（ティッピング・オフ）",
-   "category": "その他",
-   "description": "STR届出の事実を顧客等に漏洩すること。多くの法域で刑事罰の対象。捜査妨害を防止する趣旨。"
-  },
-  {
-   "term": "De-risking",
-   "full": "De-risking",
-   "ja": "ディリスキング",
-   "category": "その他",
-   "description": "金融機関がリスクの高い顧客・地域との取引を一律に解消すること。金融包摂を阻害する副作用が懸念。"
-  },
-  {
-   "term": "Correspondent Banking",
-   "full": "Correspondent Banking",
-   "ja": "コルレスバンキング",
-   "category": "その他",
-   "description": "銀行間の国際送金・決済サービス。コルレス先のAML/CFT体制のDDが必要。ネスティングリスクに注意。"
-  },
-  {
-   "term": "Shell Company",
-   "full": "Shell Company",
-   "ja": "ペーパーカンパニー",
-   "category": "その他",
-   "description": "実質的な事業活動を行わない法人。資金洗浄の隠蔽手段として悪用されるリスクが高い。"
-  },
-  {
-   "term": "Nested Account",
-   "full": "Nested Account",
-   "ja": "ネスティング",
-   "category": "その他",
-   "description": "コルレス口座を通じて第三者金融機関がサービスにアクセスすること。間接的な取引関係のリスク。"
-  },
-  {
-   "term": "Structuring",
-   "full": "Structuring",
-   "ja": "ストラクチャリング",
-   "category": "その他",
-   "description": "報告基準額（米国では1万ドル）を回避するために取引を意図的に分割する行為。それ自体が違法。"
-  },
-  {
-   "term": "Smurfing",
-   "full": "Smurfing",
-   "ja": "スマーフィング",
-   "category": "その他",
-   "description": "複数の人物（スマーフ）を利用してストラクチャリングを行う手法。報告義務の回避を目的とする。"
-  },
-  {
-   "term": "Trade-Based ML",
-   "full": "Trade-Based Money Laundering",
-   "ja": "貿易型マネロン",
-   "category": "その他",
-   "description": "貿易取引を悪用したマネロン手法。過大・過少請求、架空取引、多重請求等の手口がある。"
-  },
-  {
-   "term": "TBML",
-   "full": "Trade-Based Money Laundering",
-   "ja": "貿易ベースの資金洗浄",
-   "category": "その他",
-   "description": "Trade-Based MLの略称。国際貿易の複雑性を利用し、犯罪収益を移転・隠蔽する手法の総称。"
-  },
-  {
-   "term": "Hawala",
-   "full": "Hawala",
-   "ja": "ハワラ",
-   "category": "その他",
-   "description": "非公式な価値移転システム。物理的な資金移動なしに送金を行う。中東・南アジアで伝統的に利用。"
-  },
-  {
-   "term": "Wolfsberg Group",
-   "full": "Wolfsberg Group",
-   "ja": "ウォルフスベルグ・グループ",
-   "category": "その他",
-   "description": "13の国際大手銀行で構成される民間イニシアティブ。AML/CFTのベストプラクティスを策定・公表。"
-  },
-  {
-   "term": "Egmont Group",
-   "full": "Egmont Group of Financial Intelligence Units",
-   "ja": "エグモント・グループ",
-   "category": "その他",
-   "description": "世界のFIU（資金情報機関）の国際ネットワーク。FIU間の情報交換・協力を促進。170超の加盟FIU。"
-  },
-  {
-   "term": "Travel Rule",
-   "full": "Travel Rule",
-   "ja": "トラベルルール",
-   "category": "その他",
-   "description": "送金時に送金人・受取人情報を伝達する義務。FATF勧告16。暗号資産にも適用拡大（VASP間）。"
-  },
-  {
-   "term": "Beneficial Owner",
-   "full": "Beneficial Owner",
-   "ja": "実質的支配者",
-   "category": "その他",
-   "description": "法人等を最終的に所有・支配する自然人。UBOと同義。各国法でしきい値（25%等）が定められている。"
-  },
-  {
-   "term": "FIU",
-   "full": "Financial Intelligence Unit",
-   "ja": "資金情報機関",
-   "category": "組織・機関",
-   "description": "疑わしい取引報告（STR）の受理・分析・情報提供を行う中央機関。各国に設置が義務付けられている。"
-  },
-  {
-   "term": "SDN List",
-   "full": "Specially Designated Nationals and Blocked Persons List",
-   "ja": "SDNリスト",
-   "category": "リスク管理",
-   "description": "OFACが管理する制裁対象者リスト。掲載者との取引は全面禁止。資産凍結義務あり。"
-  },
-  {
-   "term": "VASP",
-   "full": "Virtual Asset Service Provider",
-   "ja": "暗号資産交換業者",
-   "category": "組織・機関",
-   "description": "暗号資産の交換・移転・管理等を行う事業者。FATF基準により AML/CFT義務の対象。"
-  },
-  {
-   "term": "CTA",
-   "full": "Corporate Transparency Act",
-   "ja": "企業透明性法",
-   "category": "法律・規制",
-   "description": "2021年成立の米国法。企業の実質的支配者情報のFinCENへの届出を義務付け。"
-  },
-  {
-   "term": "Gate Keeper",
-   "full": "Gatekeeper",
-   "ja": "ゲートキーパー",
-   "category": "その他",
-   "description": "弁護士・会計士・不動産業者等、金融システムへの入口を管理する専門職。AML義務の拡大対象。"
-  },
-  {
-   "term": "Layering",
-   "full": "Layering",
-   "ja": "階層化",
-   "category": "その他",
-   "description": "マネロンの第2段階。複数の取引を重ねて資金の出所を不明にする過程。複雑な送金経路が特徴。"
-  },
-  {
-   "term": "Placement",
-   "full": "Placement",
-   "ja": "配置",
-   "category": "その他",
-   "description": "マネロンの第1段階。犯罪収益を金融システムに投入する過程。現金の預け入れ等が典型的手口。"
-  },
-  {
-   "term": "Integration",
-   "full": "Integration",
-   "ja": "統合",
-   "category": "その他",
-   "description": "マネロンの第3段階。洗浄された資金を合法経済に戻す過程。不動産購入・事業投資等に利用。"
-  },
-  {
-   "term": "AML",
-   "full": "Anti-Money Laundering",
-   "ja": "資金洗浄防止",
-   "category": "リスク管理",
-   "description": "マネー・ローンダリングを防止するための法規制・手続き・施策の総称。"
-  },
-  {
-   "term": "CFT",
-   "full": "Combating the Financing of Terrorism",
-   "ja": "テロ資金供与対策",
-   "category": "リスク管理",
-   "description": "テロ資金供与を防止・抑止するための法規制・手続き・施策の総称。"
-  },
-  {
-   "term": "CPF",
-   "full": "Counter-Proliferation Financing",
-   "ja": "拡散金融対策",
-   "category": "リスク管理",
-   "description": "大量破壊兵器の拡散に関する資金供与を防止するための措置。FATF第4次相互審査で重点項目。"
-  },
-  {
-   "term": "BOI",
-   "full": "Beneficial Ownership Information",
-   "ja": "実質的支配者情報",
-   "category": "法律・規制",
-   "description": "米国CTAに基づくFinCENへの実質的支配者届出情報。2025年3月改訂により、米国国内企業・米国人は報告義務から除外。外国企業のみ届出義務継続。"
-  },
-  {
-   "term": "AMLA 2020",
-   "full": "Anti-Money Laundering Act of 2020",
-   "ja": "2020年マネーロンダリング防止法",
-   "category": "法律・規制",
-   "description": "米国BSAの大幅改正法。FinCENの権限強化、内部告発者報奨金制度の創設、暗号資産への適用明確化等を規定。"
-  },
-  {
-   "term": "AMLID",
-   "full": "AML/CFT Increased Monitoring (FATF Grey List)",
-   "ja": "FATFグレーリスト（監視強化対象リスト）",
-   "category": "組織・機関",
-   "description": "AML/CFT体制に戦略的欠陥があり行動計画にコミットした国・地域のリスト。2026年2月時点：クウェート・パプアニューギニア追加を含む22か国・地域。"
-  },
-  {
-   "term": "匿名・流動型犯罪グループ",
-   "full": "Anonymous Mobile Crime Groups",
-   "ja": "匿名・流動型犯罪グループ",
-   "category": "その他",
-   "description": "SNS等で匿名かつ流動的に構成員を募集して犯罪を実行する組織形態。特殊詐欺の実行犯や闇バイト等として悪用される。AML/CFTの新たなリスク類型として注目。"
-  },
-  {
-   "term": "Unhosted Wallet",
-   "full": "Unhosted Wallet / Non-custodial Wallet",
-   "ja": "アンホストウォレット（非カストディアル）",
-   "category": "その他",
-   "description": "秘密鍵を利用者自身が管理する暗号資産ウォレット。VASPを介さないP2P取引が可能なため、追跡・KYCが困難。FATFは2026年にステーブルコイン・アンホストウォレット報告書を公表し、リスクベースでの管理を要求。"
-  },
-  {
-   "term": "Stablecoin",
-   "full": "Stablecoin",
-   "ja": "ステーブルコイン",
-   "category": "その他",
-   "description": "法定通貨等に価値が連動するよう設計された暗号資産。MiCA・FATFの規制対象。FATFは2026年プレナリーでステーブルコインとアンホストウォレットに関する標的型報告書を承認。P2P取引のMLリスクを重点的に検討。"
-  },
-  {
-   "term": "Offshore VASP",
-   "full": "Offshore Virtual Asset Service Provider",
-   "ja": "オフショアVASP",
-   "category": "その他",
-   "description": "規制の緩い国・地域を拠点とする暗号資産サービスプロバイダー。規制の抜け穴として犯罪者に悪用されるリスクが高い。FATFが2026年2月プレナリーで「オフショアVASPのリスクへの理解と軽減」報告書を承認。"
-  },
-  {
-   "term": "Cyber-enabled Fraud",
-   "full": "Cyber-enabled Fraud",
-   "ja": "サイバー手段を用いた詐欺",
-   "category": "その他",
-   "description": "インターネット・デジタル技術を悪用した詐欺行為の総称。AIやディープフェイク等を活用した本人確認の偽造・不正アクセス・SNS詐欺等が含まれる。FATFは2026年2月プレナリーで「サイバー手段を用いた詐欺と仮想資産」に関する報告書を承認し、犯罪収益のAML経路として国際的に注目されている。"
-  },
-  {
-   "term": "GENIUS Act",
-   "full": "Guiding and Establishing National Innovation for U.S. Stablecoins Act",
-   "ja": "GENIUSステーブルコイン法",
-   "category": "法律・規制",
-   "description": "米国のステーブルコイン包括規制法。FinCENとOFACは2026年4月8日に同法実施規則案を共同公表し、ステーブルコイン発行者（PPSI）をBSA上の金融機関として位置付け、AML/CFTプログラム・SAR申告・制裁コンプライアンス・取引ブロック機能を義務付けた。"
-  },
-  {
-   "term": "PPSI",
-   "full": "Permitted Payment Stablecoin Issuer",
-   "ja": "許可済ペイメント・ステーブルコイン発行者",
-   "category": "組織・機関",
-   "description": "GENIUS法に基づく米国のステーブルコイン発行者。2026年4月のFinCEN/OFAC共同規則案によりBSA上の金融機関として規制対象となり、AML/CFTプログラムの整備・SAR申告・OFACの制裁コンプライアンスプログラム・技術的ブロック/凍結能力の実装が義務付けられた。"
-  },
-  {
-   "term": "FATF Ministerial Declaration 2026",
-   "full": "FATF Ministerial Declaration April 2026",
-   "ja": "FATF閣僚宣言（2026年4月）",
-   "category": "組織・機関",
-   "description": "2026年4月17日にワシントンD.C.（IMF・世銀春会合の機会）で開催されたFATF閣僚会合で採択された宣言。①拡大する詐欺（fraud）の脅威への集中対応、②AML/CFT/CPFツールキットの全面活用、③組織的詐欺センター・法人悪用・暗号資産・AI等の新技術悪用の理解深化、④リスクベース・アプローチの完全実施を国際的にコミットした。次回閣僚会合は2028年予定。"
-  },
-  {
-   "term": "JAFIC年次報告書（令和7年）",
-   "full": "Japan Financial Intelligence Center Annual Report 2025",
-   "ja": "JAFIC犯罪収益移転防止年次報告書（令和7年）",
-   "category": "組織・機関",
-   "description": "警察庁が2025年に公表した年次報告書。2024年の疑わしい取引の届出件数が初めて100万件を突破し過去最高を記録。非金融特定事業者（不動産・宝石貴金属業者等）からの届出が増加傾向にある一方、構成比は依然として低い水準。FIU提供情報の捜査機関での活用も増加傾向。"
-  },
-  {
-   "term": "OFAC GL 35",
-   "full": "Counter Terrorism General License 35",
-   "ja": "OFACテロ対策一般ライセンス35号",
-   "category": "法律・規制",
-   "description": "OFACが2026年4月14日付の制裁指定対象者に係る取引のワインドダウン（清算）を許可した一般ライセンス。指定後一定期間内の既存取引のクローズアウト等を認める時限的措置。GL 35のような時限ワインドダウンライセンスはコンプライアンス対応の重要な確認事項。"
-  },
-  {
-   "term": "AMLA CDD RTS",
-   "full": "AMLA Customer Due Diligence Regulatory Technical Standards",
-   "ja": "AMLA顧客デューデリジェンス規制技術基準",
-   "category": "法律・規制",
-   "description": "EU AMLAが2026年2月に公表した顧客デューデリジェンス（CDD）に関する規制技術基準（RTS）草案。標準・簡素・厳格CDDで必要な情報・書類の詳細、個人・法人・実質的支配者の本人確認基準、リスク感応的な継続モニタリング、電子的本人確認・デジタルオンボーディング（eIDAS、EUDIウォレット等）の利用基準等を規定。パブリックコメント期限は2026年5月8日。"
-  },
-  {
-   "term": "BWRA",
-   "full": "Business-Wide Risk Assessment",
-   "ja": "ビジネス全体のリスク評価",
-   "category": "リスク管理",
-   "description": "EU AMLR第10条(4)に基づく、義務事業者（OE）が自社の事業モデル・顧客・商品・サービス・配送チャネル・地理的エクスポージャーから生じるML/TFリスクを特定・評価・管理するためのリスクベース・アプローチの中核要素。AMLAは2026年4月16日にBWRAガイドライン草案のパブコンを開始（2026年7月15日まで、Q4 2026に最終ガイドライン公表予定）。比例性を重視し、規模・事業モデル・リスクプロファイルに応じた柔軟な実施を許容。"
-  },
-  {
-   "term": "AMLA Group-wide RTS",
-   "full": "AMLA Group-wide Requirements Regulatory Technical Standards",
-   "ja": "AMLAグループワイド要件RTS",
-   "category": "法律・規制",
-   "description": "AMLR第16条(4)に基づくグループレベルでのAML/CFT要件に関する規制技術基準（RTS）草案。AMLAが2026年4月16日にパブコン開始（コメント期限2026年6月15日、欧州委員会への提出は2026年9月30日まで）。グループ全体のポリシー・統制・手続き、子会社・支店間の情報共有、グループ・コンプライアンス機能等を規定。"
-  },
-  {
-   "term": "FinCEN Whistleblower NPRM",
-   "full": "FinCEN Whistleblower Incentives and Protections NPRM",
-   "ja": "FinCEN内部告発者報奨・保護規則案",
-   "category": "法律・規制",
-   "description": "FinCENが2026年4月1日に連邦官報に公示した内部告発者プログラム実施規則案（NPRM）。BSA・OFAC制裁プログラム・IEEPA・TWEA・キングピン法等の違反通報を奨励。獎励金は監督当局が回収した制裁金（100万ドル超の covered actions が対象）の10〜30%。1,500万ドル以下の場合は30%が推定される。経営層・コンプライアンス・監査部門の関係者は情報入手から120日間の待機期間が必要。コメント期限は2026年6月1日。"
-  },
-  {
-   "term": "FATF MER 2026",
-   "full": "FATF Mutual Evaluation Reports 2026 (Italy/Austria/Singapore)",
-   "ja": "FATF相互審査報告書2026年",
-   "category": "組織・機関",
-   "description": "2026年2月のFATFプレナリーで採択された第5次相互審査報告書。Italy（イタリア）報告書は2026年4月23日に、Austria（オーストリア、IMF主導）報告書は2026年4月30日に公表。シンガポール（FATF・APG共同審査）報告書も同時期に公表予定。第5次審査は技術的コンプライアンスと有効性（Immediate Outcomes）を統合的に評価する新ラウンド。日本の第5次審査は2028年オンサイト予定。"
-  },
-  {
-   "term": "AMLA Risk Model Data Collection",
-   "full": "AMLA Risk Assessment Model Data Collection Exercise",
-   "ja": "AMLAリスクアセスメントモデル・データ収集演習",
-   "category": "組織・機関",
-   "description": "AMLAが2026年3月に開始したリスクアセスメントモデルの試験・較正のためのデータ収集演習。2027年に直接監督対象として最大40の金融機関を選定するための前段階作業。参加機関は2026年4月22日までにデータ提出が必要。EBA（欧州銀行監督機構）から引き継いだリスクアセスメントモデルの実効性検証、IT基盤整備、監督マニュアル策定に活用される。2028年からの直接監督開始に向けた重要な準備プロセス。"
-  },
-  {
-   "term": "AMLA BWRA Public Hearing",
-   "full": "AMLA Business-Wide Risk Assessment Public Hearing",
-   "ja": "AMLA BWRAガイドライン公聴会（開催済）",
-   "category": "組織・機関",
-   "description": "AMLAが2026年5月28日（CET）に開催したビジネス全体のリスク評価（BWRA）ガイドライン草案に関する公聴会。義務事業者（OE）が事業モデル・顧客・商品・配送チャネル・地理的要素から生じるML/TFリスクを特定・評価する手法を議論した。コメント期限は2026年7月15日、最終ガイドラインは2026年Q4公表予定。CDD RTS草案のコメント期限（2026年5月8日・終了済）と並行して進行した。"
-  },
-  {
-   "term": "OFAC Iran Designations May2026",
-   "full": "OFAC Iran-Related Designations May 1, 2026",
-   "ja": "OFACイラン関連制裁指定（2026年5月1日）",
-   "category": "リスク管理",
-   "description": "OFACが2026年5月1日に発出したイラン関連の新規制裁指定。同日付でIran-related General License（一般ライセンス）も同時公表されており、指定対象との既存取引のワインドダウン措置が認められる時限的措置を含む。Iran-related OFAC Alertも併せて公表。米国制裁プログラムの執行強化が継続しており、金融機関は SDN リスト更新の即時反映と取引の事前スクリーニングが必要。"
-  },
-  {
-   "term": "FIN-2026-HT World Cup",
-   "full": "FinCEN Notice on Human Trafficking During 2026 FIFA World Cup",
-   "ja": "FinCEN通知（2026 FIFAワールドカップ期間中の人身取引）",
-   "category": "リスク管理",
-   "description": "FinCENが2026年5月13日に発出した、2026年FIFAワールドカップ（6月11日〜7月19日、米国・カナダ・メキシコ16都市で開催）開催に伴う人身取引（性的搾取・労働搾取）のリスクへの警戒を金融機関に呼びかける通知。SAR申告時のキーフレーズは「FIN-2026-HT World Cup」。通常のしきい値を超えなくとも疑わしい場合は速やかにSAR申告を実施し、人身取引ホットラインへの通報も推奨。レッドフラッグには、不自然に高額な旅費関連取引、現金・P2P送金・暗号資産・プリペイドカード経由の多額の入金等を例示。"
-  },
-  {
-   "term": "AMLA Home-Host RTS",
-   "full": "AMLA Home-Host Supervisory Cooperation Regulatory Technical Standards",
-   "ja": "AMLAホスト国・ホーム国監督協力RTS",
-   "category": "法律・規制",
-   "description": "AMLAが2026年5月11日にパブコン開始した、ホーム国（母国）監督当局とホスト国（受入国）監督当局の役割分担と協力モダリティに関する規制技術基準（RTS）草案。国境を越えた金融グループのAML/CFT監督における情報交換・共同検査・実効的な監督協力の枠組みを整備。AMLAの2028年からの直接監督開始に向けた重要な準備規制。"
-  },
-  {
-   "term": "AMLA Public Hearings May 2026",
-   "full": "AMLA Public Hearings on Group-wide RTS and BWRA Guidelines",
-   "ja": "AMLA公聴会（2026年5月20日・5月28日／開催済）",
-   "category": "組織・機関",
-   "description": "AMLAが2026年5月に開催した2つの重要公聴会。①5月20日：グループワイド要件RTS草案（AMLR第16条(4)・第17条(3)）には650名超が参加、②5月28日：BWRA（ビジネス全体のリスク評価）ガイドライン草案（AMLR第10条(4)）。OE（義務事業者）のグループAML/CFT体制、第三国子会社・支店への追加措置、リスク評価の最低4要件を議論。いずれも単一ルールブック完成（2027年7月10日適用）に向けた重要マイルストーン。日本の国際銀行のEU子会社も実務対応が必要。"
-  },
-  {
-   "term": "FinCEN IRGC Alert May 2026",
-   "full": "FinCEN Alert on Iranian Revolutionary Guard Corps May 2026",
-   "ja": "FinCEN IRGC関連通知（2026年5月）",
-   "category": "リスク管理",
-   "description": "FinCENが2026年5月11日に発出した、イラン革命防衛隊（IRGC）によるマネーロンダリングを阻止するための金融機関向けアラート。同日OFACもIRGCのイラン産原油の対中販売・輸送に関与した12個人・団体を制裁指定。さらに5月8日には、イランの無人航空機（UAV）・弾道ミサイルプログラムの武器調達を可能にした中東・アジア・東欧の10個人・企業を指定。Economic Furyキャンペーンの一環としてイラン外貨両替所3社とフロント企業も指定された。"
-  },
-  {
-   "term": "OFAC Cuba GAESA Designation",
-   "full": "OFAC Designation of GAESA under EO 14404",
-   "ja": "OFACキューバGAESA制裁指定",
-   "category": "リスク管理",
-   "description": "OFACがキューバの軍事組織GAESAを大統領令14404に基づき制裁指定（2026年5月）。GAESAはキューバ経済の金融サービスセクターでの活動を理由に指定。あわせて指導者層のAnia Guillermina Lastres Morera、Cuba's Moa Nickel SA（金属・鉱業セクター）も指定。米国によるキューバ軍事政権・エリート層に対する制裁強化の動き。"
-  },
-  {
-   "term": "Venezuela GL 58",
-   "full": "Venezuela-related General License 58",
-   "ja": "ベネズエラ関連一般ライセンス58号",
-   "category": "法律・規制",
-   "description": "OFACが2026年5月5日に公表したベネズエラ関連の一般ライセンス58号。「ベネズエラ政府との潜在的な債務再編に関連した一定のサービスを承認する」内容で、債務再編交渉に関連するアドバイザリーサービス等を時限的に認める。ベネズエラ制裁プログラムの中で、債務問題対応のための例外措置として注目。"
-  },
-  {
-   "term": "Giles Thomson",
-   "full": "Giles Thomson - Incoming FATF President",
-   "ja": "ジャイルズ・トムソン（次期FATF議長）",
-   "category": "組織・機関",
-   "description": "英国出身の次期FATF議長。2026年2月プレナリーで2026年7月から2028年6月までの2年間の任期で次期議長に指名された。現議長のElisa de Anda Madrazo（メキシコ）の任期満了（2026年6月30日）後に就任。次回プレナリーは2026年6月（メキシコ議長最終）で、議長交代後初のプレナリーは2026年10月予定。日本のFATF第5次相互審査（2028年8月オンサイト）はThomson議長期間中に実施される見込み。"
-  },
-  {
-   "term": "FATF Cyber-Enabled Fraud Report 2026",
-   "full": "FATF Report on Cyber-Enabled Fraud February 2026",
-   "ja": "FATFサイバー手段詐欺報告書（2026年2月）",
-   "category": "組織・機関",
-   "description": "FATFが2026年2月24日に公表した「サイバー手段を用いた詐欺・デジタル化とML/TF/PFリスク」報告書。英国では詐欺が全犯罪の40%超、シンガポールでは2年でサイバー詐欺件数が61%増加。FATF評価対象156法域（90%）が詐欺を主要なマネロンリスクと特定。AI・ディープフェイク等の悪用、組織的詐欺センター、ロマンス詐欺等の手口を分析。FATF基準を活用した詐欺対策の高度化を各国に要請。"
-  },
-  {
-   "term": "FATF Grey List 2026年2月",
-   "full": "Jurisdictions under Increased Monitoring - 13 February 2026",
-   "ja": "強化モニタリング対象国・地域（2026年2月13日）",
-   "category": "組織・機関",
-   "description": "FATFは2026年2月13日のプレナリーで、クウェートとパプアニューギニアの2か国を強化モニタリング対象国・地域（いわゆるグレーリスト）に新規追加した。除外国はなく、2026年2月時点のグレーリストは計22か国・地域となった。前回2025年10月にブルキナファソ・モザンビーク・ナイジェリア・南アフリカが、2025年6月にはクロアチア・マリ・タンザニアが除外されている。ブラックリスト（行動要請対象）は北朝鮮・イラン・ミャンマーの3か国で変更なし。"
-  },
-  {
-   "term": "FIN-2026-R001",
-   "full": "FinCEN Order FIN-2026-R001 (Beneficial Ownership Verification Relief)",
-   "ja": "FinCEN命令 FIN-2026-R001（実質的支配者確認の負担軽減）",
-   "category": "法律・規制",
-   "description": "FinCENが2026年2月に発出した命令。CDD規則の下で法人が新規口座を開設するたびに実質的支配者（BO）情報を繰り返し確認する負担を金融機関に対し軽減するもの。BO確認義務自体を撤廃するものではなく、確認の方法を緩和する点が特徴。なお米国のCTAに基づくBOI報告義務は、2025年3月の暫定最終規則で米国内設立企業・米国人が適用除外とされ、外国報告会社のみが対象となっている。"
-  },
-  {
-   "term": "AMLA SPD 2026-2028",
-   "full": "AMLA Single Programming Document 2026-2028",
-   "ja": "AMLA単一プログラミング文書（2026-2028年）",
-   "category": "組織・機関",
-   "description": "EUのAMLA（反マネロン機構）が2026年2月に公表した初の複数年計画。(1)単一ルールブックの完成、(2)監督収斂の推進、(3)FIU（金融情報機関）間協力の強化の3つを戦略目標とする。AMLAは2027年7月10日までに23のレベル2・レベル3措置（RTS・ITS・ガイドライン）を公表予定で、その大半が2026年7月10日期限。2026年Q2に11件、下半期に8件、2027年Q1に1件の市中協議を予定。"
-  },
-  {
-   "term": "OFAC SDN Modernization 2026",
-   "full": "OFAC SDN List Modernization Effort 2026",
-   "ja": "OFAC SDNリスト近代化（2026年）",
-   "category": "法律・規制",
-   "description": "米財務省OFACが2026年に開始した制裁リスト近代化の取組み。死亡した個人、解体された船舶、指定から10年以上経過した対象など、陳腐化した約76件のエントリーをSDN（特別指定国民・ブロック対象者）リストから削除した。リストの実効性・正確性を高める狙い。一方で2026年5月はイラン関連（Economic Furyキャンペーン）、シナロア・カルテルのフェンタニル関連、レバノンのヒズボラ関連など新規指定も活発に継続している。"
-  },
-  {
-   "term": "金融庁GL/FAQ改正2026",
-   "full": "金融庁AML/CFTガイドライン・FAQ改正（2026年3月31日）",
-   "ja": "金融庁ガイドライン・FAQ改正（令和8年3月31日適用）",
-   "category": "法律・規制",
-   "description": "金融庁は2026年3月31日にAML/CFTガイドライン本体とFAQを改正・同日適用。(1)ガイドライン本体は全機関共通の必須要件のみを残し、高度化の内容はFAQへ移設して構成を再編。(2)eKYCベンダー・スクリーニングシステム提供者・為替取引分析業者などへの外部委託について、委託先の態勢検証の仕組み整備を要求。(3)取引モニタリング・新技術・外部委託の3領域で新たな対応を追加。背景には預貯金口座の不正利用防止強化とFATF第5次審査メソドロジーへの対応がある。"
-  },
-  {
-   "term": "FATF Plenary June 2026",
-   "full": "FATF総会（2026年6月17-19日）",
-   "ja": "FATF総会（2026年6月）",
-   "category": "FATF",
-   "description": "メキシコ議長（Elisa de Anda Madrazo）下での最終総会。(1)グレーリストにボスニア・ヘルツェゴビナとイラクを追加、アルジェリアとナミビアを除外し計22か国に。(2)勧告6を改正し人道支援への例外を明確化。(3)仮想資産（VA/VASP）に関する第7次標的型更新およびDeFiに関する新報告書を承認。(4)次期英国議長の優先課題を承認し、インドのVivek Aggarwalを2026年7月就任の副議長に任命。"
-  },
-  {
-   "term": "FATF R.6改正2026",
-   "full": "FATF勧告6改正（人道支援例外・2026年6月）",
-   "ja": "勧告6改正（人道例外）",
-   "category": "FATF",
-   "description": "2026年6月総会で勧告6（テロ資金供与に関する標的型金融制裁）を改正。制裁措置が人道支援および基本的な人間のニーズに必要な資金・資産・物資・サービスの流れを妨げないよう、国連安保理決議2664号・2761号の人道例外を基準に組み込んだ。金融機関の制裁スクリーニング設計に影響。"
-  },
-  {
-   "term": "FATF DeFi報告書2026",
-   "full": "FATF DeFi標的型報告書（2026年）",
-   "ja": "DeFiのML/TF/PFリスク報告書",
-   "category": "仮想資産",
-   "description": "2026年6月総会で承認。分散型金融（DeFi）プラットフォームのマネロン・テロ資金供与・拡散金融リスクへのエクスポージャーを検証する新たな標的型報告書。同時に承認されたVA/VASPに関する第7次標的型更新（トラベルルール等の実装状況評価）と併せ、無許可VASP・アンホストウォレット監視の高度化を促す。"
-  },
-  {
-   "term": "FATF UK Presidency 2026",
-   "full": "FATF英国議長就任（2026年7月）",
-   "ja": "次期FATF議長＝英国",
-   "category": "FATF",
-   "description": "2026年7月よりメキシコ（Elisa de Anda Madrazo議長）から英国へFATF議長が交代。6月総会で英国議長の優先課題が承認された。副議長にはインドのVivek Aggarwalが任命。日本の第5次相互審査対応期間とも重なり、議長国の優先課題（技術革用の悪用対策等）が標準改正の方向性に影響。"
-  },
-  {
-   "term": "R.16 Guidance Consultation 2026",
-   "full": "FATF R.16送金透明性ガイダンス市中協議（2026年6月）",
-   "ja": "勧告16送金透明性ガイダンス市中協議",
-   "category": "FATF",
-   "description": "FATFが2026年6月24日に開始した、強化された勧告16（クロスボーダー送金の透明性）の実施を支援する新ガイダンス案の市中協議。デジタルウォレットやモバイルマネー等の新たな決済手段への勧告16の適用や、詐欺・誤送金防止ツールの導入を扱う。コメント期限は2026年8月21日、各国の実施期限は2030年末。2025年6月に合意された勧告16改正を踏まえたもの。"
-  },
-  {
-   "term": "FATF PPP & Data Protection Overview 2026",
-   "full": "官民連携・データ保護アレンジメントのグローバル概観（2026年7月）",
-   "ja": "FATF官民連携・データ保護グローバル概観",
-   "category": "FATF",
-   "description": "2026年6月総会で承認され、2026年7月に公表予定のFATF報告書。世界各国の情報共有モデルを整理し、データ保護要件と整合した実効的なインテリジェンス共有（actionable intelligence sharing）を支援することを目的とする。英国議長下の優先課題『情報共有』に対応する成果物。"
-  }
- ],
- "fatf40": [
-  {
-   "number": 1,
-   "title": "リスク評価とリスクベース・アプローチ",
-   "summary": "各国はML/TF/PFリスクを特定・評価し、リスクに応じた措置を講じること。RBAがFATF基準の基盤。"
-  },
-  {
-   "number": 2,
-   "title": "国内関係当局間の協力と調整",
-   "summary": "各国はAML/CFT政策の策定・調整のため、国内関係機関間の協力メカニズムを確保すること。"
-  },
-  {
-   "number": 3,
-   "title": "マネー・ローンダリングの犯罪化",
-   "summary": "ウィーン条約・パレルモ条約に基づきMLを犯罪化すること。前提犯罪は広範に設定すること。"
-  },
-  {
-   "number": 4,
-   "title": "犯罪収益の没収と保全措置",
-   "summary": "犯罪収益・犯罪手段等の没収を可能にする法制度を整備し、保全措置を講じること。"
-  },
-  {
-   "number": 5,
-   "title": "テロ資金供与の犯罪化",
-   "summary": "テロ資金供与条約に基づきTFを犯罪化すること。テロ目的の資金収集・提供を処罰対象に。"
-  },
-  {
-   "number": 6,
-   "title": "テロリスト等に対する金融制裁",
-   "summary": "国連安保理決議に基づき、テロリスト等の資産を遅滞なく凍結する措置を実施すること。"
-  },
-  {
-   "number": 7,
-   "title": "大量破壊兵器拡散に対する金融制裁",
-   "summary": "国連安保理決議に基づき、WMD拡散に関与する者の資産凍結措置を遅滞なく実施すること。"
-  },
-  {
-   "number": 8,
-   "title": "非営利団体（NPO）",
-   "summary": "NPOのTF悪用リスクを特定・評価し、リスクに応じた措置でNPOセクターを保護すること。"
-  },
-  {
-   "number": 9,
-   "title": "金融機関の秘密保持法制",
-   "summary": "金融機関の秘密保持法がFATF勧告の実施を妨げないことを確保すること。"
-  },
-  {
-   "number": 10,
-   "title": "顧客デューディリジェンス（CDD）",
-   "summary": "金融機関は匿名口座を禁止し、CDD（本人確認・実質的支配者確認・取引目的確認等）を実施すること。"
-  },
-  {
-   "number": 11,
-   "title": "記録保存",
-   "summary": "取引記録を少なくとも5年間保存すること。CDD情報も取引関係終了後5年間保存。"
-  },
-  {
-   "number": 12,
-   "title": "PEP（重要な公的地位を有する者）",
-   "summary": "外国PEPとの取引には上級管理職の承認、資産源泉の確認等のEDD措置を適用すること。"
-  },
-  {
-   "number": 13,
-   "title": "コルレス銀行業務",
-   "summary": "コルレス銀行関係の構築時にはDDを実施し、相手銀行のAML/CFT体制を評価すること。"
-  },
-  {
-   "number": 14,
-   "title": "送金サービス",
-   "summary": "資金移転サービス業者に免許・登録を義務付け、AML/CFT措置を遵守させること。"
-  },
-  {
-   "number": 15,
-   "title": "新技術",
-   "summary": "新たな技術（暗号資産等）のML/TFリスクを評価し、適切な措置を講じること。VASPの規制を含む。"
-  },
-  {
-   "number": 16,
-   "title": "電信送金（トラベルルール）",
-   "summary": "電信送金に送金人・受取人の情報を付随させること。一定額以上の送金で詳細情報が必要。"
-  },
-  {
-   "number": 17,
-   "title": "第三者への依拠",
-   "summary": "CDDの一部を第三者に依拠する場合、最終的な責任は依拠する金融機関にあること。"
-  },
-  {
-   "number": 18,
-   "title": "内部管理・コンプライアンス",
-   "summary": "金融機関はAML/CFTプログラムを策定し、コンプライアンスオフィサー設置等の内部管理体制を構築すること。"
-  },
-  {
-   "number": 19,
-   "title": "高リスク国",
-   "summary": "FATFが特定した高リスク国との取引にはEDD措置を適用し、対抗措置を適用できること。"
-  },
-  {
-   "number": 20,
-   "title": "疑わしい取引の届出",
-   "summary": "ML/TFの疑いがある取引をFIUに速やかに届け出ること。届出を行ったことの守秘義務。"
-  },
-  {
-   "number": 21,
-   "title": "内部告発者保護と届出の秘密保持",
-   "summary": "STR届出者を法的責任から保護し、届出の事実を秘密に保持すること（Tipping Off禁止）。"
-  },
-  {
-   "number": 22,
-   "title": "指定非金融業者・職業専門家（DNFBP）のCDD",
-   "summary": "カジノ・不動産業者・貴金属商・弁護士・会計士等にCDD義務を課すこと。"
-  },
-  {
-   "number": 23,
-   "title": "DNFBPのSTR",
-   "summary": "DNFBPに疑わしい取引の届出義務を課すこと。"
-  },
-  {
-   "number": 24,
-   "title": "法人の実質的支配者",
-   "summary": "法人の実質的支配者情報の透明性を確保するため、正確な情報の取得・保管メカニズムを構築すること。"
-  },
-  {
-   "number": 25,
-   "title": "法的取極めの実質的支配者",
-   "summary": "信託等の法的取極めの実質的支配者情報の透明性を確保すること。受託者情報の登録・保管。"
-  },
-  {
-   "number": 26,
-   "title": "金融機関に対する規制・監督",
-   "summary": "金融機関のAML/CFT遵守について適切なリスクベースの監督を実施すること。"
-  },
-  {
-   "number": 27,
-   "title": "監督当局の権限",
-   "summary": "監督当局に金融機関への検査・制裁等の十分な権限を付与すること。"
-  },
-  {
-   "number": 28,
-   "title": "DNFBPの規制・監督",
-   "summary": "DNFBPのAML/CFT遵守についてリスクベースの監督・モニタリングを実施すること。"
-  },
-  {
-   "number": 29,
-   "title": "FIU（資金情報機関）",
-   "summary": "各国はSTRの受理・分析を行うFIUを設置すること。運用上の独立性と情報アクセスを確保。"
-  },
-  {
-   "number": 30,
-   "title": "捜査当局の責務",
-   "summary": "ML/TF/PFの捜査を担当する当局を指定し、十分な資源・権限を付与すること。"
-  },
-  {
-   "number": 31,
-   "title": "捜査・起訴における当局の権限",
-   "summary": "捜査当局にML/TF捜査のための広範な権限（おとり捜査、通信傍受等）を付与すること。"
-  },
-  {
-   "number": 32,
-   "title": "キャッシュ・クーリエ",
-   "summary": "現金・無記名証券の国境を越える物理的移動を探知するための申告・届出制度を導入すること。"
-  },
-  {
-   "number": 33,
-   "title": "統計",
-   "summary": "AML/CFTシステムの有効性・効率性に関する統計を維持すること。STR件数、訴追件数等。"
-  },
-  {
-   "number": 34,
-   "title": "ガイダンスとフィードバック",
-   "summary": "金融機関・DNFBPに対しAML/CFT措置のガイダンス・フィードバックを提供すること。"
-  },
-  {
-   "number": 35,
-   "title": "制裁",
-   "summary": "AML/CFT義務違反に対し、効果的・比例的・抑止力のある制裁を適用できること。"
-  },
-  {
-   "number": 36,
-   "title": "国際的な法的相互協力",
-   "summary": "ML/TF/PFに関する法的相互協力（MLA）を速やかに実施すること。"
-  },
-  {
-   "number": 37,
-   "title": "犯罪人引渡し等",
-   "summary": "ML/TFに関する犯罪人引渡しを速やかに実施すること。国籍要件等で拒否する場合は代替措置。"
-  },
-  {
-   "number": 38,
-   "title": "外国の凍結・没収要請",
-   "summary": "外国からの犯罪収益の凍結・没収要請に対応するための法的枠組みを整備すること。"
-  },
-  {
-   "number": 39,
-   "title": "没収資産の共有",
-   "summary": "没収した犯罪収益等を協力国と共有するための取極めを検討すること。"
-  },
-  {
-   "number": 40,
-   "title": "国際協力のその他の形態",
-   "summary": "監督当局・FIU・捜査当局間の迅速な国際協力を確保すること。情報交換の障壁を除去。"
-  }
- ],
- "regulations": [
-  {
-   "name": "犯罪収益移転防止法（犯収法）",
-   "jurisdiction": "日本",
-   "year": "2007",
-   "summary": "AML/CFTの中核法。特定事業者にCDD・STR・取引記録保存を義務付け。2024年改正で暗号資産規制強化。"
-  },
-  {
-   "name": "外国為替及び外国貿易法（外為法）",
-   "jurisdiction": "日本",
-   "year": "1949",
-   "summary": "経済制裁の根拠法。資産凍結措置、支払等の許可制を規定。北朝鮮・イラン等への制裁を実施。"
-  },
-  {
-   "name": "組織的犯罪処罰法",
-   "jurisdiction": "日本",
-   "year": "1999",
-   "summary": "ML罪・犯罪収益の没収・追徴を規定。2017年改正でテロ等準備罪（共謀罪）を新設。"
-  },
-  {
-   "name": "テロ資金提供処罰法",
-   "jurisdiction": "日本",
-   "year": "2002",
-   "summary": "テロ資金供与を犯罪化。2014年改正で対象行為を拡大し、FATF勧告5への対応を強化。"
-  },
-  {
-   "name": "Bank Secrecy Act（BSA）",
-   "jurisdiction": "米国",
-   "year": "1970",
-   "summary": "米国AMLの基本法。金融機関にCTR・SAR報告、記録保存、AMLプログラム整備を義務付け。"
-  },
-  {
-   "name": "USA PATRIOT Act",
-   "jurisdiction": "米国",
-   "year": "2001",
-   "summary": "9.11後のBSA強化法。CIP義務化、Section 314情報共有、シェルバンク禁止、コルレスDD強化。"
-  },
-  {
-   "name": "Anti-Money Laundering Act of 2020（AMLA）",
-   "jurisdiction": "米国",
-   "year": "2020",
-   "summary": "BSAの大幅改正。FinCENの権限強化、内部告発者報奨金制度、暗号資産への適用明確化。"
-  },
-  {
-   "name": "Corporate Transparency Act（CTA）",
-   "jurisdiction": "米国",
-   "year": "2021",
-   "summary": "法人の実質的支配者情報（BOI）のFinCENへの届出を義務化。ペーパーカンパニー悪用防止が目的。2025年3月改訂で米国国内企業・米国人の報告義務を全面除外。外国企業のみ届出義務継続。"
-  },
-  {
-   "name": "EU Anti-Money Laundering Regulation（AMLR）",
-   "jurisdiction": "EU",
-   "year": "2024",
-   "summary": "EU初の直接適用AML規則（2027年適用）。CDD統一基準、現金支払上限1万ユーロ、UBO登録等。"
-  },
-  {
-   "name": "6th Anti-Money Laundering Directive（6AMLD）",
-   "jurisdiction": "EU",
-   "year": "2024",
-   "summary": "第6次AML指令。FIUの権限強化、UBO登録の公開範囲、監督当局間の協力を規定。"
-  },
-  {
-   "name": "AMLA設立規則",
-   "jurisdiction": "EU",
-   "year": "2024",
-   "summary": "EU AML/CFT監督機関（AMLA）をフランクフルトに設立。高リスク金融機関の直接監督権限を付与。"
-  },
-  {
-   "name": "Markets in Crypto-Assets（MiCA）",
-   "jurisdiction": "EU",
-   "year": "2023",
-   "summary": "暗号資産の包括規制（2024年12月30日全面適用）。CASPの認可制、ステーブルコイン規制、消費者保護、AML義務を規定。既存事業者向けの経過措置は2026年7月1日に終了し、以降は全CASPがMiCA認可を要する。"
-  },
-  {
-   "name": "Digital Operational Resilience Act（DORA）",
-   "jurisdiction": "EU",
-   "year": "2023",
-   "summary": "金融機関のICTリスク管理規制（2025年適用）。サイバーレジリエンス、サードパーティ管理を規定。"
-  },
-  {
-   "name": "Transfer of Funds Regulation（TFR改正）",
-   "jurisdiction": "EU",
-   "year": "2023",
-   "summary": "送金時の情報付随義務を暗号資産移転にも拡大。VASPへのトラベルルール適用を規定。"
-  },
-  {
-   "name": "SWIFT Customer Security Programme（CSP）",
-   "jurisdiction": "国際",
-   "year": "2017",
-   "summary": "SWIFT加盟金融機関向けのサイバーセキュリティ基準。必須・推奨統制の遵守状況を年次で自己評価。"
-  },
-  {
-   "name": "個人情報保護法",
-   "jurisdiction": "日本",
-   "year": "2003",
-   "summary": "個人情報の取扱いを規定。AML/CFTにおけるデータ利活用との両立が実務上の課題。2022年改正施行。"
-  },
-  {
-   "name": "金融庁AML/CFTガイドライン改正",
-   "jurisdiction": "日本",
-   "year": "2026",
-   "summary": "2026年1月19日に改正案公表、同年3月31日に最終版を公表（FAQ更新含む）。チェックリスト型から有効性・アウトカム重視への転換、経営陣のアカウンタビリティ強化、AI・機械学習活用の取引モニタリング推進、STR申告精度の向上を求める内容。預貯金口座の不正利用等防止強化とFATF第5次対日相互審査（2028年オンサイト予定）への対応が主要目的。"
-  },
-  {
-   "name": "FinCEN Investment Adviser AML Rule（延期）",
-   "jurisdiction": "米国",
-   "year": "2026",
-   "summary": "投資顧問業者（IA）へのAMLプログラム整備・SAR申告義務の適用開始を2026年1月から2028年1月へ2年延期。多様なビジネスモデルへの規則の適切な調整を検討するための猶予期間。トランプ政権の規制見直し方針を反映。"
-  },
-  {
-   "name": "GENIUS Act AML/CFT実施規則案（FinCEN/OFAC）",
-   "jurisdiction": "米国",
-   "year": "2026",
-   "summary": "2026年4月8日公表。GENIUS法に基づきFinCENとOFACが共同提案。ステーブルコイン発行者（PPSI）をBSA上の金融機関と位置付け、AML/CFTプログラム整備（リスク評価・内部統制・独立テスト・研修・米国在住コンプライアンスオフィサー）、SAR申告、制裁コンプライアンス、取引ブロック/凍結の技術的能力を義務付け。60日間のパブリックコメント募集。"
-  },
-  {
-   "name": "FinCEN AML/CFTプログラム要件規則案（NPRM）",
-   "jurisdiction": "米国",
-   "year": "2026",
-   "summary": "2026年4月7日公表。BSAに基づく全金融機関のAML/CFTプログラム要件を大幅改正。リスク評価プロセスの明示的義務化、有効性重視（技術的コンプライアンスから実効性への転換）、米国在住コンプライアンスオフィサー要件を追加。FDIC・OCC・NCUAと共同発出。パブリックコメント期限は2026年6月9日。最終規則後12か月の実施猶予期間。"
-  },
-  {
-   "name": "FATF閣僚宣言（2026年4月）",
-   "jurisdiction": "国際",
-   "year": "2026",
-   "summary": "2026年4月17日ワシントンD.C.で開催されたFATF閣僚会合で採択。詐欺（fraud）の世界的な急拡大への対応強化、AML/CFT/CPFツールキットの全面活用、組織的詐欺センター・法人悪用・仮想資産・AI等の新技術悪用の理解深化、リスクベース・アプローチの完全実施を国際的にコミット。次回閣僚会合は2028年。"
-  },
-  {
-   "name": "FATFステーブルコイン・アンホストウォレット標的型報告書",
-   "jurisdiction": "国際",
-   "year": "2026",
-   "summary": "2026年3月3日FATF公表（42ページ）。違法な暗号資産活動の大半がTether等のステーブルコインに集中し、P2Pプラットフォーム経由でアンホストウォレットへ移転されている実態を指摘。①セカンダリー市場のモニタリング、②VASP・DeFi管理者へのコンプライアンス要求、③官民協力強化等の推奨実務を提示。"
-  },
-  {
-   "name": "AMLA CDD規制技術基準（RTS草案）",
-   "jurisdiction": "EU",
-   "year": "2026",
-   "summary": "AMLAが2026年2月公表のCDDに関するRTS草案。標準・簡素・厳格CDDの情報・書類詳細、本人確認基準、リスク感応的継続モニタリング、電子的本人確認（eIDAS・EUDIウォレット等）の利用基準を規定。2026年3月24日に1,600超のステークホルダーが参加した公聴会を実施。パブリックコメント期限は2026年5月8日。"
-  },
-  {
-   "name": "JAFIC年次報告書（令和7年版）",
-   "jurisdiction": "日本",
-   "year": "2025",
-   "summary": "警察庁が2025年に公表したJAFIC犯罪収益移転防止年次報告書。2024年の疑わしい取引の届出件数が初めて100万件を突破し過去最高を記録。非金融特定事業者（不動産業者・宝石貴金属商等）からの届出が増加傾向にあるものの構成比は依然低水準。FIU情報の捜査機関での活用も上昇傾向。同時公表の犯罪収益移転危険度調査書（令和7年版）と併せて金融機関のリスク評価のベースライン情報。"
-  },
-  {
-   "name": "AMLA BWRAガイドライン草案",
-   "jurisdiction": "EU",
-   "year": "2026",
-   "summary": "AMLAが2026年4月16日にパブコン開始したビジネス全体のリスク評価（BWRA）に関するガイドライン草案。AMLR第10条(4)に基づき、義務事業者が事業モデル・顧客・商品・配送チャネル・地理的要素から生じるリスクを特定・評価する手法を定める。比例性を重視。コメント期限は2026年7月15日、最終ガイドラインは2026年Q4公表予定。公聴会は2026年5月28日にCETで開催。"
-  },
-  {
-   "name": "AMLAグループワイド要件RTS草案",
-   "jurisdiction": "EU",
-   "year": "2026",
-   "summary": "AMLAが2026年4月16日にパブコン開始したAMLR第16条(4)に基づくグループ全体のAML/CFT要件に関するRTS草案。グループポリシー・統制・手続き、子会社・支店間の情報共有、グループ・コンプライアンス機能等を規定。コメント期限2026年6月15日。AMLAは2026年9月30日までに欧州委員会へ提出予定。"
-  },
-  {
-   "name": "FinCEN内部告発者プログラム実施規則案（NPRM）",
-   "jurisdiction": "米国",
-   "year": "2026",
-   "summary": "FinCENが2026年4月1日に連邦官報公示。BSA・OFAC制裁・IEEPA・TWEA・キングピン法等の違反通報者に獎励金（回収制裁金100万ドル超の covered actions の10〜30%）を支払う制度。経営・監査・コンプライアンス部門の内部関係者は情報入手から120日間の待機期間が必要。コメント期限2026年6月1日。AML執行のパラダイムシフトとなる重要規則案。"
-  },
-  {
-   "name": "FATF第5次相互審査報告書（Italy/Austria/Singapore）",
-   "jurisdiction": "国際",
-   "year": "2026",
-   "summary": "2026年2月FATFプレナリー採択の第5次相互審査報告書。Italy報告書を2026年4月23日、Austria報告書（IMF主導）を2026年4月30日に公表。Singapore（FATF・APG共同審査）も同時期公表。技術的コンプライアンスと有効性（Immediate Outcomes）を統合評価する新ラウンドの初期事例として、日本（2028年オンサイト予定）の準備上の重要参考事例。"
-  },
-  {
-   "name": "AMLAリスクアセスメントモデル試験（2026年データ収集演習）",
-   "jurisdiction": "EU",
-   "year": "2026",
-   "summary": "AMLAが2026年3月に開始したリスクアセスメントモデルの試験・較正のためのデータ収集演習。EBAから引き継いだリスク評価モデルを試験・較正することで、2027年に直接監督対象として最大40の高リスク金融機関を選定する基盤を構築。参加機関は2026年4月22日までにデータ提出。AMLAは2026年中に各国監督当局と協働してリスク評価方法論と選定プロセスを試験し、2028年からの直接監督開始に向けて準備を進める。"
-  },
-  {
-   "name": "OFACイラン関連制裁指定（2026年5月1日）",
-   "jurisdiction": "米国",
-   "year": "2026",
-   "summary": "OFACが2026年5月1日に発出したイラン関連の新規SDN指定。同日付でIran-related General License（一般ライセンス）とIran-related OFAC Alertも同時公表。指定対象との既存取引のワインドダウン措置が時限的に認められる。直近では2026年4月28日にも対テロ・イラン関連の指定、4月30日にDRC関連指定、4月29日にロシア関連GLの修正が行われており、SDNリスト更新が高頻度化。"
-  },
-  {
-   "name": "FinCEN通知：2026 FIFAワールドカップ期間中の人身取引",
-   "jurisdiction": "米国",
-   "year": "2026",
-   "summary": "FinCENが2026年5月13日に発出。2026年FIFAワールドカップ（6/11〜7/19、米国・カナダ・メキシコ16都市開催）開催に伴う人身取引（性的・労働搾取）リスクを警戒し、ホスト都市周辺の金融機関に注意喚起。SAR申告時のキーフレーズは「FIN-2026-HT World Cup」。レッドフラッグには不自然に高額な旅費・現金・P2P送金・暗号資産・プリペイドカードによる支払等が含まれる。"
-  },
-  {
-   "name": "FinCEN IRGC関連アラート（2026年5月）",
-   "jurisdiction": "米国",
-   "year": "2026",
-   "summary": "FinCENが2026年5月11日に発出した、イラン革命防衛隊（IRGC）によるマネロンを阻止するための金融機関向けアラート。OFACもIRGCのイラン産原油対中販売・輸送関係者12個人/団体を指定、UAV・ミサイル調達関係者10個人/企業を指定。Economic Furyキャンペーン継続。"
-  },
-  {
-   "name": "AMLAホスト国・ホーム国監督協力RTS草案",
-   "jurisdiction": "EU",
-   "year": "2026",
-   "summary": "AMLAが2026年5月11日にパブコン開始。ホーム国（母国）監督当局とホスト国（受入国）監督当局の役割分担と協力モダリティに関する規制技術基準（RTS）草案。国境を越えた金融グループのAML/CFT監督における情報交換・共同検査・実効的な監督協力の枠組みを整備。"
-  },
-  {
-   "name": "AMLA公聴会（2026年5月20日・5月28日）",
-   "jurisdiction": "EU",
-   "year": "2026",
-   "summary": "AMLAが2026年5月に開催する2つの重要公聴会。①5月20日10:00-12:00 CET：グループワイド要件RTS草案（AMLR第16条(4)・第17条(3)）、②5月28日10:00-12:00 CET：BWRAガイドライン草案（AMLR第10条(4)）。OEのグループAML/CFT体制、第三国子会社への追加措置、リスク評価最低4要件を議論。"
-  },
-  {
-   "name": "OFACキューバGAESA制裁指定（2026年5月）",
-   "jurisdiction": "米国",
-   "year": "2026",
-   "summary": "OFACがキューバ軍事組織GAESAを大統領令14404に基づき制裁指定。キューバ経済の金融サービスセクターでの活動が理由。同時にAnia Guillermina Lastres Morera（指導者層）とCuba's Moa Nickel SA（金属・鉱業セクター）も指定。米国によるキューバ軍事政権・エリート層への制裁強化。"
-  },
-  {
-   "name": "ベネズエラ関連一般ライセンス58号",
-   "jurisdiction": "米国",
-   "year": "2026",
-   "summary": "OFACが2026年5月5日公表のベネズエラ関連GL58。「ベネズエラ政府との潜在的な債務再編に関連した一定のサービスを承認する」内容。債務再編交渉に関連するアドバイザリーサービス等を時限的に許可。"
-  },
-  {
-   "name": "FATFサイバー手段詐欺報告書（2026年2月）",
-   "jurisdiction": "国際",
-   "year": "2026",
-   "summary": "FATFが2026年2月24日公表の「サイバー手段を用いた詐欺・デジタル化とML/TF/PFリスク」報告書。英国では詐欺が全犯罪の40%超、シンガポールでは2年で61%増加。156法域（評価対象の90%）が詐欺を主要なマネロンリスクと特定。AI・ディープフェイク悪用、組織的詐欺センター、ロマンス詐欺等を分析し、FATF基準を活用した詐欺対策の高度化を各国に要請。"
-  },
-  {
-   "name": "FinCEN命令FIN-2026-R001（BO確認負担軽減）",
-   "jurisdiction": "米国",
-   "year": "2026",
-   "summary": "FinCENが2026年2月に発出。CDD規則の下で法人が新規口座を開設するたびにBO情報を繰り返し確認する負担を金融機関に対し軽減。BO確認義務自体は維持しつつ確認方法を緩和する点が特徴。"
-  },
-  {
-   "name": "AMLA単一プログラミング文書2026-2028",
-   "jurisdiction": "EU",
-   "year": "2026",
-   "summary": "AMLAが2026年2月公表の初の複数年計画。単一ルールブック完成・監督収斂・FIU協力強化を戦略目標とし、2027年7月10日までに23のレベル2/3措置を整備。単一ルールブックは2027年7月10日から全27加盟国に統一適用。"
-  },
-  {
-   "name": "FATFグレーリスト更新（2026年6月）",
-   "jurisdiction": "国際",
-   "year": "2026",
-   "summary": "2026年6月17-19日総会で増加監視対象国を更新。ボスニア・ヘルツェゴビナとイラクを追加、アルジェリアとナミビアを（オンサイト訪問成功を経て）除外。引き続き計22か国。日本のコルレス・貿易金融のジオリスク評価で参照すべきリスト。"
-  },
-  {
-   "name": "FATF勧告6改正（人道例外・2026年6月）",
-   "jurisdiction": "国際",
-   "year": "2026",
-   "summary": "テロ資金供与に係る標的型金融制裁を定める勧告6を改正し、国連安保理決議2664号・2761号の人道例外を組み込み。制裁措置が人道支援・基本的人間ニーズに必要な資金等の流れを阻害しないことを明確化。金融機関は制裁スクリーニングと人道送金の取扱基準を見直す必要。"
-  },
-  {
-   "name": "MiCA経過措置終了（2026年7月1日）",
-   "jurisdiction": "EU",
-   "year": "2026",
-   "summary": "2024年12月30日以前から各国法に基づき暗号資産サービスを提供してきた事業者の経過措置（グランドファザリング）が2026年7月1日にEU全域で終了。同日以降、MiCAライセンス未取得でEU顧客にサービス提供する事業者はEU法違反。ESMAは認可CASPに対し既存顧客の移行・オンボーディングを期限前に完了するよう要請。"
-  },
-  {
-   "name": "FATF勧告16送金透明性ガイダンス市中協議（2026年6月）",
-   "jurisdiction": "国際",
-   "year": "2026",
-   "summary": "2026年6月24日、FATFが強化された勧告16（クロスボーダー送金の透明性）実施支援ガイダンス案の市中協議を開始。デジタルウォレット・モバイルマネー等の新決済手段への適用、送金人・受取人情報の付随、詐欺・誤送金防止ツールを扱う。コメント期限2026年8月21日、各国の実施目標は2030年末。日本の電信送金・トラベルルール対応の前提となる国際基準の精緻化。"
-  }
- ],
- "comparisons": [
-  {
-   "aspect": "中核法",
-   "japan": "犯収法（2007年）",
-   "eu": "AMLR（2024年採択、2027年適用）",
-   "us": "BSA（1970年）+ AMLA 2020"
-  },
-  {
-   "aspect": "監督機関",
-   "japan": "金融庁・JAFIC（警察庁）",
-   "eu": "AMLA（2025年設立）+ 各国当局",
-   "us": "FinCEN（財務省）・OCC・FRB・FDIC"
-  },
-  {
-   "aspect": "FATF評価",
-   "japan": "第4次相互審査（2021年）：重点フォローアップ（強化観察）。勧告24・25等に不備指摘。2026年3月31日に金融庁ガイドライン改正（有効性重視・経営陣アカウンタビリティ強化）を公表。2028年に第5次オンサイト審査予定。",
-   "eu": "加盟国ごとに評価。ドイツ（2022年）等で重点フォローアップの事例あり。",
-   "us": "第4次相互審査（2016年）：通常フォローアップ。法人透明性（旧勧告24）に不備指摘 → CTA制定。"
-  },
-  {
-   "aspect": "サイバー法制",
-   "japan": "FISC安全対策基準、サイバーセキュリティ基本法。金融庁ガイドラインで監督。",
-   "eu": "DORA（2025年適用）。金融機関のICTリスク管理を包括規制。NIS2指令も関連。",
-   "us": "NIST CSF（任意だが事実上の標準）、GLBA Safeguards Rule。州法（NY DFS等）も重要。"
-  },
-  {
-   "aspect": "暗号資産規制",
-   "japan": "資金決済法で暗号資産交換業を登録制（2017年〜）。犯収法の特定事業者に含む。世界に先駆けて法制化。",
-   "eu": "MiCA（2023年発効、段階適用）。CASP認可制、ステーブルコイン規制。TFR改正でトラベルルール適用。",
-   "us": "統一連邦法なし。SEC・CFTC・FinCENが個別に規制。州法（NY BitLicense等）も適用。"
-  },
-  {
-   "aspect": "最大罰金事例",
-   "japan": "行政処分（業務改善命令・業務停止命令）が中心。AML不備での罰金額は欧米に比べ少額。",
-   "eu": "BNPパリバ：約89億ドル（2014年、米国での制裁違反も含む）。ダンスケ銀行事件は約20億ドル。",
-   "us": "TDバンク：約31億ドル（2024年）。過去にはHSBC 19億ドル（2012年）等の大型案件。"
-  },
-  {
-   "aspect": "実質的支配者",
-   "japan": "犯収法で特定事業者にUBO確認義務。25%超の議決権保有者等。中央登録制度は未整備（検討中）。",
-   "eu": "AMLR/6AMLDでUBO中央登録簿を義務化。正当な利益を有する者にアクセス権。しきい値25%。",
-   "us": "CTA（2021年）でFinCENへのBOI届出を義務化。ただし2025年3月改訂で米国国内企業・米国人は全面除外。外国企業のみ届出義務継続（登録後30日以内等）。"
-  }
- ]
+  "glossary": [
+    {
+      "term": "CDD",
+      "full": "Customer Due Diligence",
+      "ja": "顧客デューディリジェンス",
+      "category": "顧客管理",
+      "description": "顧客の身元確認と取引目的の確認を行うプロセス。リスクに応じた顧客情報の収集・検証を実施する。"
+    },
+    {
+      "term": "EDD",
+      "full": "Enhanced Due Diligence",
+      "ja": "強化されたデューディリジェンス",
+      "category": "顧客管理",
+      "description": "高リスク顧客に対して実施する、通常のCDDより詳細な確認手続き。PEPや高リスク国との取引に適用。"
+    },
+    {
+      "term": "SDD",
+      "full": "Simplified Due Diligence",
+      "ja": "簡素化されたデューディリジェンス",
+      "category": "顧客管理",
+      "description": "低リスク顧客に対して適用される、簡略化された確認手続き。上場企業や政府機関等が対象。"
+    },
+    {
+      "term": "KYC",
+      "full": "Know Your Customer",
+      "ja": "顧客確認",
+      "category": "顧客管理",
+      "description": "顧客の身元を確認し、その顧客がどのような人物・法人であるかを把握するプロセス。CDDの中核要素。"
+    },
+    {
+      "term": "PEP",
+      "full": "Politically Exposed Person",
+      "ja": "外国の重要な公的地位を有する者",
+      "category": "顧客管理",
+      "description": "外国政府等において重要な地位にある者（元首、閣僚、裁判官等）及びその家族。高リスク顧客として EDD が必要。"
+    },
+    {
+      "term": "UBO",
+      "full": "Ultimate Beneficial Owner",
+      "ja": "実質的支配者",
+      "category": "顧客管理",
+      "description": "法人の議決権の25%超を保有する等、最終的に法人を支配する自然人。特定・確認が義務付けられている。"
+    },
+    {
+      "term": "CIP",
+      "full": "Customer Identification Program",
+      "ja": "顧客識別プログラム",
+      "category": "顧客管理",
+      "description": "米国BSAに基づき金融機関に義務付けられた顧客身元確認プログラム。口座開設時の本人確認を規定。"
+    },
+    {
+      "term": "Ongoing CDD",
+      "full": "Ongoing Customer Due Diligence",
+      "ja": "継続的顧客デューディリジェンス",
+      "category": "顧客管理",
+      "description": "取引関係の存続期間を通じて行う継続的な顧客情報の更新・取引モニタリング。"
+    },
+    {
+      "term": "RBA",
+      "full": "Risk-Based Approach",
+      "ja": "リスクベース・アプローチ",
+      "category": "リスク管理",
+      "description": "ML/TFリスクの高低に応じて資源配分を最適化する手法。FATF勧告の基本原則。"
+    },
+    {
+      "term": "NRA",
+      "full": "National Risk Assessment",
+      "ja": "国家リスク評価",
+      "category": "リスク管理",
+      "description": "国全体のML/TFリスクを包括的に評価するプロセス。FATF勧告1で各国に義務付け。"
+    },
+    {
+      "term": "ML",
+      "full": "Money Laundering",
+      "ja": "マネー・ローンダリング",
+      "category": "リスク管理",
+      "description": "犯罪収益の出所を隠蔽し、合法的な資金に見せかける行為。3段階：配置・階層化・統合。"
+    },
+    {
+      "term": "TF",
+      "full": "Terrorist Financing",
+      "ja": "テロ資金供与",
+      "category": "リスク管理",
+      "description": "テロ行為またはテロ組織に対して資金を提供・収集する行為。合法資金も対象となる点がMLと異なる。"
+    },
+    {
+      "term": "PF",
+      "full": "Proliferation Financing",
+      "ja": "拡散金融",
+      "category": "リスク管理",
+      "description": "大量破壊兵器の拡散に関する資金供与。国連安保理決議に基づく制裁対象。"
+    },
+    {
+      "term": "STR",
+      "full": "Suspicious Transaction Report",
+      "ja": "疑わしい取引の届出",
+      "category": "リスク管理",
+      "description": "疑わしい取引を発見した場合にFIUに届け出る報告。日本では犯収法に基づきJAFICに届出。"
+    },
+    {
+      "term": "SAR",
+      "full": "Suspicious Activity Report",
+      "ja": "疑わしい活動報告",
+      "category": "リスク管理",
+      "description": "米国で金融機関がFinCENに提出する疑わしい活動の報告書。STRと同義で米国での呼称。"
+    },
+    {
+      "term": "CTR",
+      "full": "Currency Transaction Report",
+      "ja": "通貨取引報告",
+      "category": "リスク管理",
+      "description": "米国で1万ドル超の現金取引について金融機関がFinCENに提出する報告書。"
+    },
+    {
+      "term": "TTF",
+      "full": "Targeted Financial Sanctions",
+      "ja": "対象を特定した金融制裁",
+      "category": "リスク管理",
+      "description": "テロリストや拡散金融に関与する個人・団体の資産凍結等を行う制裁措置。遅滞なく実施が求められる。"
+    },
+    {
+      "term": "FATF",
+      "full": "Financial Action Task Force",
+      "ja": "金融活動作業部会",
+      "category": "組織・機関",
+      "description": "AML/CFT/CPFの国際基準策定機関。40の勧告を策定し、相互審査により各国の遵守状況を評価。"
+    },
+    {
+      "term": "JAFIC",
+      "full": "Japan Financial Intelligence Center",
+      "ja": "犯罪収益移転防止対策室",
+      "category": "組織・機関",
+      "description": "日本のFIU（資金情報機関）。国家公安委員会・警察庁に設置。STRの受理・分析を担当。"
+    },
+    {
+      "term": "FinCEN",
+      "full": "Financial Crimes Enforcement Network",
+      "ja": "金融犯罪取締ネットワーク",
+      "category": "組織・機関",
+      "description": "米国財務省の局。米国のFIUとしてSAR/CTRの受理・分析、BSAの執行を担当。"
+    },
+    {
+      "term": "OFAC",
+      "full": "Office of Foreign Assets Control",
+      "ja": "外国資産管理局",
+      "category": "組織・機関",
+      "description": "米国財務省の局。経済制裁プログラムの管理・執行、SDNリストの管理を担当。"
+    },
+    {
+      "term": "AMLA",
+      "full": "Anti-Money Laundering Authority",
+      "ja": "EU資金洗浄防止機関",
+      "category": "組織・機関",
+      "description": "2025年7月1日設立のEU AML/CFT監督機関（フランクフルト所在）。2026年1月にEBAからAML/CFT関連マンデートを正式移管。2026年3月に初の公聴会を開催しCDD等のRTS草案を公表。2026年7月10日までに23件のLevel 2/3技術基準の公表義務あり。2028年からEU内の高リスク金融機関約40社の直接監督を開始予定。"
+    },
+    {
+      "term": "EBA",
+      "full": "European Banking Authority",
+      "ja": "欧州銀行監督機構",
+      "category": "組織・機関",
+      "description": "EU銀行部門の規制・監督機関。AML/CFTガイドラインの策定にも関与。AMIAへ一部機能移管。"
+    },
+    {
+      "term": "BCBS",
+      "full": "Basel Committee on Banking Supervision",
+      "ja": "バーゼル銀行監督委員会",
+      "category": "組織・機関",
+      "description": "銀行監督に関する国際基準策定機関。健全性規制（バーゼルIII）の他、AML/CFTガイドラインも発出。"
+    },
+    {
+      "term": "BSA",
+      "full": "Bank Secrecy Act",
+      "ja": "銀行秘密法",
+      "category": "法律・規制",
+      "description": "1970年制定の米国AML基本法。金融機関にCTR・SAR等の報告義務、記録保存義務を課す。"
+    },
+    {
+      "term": "PATRIOT Act",
+      "full": "USA PATRIOT Act",
+      "ja": "米国愛国者法",
+      "category": "法律・規制",
+      "description": "2001年9.11後に制定。BSAを強化し、CIP義務、コルレス銀行規制、情報共有（Section 314）等を追加。"
+    },
+    {
+      "term": "犯収法",
+      "full": "犯罪収益移転防止法",
+      "ja": "犯罪収益移転防止法",
+      "category": "法律・規制",
+      "description": "日本のAML/CFT中核法（2007年全面施行）。特定事業者にCDD・STR・取引記録保存を義務付け。"
+    },
+    {
+      "term": "外為法",
+      "full": "外国為替及び外国貿易法",
+      "ja": "外国為替及び外国貿易法",
+      "category": "法律・規制",
+      "description": "日本の経済制裁の根拠法。資産凍結措置・支払規制等を実施。財務省・経済産業省が所管。"
+    },
+    {
+      "term": "AMLR",
+      "full": "Anti-Money Laundering Regulation",
+      "ja": "EU資金洗浄防止規則",
+      "category": "法律・規制",
+      "description": "EU初の直接適用されるAML規則（2024年採択、2027年適用）。CDD・UBO・現金制限等を統一的に規定。"
+    },
+    {
+      "term": "AMLD",
+      "full": "Anti-Money Laundering Directive",
+      "ja": "EU資金洗浄防止指令",
+      "category": "法律・規制",
+      "description": "EUのAML指令。第6次AMLD（6AMLD）までが策定済。加盟国は国内法化が必要。AMLRへ移行中。"
+    },
+    {
+      "term": "MiCA",
+      "full": "Markets in Crypto-Assets Regulation",
+      "ja": "暗号資産市場規則",
+      "category": "法律・規制",
+      "description": "EUの暗号資産包括規制（2023年発効、2024年12月30日に全面適用）。暗号資産サービスプロバイダー（CASP）に単一のEU認可制度・AML義務を課す。既存事業者向けの経過措置（グランドファザリング期間）は2026年7月1日に終了し、以降は全CASPがMiCA認可を要する。"
+    },
+    {
+      "term": "DORA",
+      "full": "Digital Operational Resilience Act",
+      "ja": "デジタル運用レジリエンス法",
+      "category": "法律・規制",
+      "description": "EU金融機関のICTリスク管理を包括的に規制する法律（2025年適用）。サイバーレジリエンスを強化。"
+    },
+    {
+      "term": "NIST CSF",
+      "full": "NIST Cybersecurity Framework",
+      "ja": "NISTサイバーセキュリティフレームワーク",
+      "category": "サイバー",
+      "description": "米国NISTが策定したサイバーセキュリティのフレームワーク。識別・防御・検知・対応・復旧の5機能で構成。"
+    },
+    {
+      "term": "FISC",
+      "full": "Center for Financial Industry Information Systems",
+      "ja": "金融情報システムセンター",
+      "category": "サイバー",
+      "description": "日本の金融機関向けセキュリティ基準を策定する公益財団法人。FISC安全対策基準を発行。"
+    },
+    {
+      "term": "ISO 27001",
+      "full": "ISO/IEC 27001",
+      "ja": "情報セキュリティマネジメントシステム",
+      "category": "サイバー",
+      "description": "情報セキュリティマネジメントの国際規格。リスクアセスメントに基づく管理策の実施を要求。"
+    },
+    {
+      "term": "PCI DSS",
+      "full": "Payment Card Industry Data Security Standard",
+      "ja": "PCIデータセキュリティ基準",
+      "category": "サイバー",
+      "description": "クレジットカード情報保護のためのセキュリティ基準。12の要件で構成。カード取扱事業者に適用。"
+    },
+    {
+      "term": "SWIFT CSP",
+      "full": "SWIFT Customer Security Programme",
+      "ja": "SWIFT顧客セキュリティプログラム",
+      "category": "サイバー",
+      "description": "SWIFTが加盟金融機関に義務付けるセキュリティ基準。必須統制と推奨統制で構成。"
+    },
+    {
+      "term": "Tipping Off",
+      "full": "Tipping Off",
+      "ja": "情報漏洩（ティッピング・オフ）",
+      "category": "その他",
+      "description": "STR届出の事実を顧客等に漏洩すること。多くの法域で刑事罰の対象。捜査妨害を防止する趣旨。"
+    },
+    {
+      "term": "De-risking",
+      "full": "De-risking",
+      "ja": "ディリスキング",
+      "category": "その他",
+      "description": "金融機関がリスクの高い顧客・地域との取引を一律に解消すること。金融包摂を阻害する副作用が懸念。"
+    },
+    {
+      "term": "Correspondent Banking",
+      "full": "Correspondent Banking",
+      "ja": "コルレスバンキング",
+      "category": "その他",
+      "description": "銀行間の国際送金・決済サービス。コルレス先のAML/CFT体制のDDが必要。ネスティングリスクに注意。"
+    },
+    {
+      "term": "Shell Company",
+      "full": "Shell Company",
+      "ja": "ペーパーカンパニー",
+      "category": "その他",
+      "description": "実質的な事業活動を行わない法人。資金洗浄の隠蔽手段として悪用されるリスクが高い。"
+    },
+    {
+      "term": "Nested Account",
+      "full": "Nested Account",
+      "ja": "ネスティング",
+      "category": "その他",
+      "description": "コルレス口座を通じて第三者金融機関がサービスにアクセスすること。間接的な取引関係のリスク。"
+    },
+    {
+      "term": "Structuring",
+      "full": "Structuring",
+      "ja": "ストラクチャリング",
+      "category": "その他",
+      "description": "報告基準額（米国では1万ドル）を回避するために取引を意図的に分割する行為。それ自体が違法。"
+    },
+    {
+      "term": "Smurfing",
+      "full": "Smurfing",
+      "ja": "スマーフィング",
+      "category": "その他",
+      "description": "複数の人物（スマーフ）を利用してストラクチャリングを行う手法。報告義務の回避を目的とする。"
+    },
+    {
+      "term": "Trade-Based ML",
+      "full": "Trade-Based Money Laundering",
+      "ja": "貿易型マネロン",
+      "category": "その他",
+      "description": "貿易取引を悪用したマネロン手法。過大・過少請求、架空取引、多重請求等の手口がある。"
+    },
+    {
+      "term": "TBML",
+      "full": "Trade-Based Money Laundering",
+      "ja": "貿易ベースの資金洗浄",
+      "category": "その他",
+      "description": "Trade-Based MLの略称。国際貿易の複雑性を利用し、犯罪収益を移転・隠蔽する手法の総称。"
+    },
+    {
+      "term": "Hawala",
+      "full": "Hawala",
+      "ja": "ハワラ",
+      "category": "その他",
+      "description": "非公式な価値移転システム。物理的な資金移動なしに送金を行う。中東・南アジアで伝統的に利用。"
+    },
+    {
+      "term": "Wolfsberg Group",
+      "full": "Wolfsberg Group",
+      "ja": "ウォルフスベルグ・グループ",
+      "category": "その他",
+      "description": "13の国際大手銀行で構成される民間イニシアティブ。AML/CFTのベストプラクティスを策定・公表。"
+    },
+    {
+      "term": "Egmont Group",
+      "full": "Egmont Group of Financial Intelligence Units",
+      "ja": "エグモント・グループ",
+      "category": "その他",
+      "description": "世界のFIU（資金情報機関）の国際ネットワーク。FIU間の情報交換・協力を促進。170超の加盟FIU。"
+    },
+    {
+      "term": "Travel Rule",
+      "full": "Travel Rule",
+      "ja": "トラベルルール",
+      "category": "その他",
+      "description": "送金時に送金人・受取人情報を伝達する義務。FATF勧告16。暗号資産にも適用拡大（VASP間）。"
+    },
+    {
+      "term": "Beneficial Owner",
+      "full": "Beneficial Owner",
+      "ja": "実質的支配者",
+      "category": "その他",
+      "description": "法人等を最終的に所有・支配する自然人。UBOと同義。各国法でしきい値（25%等）が定められている。"
+    },
+    {
+      "term": "FIU",
+      "full": "Financial Intelligence Unit",
+      "ja": "資金情報機関",
+      "category": "組織・機関",
+      "description": "疑わしい取引報告（STR）の受理・分析・情報提供を行う中央機関。各国に設置が義務付けられている。"
+    },
+    {
+      "term": "SDN List",
+      "full": "Specially Designated Nationals and Blocked Persons List",
+      "ja": "SDNリスト",
+      "category": "リスク管理",
+      "description": "OFACが管理する制裁対象者リスト。掲載者との取引は全面禁止。資産凍結義務あり。"
+    },
+    {
+      "term": "VASP",
+      "full": "Virtual Asset Service Provider",
+      "ja": "暗号資産交換業者",
+      "category": "組織・機関",
+      "description": "暗号資産の交換・移転・管理等を行う事業者。FATF基準により AML/CFT義務の対象。"
+    },
+    {
+      "term": "CTA",
+      "full": "Corporate Transparency Act",
+      "ja": "企業透明性法",
+      "category": "法律・規制",
+      "description": "2021年成立の米国法。企業の実質的支配者情報のFinCENへの届出を義務付け。"
+    },
+    {
+      "term": "Gate Keeper",
+      "full": "Gatekeeper",
+      "ja": "ゲートキーパー",
+      "category": "その他",
+      "description": "弁護士・会計士・不動産業者等、金融システムへの入口を管理する専門職。AML義務の拡大対象。"
+    },
+    {
+      "term": "Layering",
+      "full": "Layering",
+      "ja": "階層化",
+      "category": "その他",
+      "description": "マネロンの第2段階。複数の取引を重ねて資金の出所を不明にする過程。複雑な送金経路が特徴。"
+    },
+    {
+      "term": "Placement",
+      "full": "Placement",
+      "ja": "配置",
+      "category": "その他",
+      "description": "マネロンの第1段階。犯罪収益を金融システムに投入する過程。現金の預け入れ等が典型的手口。"
+    },
+    {
+      "term": "Integration",
+      "full": "Integration",
+      "ja": "統合",
+      "category": "その他",
+      "description": "マネロンの第3段階。洗浄された資金を合法経済に戻す過程。不動産購入・事業投資等に利用。"
+    },
+    {
+      "term": "AML",
+      "full": "Anti-Money Laundering",
+      "ja": "資金洗浄防止",
+      "category": "リスク管理",
+      "description": "マネー・ローンダリングを防止するための法規制・手続き・施策の総称。"
+    },
+    {
+      "term": "CFT",
+      "full": "Combating the Financing of Terrorism",
+      "ja": "テロ資金供与対策",
+      "category": "リスク管理",
+      "description": "テロ資金供与を防止・抑止するための法規制・手続き・施策の総称。"
+    },
+    {
+      "term": "CPF",
+      "full": "Counter-Proliferation Financing",
+      "ja": "拡散金融対策",
+      "category": "リスク管理",
+      "description": "大量破壊兵器の拡散に関する資金供与を防止するための措置。FATF第4次相互審査で重点項目。"
+    },
+    {
+      "term": "BOI",
+      "full": "Beneficial Ownership Information",
+      "ja": "実質的支配者情報",
+      "category": "法律・規制",
+      "description": "米国CTAに基づくFinCENへの実質的支配者届出情報。2025年3月改訂により、米国国内企業・米国人は報告義務から除外。外国企業のみ届出義務継続。"
+    },
+    {
+      "term": "AMLA 2020",
+      "full": "Anti-Money Laundering Act of 2020",
+      "ja": "2020年マネーロンダリング防止法",
+      "category": "法律・規制",
+      "description": "米国BSAの大幅改正法。FinCENの権限強化、内部告発者報奨金制度の創設、暗号資産への適用明確化等を規定。"
+    },
+    {
+      "term": "AMLID",
+      "full": "AML/CFT Increased Monitoring (FATF Grey List)",
+      "ja": "FATFグレーリスト（監視強化対象リスト）",
+      "category": "組織・機関",
+      "description": "AML/CFT体制に戦略的欠陥があり行動計画にコミットした国・地域のリスト。2026年2月時点：クウェート・パプアニューギニア追加を含む22か国・地域。"
+    },
+    {
+      "term": "匿名・流動型犯罪グループ",
+      "full": "Anonymous Mobile Crime Groups",
+      "ja": "匿名・流動型犯罪グループ",
+      "category": "その他",
+      "description": "SNS等で匿名かつ流動的に構成員を募集して犯罪を実行する組織形態。特殊詐欺の実行犯や闇バイト等として悪用される。AML/CFTの新たなリスク類型として注目。"
+    },
+    {
+      "term": "Unhosted Wallet",
+      "full": "Unhosted Wallet / Non-custodial Wallet",
+      "ja": "アンホストウォレット（非カストディアル）",
+      "category": "その他",
+      "description": "秘密鍵を利用者自身が管理する暗号資産ウォレット。VASPを介さないP2P取引が可能なため、追跡・KYCが困難。FATFは2026年にステーブルコイン・アンホストウォレット報告書を公表し、リスクベースでの管理を要求。"
+    },
+    {
+      "term": "Stablecoin",
+      "full": "Stablecoin",
+      "ja": "ステーブルコイン",
+      "category": "その他",
+      "description": "法定通貨等に価値が連動するよう設計された暗号資産。MiCA・FATFの規制対象。FATFは2026年プレナリーでステーブルコインとアンホストウォレットに関する標的型報告書を承認。P2P取引のMLリスクを重点的に検討。"
+    },
+    {
+      "term": "Offshore VASP",
+      "full": "Offshore Virtual Asset Service Provider",
+      "ja": "オフショアVASP",
+      "category": "その他",
+      "description": "規制の緩い国・地域を拠点とする暗号資産サービスプロバイダー。規制の抜け穴として犯罪者に悪用されるリスクが高い。FATFが2026年2月プレナリーで「オフショアVASPのリスクへの理解と軽減」報告書を承認。"
+    },
+    {
+      "term": "Cyber-enabled Fraud",
+      "full": "Cyber-enabled Fraud",
+      "ja": "サイバー手段を用いた詐欺",
+      "category": "その他",
+      "description": "インターネット・デジタル技術を悪用した詐欺行為の総称。AIやディープフェイク等を活用した本人確認の偽造・不正アクセス・SNS詐欺等が含まれる。FATFは2026年2月プレナリーで「サイバー手段を用いた詐欺と仮想資産」に関する報告書を承認し、犯罪収益のAML経路として国際的に注目されている。"
+    },
+    {
+      "term": "GENIUS Act",
+      "full": "Guiding and Establishing National Innovation for U.S. Stablecoins Act",
+      "ja": "GENIUSステーブルコイン法",
+      "category": "法律・規制",
+      "description": "米国のステーブルコイン包括規制法。FinCENとOFACは2026年4月8日に同法実施規則案を共同公表し、ステーブルコイン発行者（PPSI）をBSA上の金融機関として位置付け、AML/CFTプログラム・SAR申告・制裁コンプライアンス・取引ブロック機能を義務付けた。"
+    },
+    {
+      "term": "PPSI",
+      "full": "Permitted Payment Stablecoin Issuer",
+      "ja": "許可済ペイメント・ステーブルコイン発行者",
+      "category": "組織・機関",
+      "description": "GENIUS法に基づく米国のステーブルコイン発行者。2026年4月のFinCEN/OFAC共同規則案によりBSA上の金融機関として規制対象となり、AML/CFTプログラムの整備・SAR申告・OFACの制裁コンプライアンスプログラム・技術的ブロック/凍結能力の実装が義務付けられた。"
+    },
+    {
+      "term": "FATF Ministerial Declaration 2026",
+      "full": "FATF Ministerial Declaration April 2026",
+      "ja": "FATF閣僚宣言（2026年4月）",
+      "category": "組織・機関",
+      "description": "2026年4月17日にワシントンD.C.（IMF・世銀春会合の機会）で開催されたFATF閣僚会合で採択された宣言。①拡大する詐欺（fraud）の脅威への集中対応、②AML/CFT/CPFツールキットの全面活用、③組織的詐欺センター・法人悪用・暗号資産・AI等の新技術悪用の理解深化、④リスクベース・アプローチの完全実施を国際的にコミットした。次回閣僚会合は2028年予定。"
+    },
+    {
+      "term": "JAFIC年次報告書（令和7年）",
+      "full": "Japan Financial Intelligence Center Annual Report 2025",
+      "ja": "JAFIC犯罪収益移転防止年次報告書（令和7年）",
+      "category": "組織・機関",
+      "description": "警察庁が2025年に公表した年次報告書。2024年の疑わしい取引の届出件数が初めて100万件を突破し過去最高を記録。非金融特定事業者（不動産・宝石貴金属業者等）からの届出が増加傾向にある一方、構成比は依然として低い水準。FIU提供情報の捜査機関での活用も増加傾向。"
+    },
+    {
+      "term": "OFAC GL 35",
+      "full": "Counter Terrorism General License 35",
+      "ja": "OFACテロ対策一般ライセンス35号",
+      "category": "法律・規制",
+      "description": "OFACが2026年4月14日付の制裁指定対象者に係る取引のワインドダウン（清算）を許可した一般ライセンス。指定後一定期間内の既存取引のクローズアウト等を認める時限的措置。GL 35のような時限ワインドダウンライセンスはコンプライアンス対応の重要な確認事項。"
+    },
+    {
+      "term": "AMLA CDD RTS",
+      "full": "AMLA Customer Due Diligence Regulatory Technical Standards",
+      "ja": "AMLA顧客デューデリジェンス規制技術基準",
+      "category": "法律・規制",
+      "description": "EU AMLAが2026年2月に公表した顧客デューデリジェンス（CDD）に関する規制技術基準（RTS）草案。標準・簡素・厳格CDDで必要な情報・書類の詳細、個人・法人・実質的支配者の本人確認基準、リスク感応的な継続モニタリング、電子的本人確認・デジタルオンボーディング（eIDAS、EUDIウォレット等）の利用基準等を規定。パブリックコメント期限は2026年5月8日。"
+    },
+    {
+      "term": "BWRA",
+      "full": "Business-Wide Risk Assessment",
+      "ja": "ビジネス全体のリスク評価",
+      "category": "リスク管理",
+      "description": "EU AMLR第10条(4)に基づく、義務事業者（OE）が自社の事業モデル・顧客・商品・サービス・配送チャネル・地理的エクスポージャーから生じるML/TFリスクを特定・評価・管理するためのリスクベース・アプローチの中核要素。AMLAは2026年4月16日にBWRAガイドライン草案のパブコンを開始（2026年7月15日まで、Q4 2026に最終ガイドライン公表予定）。比例性を重視し、規模・事業モデル・リスクプロファイルに応じた柔軟な実施を許容。"
+    },
+    {
+      "term": "AMLA Group-wide RTS",
+      "full": "AMLA Group-wide Requirements Regulatory Technical Standards",
+      "ja": "AMLAグループワイド要件RTS",
+      "category": "法律・規制",
+      "description": "AMLR第16条(4)に基づくグループレベルでのAML/CFT要件に関する規制技術基準（RTS）草案。AMLAが2026年4月16日にパブコン開始（コメント期限2026年6月15日、欧州委員会への提出は2026年9月30日まで）。グループ全体のポリシー・統制・手続き、子会社・支店間の情報共有、グループ・コンプライアンス機能等を規定。"
+    },
+    {
+      "term": "FinCEN Whistleblower NPRM",
+      "full": "FinCEN Whistleblower Incentives and Protections NPRM",
+      "ja": "FinCEN内部告発者報奨・保護規則案",
+      "category": "法律・規制",
+      "description": "FinCENが2026年4月1日に連邦官報に公示した内部告発者プログラム実施規則案（NPRM）。BSA・OFAC制裁プログラム・IEEPA・TWEA・キングピン法等の違反通報を奨励。獎励金は監督当局が回収した制裁金（100万ドル超の covered actions が対象）の10〜30%。1,500万ドル以下の場合は30%が推定される。経営層・コンプライアンス・監査部門の関係者は情報入手から120日間の待機期間が必要。コメント期限は2026年6月1日。"
+    },
+    {
+      "term": "FATF MER 2026",
+      "full": "FATF Mutual Evaluation Reports 2026 (Italy/Austria/Singapore)",
+      "ja": "FATF相互審査報告書2026年",
+      "category": "組織・機関",
+      "description": "2026年2月のFATFプレナリーで採択された第5次相互審査報告書。Italy（イタリア）報告書は2026年4月23日に、Austria（オーストリア、IMF主導）報告書は2026年4月30日に公表。シンガポール（FATF・APG共同審査）報告書も同時期に公表予定。第5次審査は技術的コンプライアンスと有効性（Immediate Outcomes）を統合的に評価する新ラウンド。日本の第5次審査は2028年オンサイト予定。"
+    },
+    {
+      "term": "AMLA Risk Model Data Collection",
+      "full": "AMLA Risk Assessment Model Data Collection Exercise",
+      "ja": "AMLAリスクアセスメントモデル・データ収集演習",
+      "category": "組織・機関",
+      "description": "AMLAが2026年3月に開始したリスクアセスメントモデルの試験・較正のためのデータ収集演習。2027年に直接監督対象として最大40の金融機関を選定するための前段階作業。参加機関は2026年4月22日までにデータ提出が必要。EBA（欧州銀行監督機構）から引き継いだリスクアセスメントモデルの実効性検証、IT基盤整備、監督マニュアル策定に活用される。2028年からの直接監督開始に向けた重要な準備プロセス。"
+    },
+    {
+      "term": "AMLA BWRA Public Hearing",
+      "full": "AMLA Business-Wide Risk Assessment Public Hearing",
+      "ja": "AMLA BWRAガイドライン公聴会（開催済）",
+      "category": "組織・機関",
+      "description": "AMLAが2026年5月28日（CET）に開催したビジネス全体のリスク評価（BWRA）ガイドライン草案に関する公聴会。義務事業者（OE）が事業モデル・顧客・商品・配送チャネル・地理的要素から生じるML/TFリスクを特定・評価する手法を議論した。コメント期限は2026年7月15日、最終ガイドラインは2026年Q4公表予定。CDD RTS草案のコメント期限（2026年5月8日・終了済）と並行して進行した。"
+    },
+    {
+      "term": "OFAC Iran Designations May2026",
+      "full": "OFAC Iran-Related Designations May 1, 2026",
+      "ja": "OFACイラン関連制裁指定（2026年5月1日）",
+      "category": "リスク管理",
+      "description": "OFACが2026年5月1日に発出したイラン関連の新規制裁指定。同日付でIran-related General License（一般ライセンス）も同時公表されており、指定対象との既存取引のワインドダウン措置が認められる時限的措置を含む。Iran-related OFAC Alertも併せて公表。米国制裁プログラムの執行強化が継続しており、金融機関は SDN リスト更新の即時反映と取引の事前スクリーニングが必要。"
+    },
+    {
+      "term": "FIN-2026-HT World Cup",
+      "full": "FinCEN Notice on Human Trafficking During 2026 FIFA World Cup",
+      "ja": "FinCEN通知（2026 FIFAワールドカップ期間中の人身取引）",
+      "category": "リスク管理",
+      "description": "FinCENが2026年5月13日に発出した、2026年FIFAワールドカップ（6月11日〜7月19日、米国・カナダ・メキシコ16都市で開催）開催に伴う人身取引（性的搾取・労働搾取）のリスクへの警戒を金融機関に呼びかける通知。SAR申告時のキーフレーズは「FIN-2026-HT World Cup」。通常のしきい値を超えなくとも疑わしい場合は速やかにSAR申告を実施し、人身取引ホットラインへの通報も推奨。レッドフラッグには、不自然に高額な旅費関連取引、現金・P2P送金・暗号資産・プリペイドカード経由の多額の入金等を例示。"
+    },
+    {
+      "term": "AMLA Home-Host RTS",
+      "full": "AMLA Home-Host Supervisory Cooperation Regulatory Technical Standards",
+      "ja": "AMLAホスト国・ホーム国監督協力RTS",
+      "category": "法律・規制",
+      "description": "AMLAが2026年5月11日にパブコン開始した、ホーム国（母国）監督当局とホスト国（受入国）監督当局の役割分担と協力モダリティに関する規制技術基準（RTS）草案。国境を越えた金融グループのAML/CFT監督における情報交換・共同検査・実効的な監督協力の枠組みを整備。AMLAの2028年からの直接監督開始に向けた重要な準備規制。"
+    },
+    {
+      "term": "AMLA Public Hearings May 2026",
+      "full": "AMLA Public Hearings on Group-wide RTS and BWRA Guidelines",
+      "ja": "AMLA公聴会（2026年5月20日・5月28日／開催済）",
+      "category": "組織・機関",
+      "description": "AMLAが2026年5月に開催した2つの重要公聴会。①5月20日：グループワイド要件RTS草案（AMLR第16条(4)・第17条(3)）には650名超が参加、②5月28日：BWRA（ビジネス全体のリスク評価）ガイドライン草案（AMLR第10条(4)）。OE（義務事業者）のグループAML/CFT体制、第三国子会社・支店への追加措置、リスク評価の最低4要件を議論。いずれも単一ルールブック完成（2027年7月10日適用）に向けた重要マイルストーン。日本の国際銀行のEU子会社も実務対応が必要。"
+    },
+    {
+      "term": "FinCEN IRGC Alert May 2026",
+      "full": "FinCEN Alert on Iranian Revolutionary Guard Corps May 2026",
+      "ja": "FinCEN IRGC関連通知（2026年5月）",
+      "category": "リスク管理",
+      "description": "FinCENが2026年5月11日に発出した、イラン革命防衛隊（IRGC）によるマネーロンダリングを阻止するための金融機関向けアラート。同日OFACもIRGCのイラン産原油の対中販売・輸送に関与した12個人・団体を制裁指定。さらに5月8日には、イランの無人航空機（UAV）・弾道ミサイルプログラムの武器調達を可能にした中東・アジア・東欧の10個人・企業を指定。Economic Furyキャンペーンの一環としてイラン外貨両替所3社とフロント企業も指定された。"
+    },
+    {
+      "term": "OFAC Cuba GAESA Designation",
+      "full": "OFAC Designation of GAESA under EO 14404",
+      "ja": "OFACキューバGAESA制裁指定",
+      "category": "リスク管理",
+      "description": "OFACがキューバの軍事組織GAESAを大統領令14404に基づき制裁指定（2026年5月）。GAESAはキューバ経済の金融サービスセクターでの活動を理由に指定。あわせて指導者層のAnia Guillermina Lastres Morera、Cuba's Moa Nickel SA（金属・鉱業セクター）も指定。米国によるキューバ軍事政権・エリート層に対する制裁強化の動き。"
+    },
+    {
+      "term": "Venezuela GL 58",
+      "full": "Venezuela-related General License 58",
+      "ja": "ベネズエラ関連一般ライセンス58号",
+      "category": "法律・規制",
+      "description": "OFACが2026年5月5日に公表したベネズエラ関連の一般ライセンス58号。「ベネズエラ政府との潜在的な債務再編に関連した一定のサービスを承認する」内容で、債務再編交渉に関連するアドバイザリーサービス等を時限的に認める。ベネズエラ制裁プログラムの中で、債務問題対応のための例外措置として注目。"
+    },
+    {
+      "term": "Giles Thomson",
+      "full": "Giles Thomson - Incoming FATF President",
+      "ja": "ジャイルズ・トムソン（次期FATF議長）",
+      "category": "組織・機関",
+      "description": "英国出身の次期FATF議長。2026年2月プレナリーで2026年7月から2028年6月までの2年間の任期で次期議長に指名された。現議長のElisa de Anda Madrazo（メキシコ）の任期満了（2026年6月30日）後に就任。次回プレナリーは2026年6月（メキシコ議長最終）で、議長交代後初のプレナリーは2026年10月予定。日本のFATF第5次相互審査（2028年8月オンサイト）はThomson議長期間中に実施される見込み。"
+    },
+    {
+      "term": "FATF Cyber-Enabled Fraud Report 2026",
+      "full": "FATF Report on Cyber-Enabled Fraud February 2026",
+      "ja": "FATFサイバー手段詐欺報告書（2026年2月）",
+      "category": "組織・機関",
+      "description": "FATFが2026年2月24日に公表した「サイバー手段を用いた詐欺・デジタル化とML/TF/PFリスク」報告書。英国では詐欺が全犯罪の40%超、シンガポールでは2年でサイバー詐欺件数が61%増加。FATF評価対象156法域（90%）が詐欺を主要なマネロンリスクと特定。AI・ディープフェイク等の悪用、組織的詐欺センター、ロマンス詐欺等の手口を分析。FATF基準を活用した詐欺対策の高度化を各国に要請。"
+    },
+    {
+      "term": "FATF Grey List 2026年2月",
+      "full": "Jurisdictions under Increased Monitoring - 13 February 2026",
+      "ja": "強化モニタリング対象国・地域（2026年2月13日）",
+      "category": "組織・機関",
+      "description": "FATFは2026年2月13日のプレナリーで、クウェートとパプアニューギニアの2か国を強化モニタリング対象国・地域（いわゆるグレーリスト）に新規追加した。除外国はなく、2026年2月時点のグレーリストは計22か国・地域となった。前回2025年10月にブルキナファソ・モザンビーク・ナイジェリア・南アフリカが、2025年6月にはクロアチア・マリ・タンザニアが除外されている。ブラックリスト（行動要請対象）は北朝鮮・イラン・ミャンマーの3か国で変更なし。"
+    },
+    {
+      "term": "FIN-2026-R001",
+      "full": "FinCEN Order FIN-2026-R001 (Beneficial Ownership Verification Relief)",
+      "ja": "FinCEN命令 FIN-2026-R001（実質的支配者確認の負担軽減）",
+      "category": "法律・規制",
+      "description": "FinCENが2026年2月に発出した命令。CDD規則の下で法人が新規口座を開設するたびに実質的支配者（BO）情報を繰り返し確認する負担を金融機関に対し軽減するもの。BO確認義務自体を撤廃するものではなく、確認の方法を緩和する点が特徴。なお米国のCTAに基づくBOI報告義務は、2025年3月の暫定最終規則で米国内設立企業・米国人が適用除外とされ、外国報告会社のみが対象となっている。"
+    },
+    {
+      "term": "AMLA SPD 2026-2028",
+      "full": "AMLA Single Programming Document 2026-2028",
+      "ja": "AMLA単一プログラミング文書（2026-2028年）",
+      "category": "組織・機関",
+      "description": "EUのAMLA（反マネロン機構）が2026年2月に公表した初の複数年計画。(1)単一ルールブックの完成、(2)監督収斂の推進、(3)FIU（金融情報機関）間協力の強化の3つを戦略目標とする。AMLAは2027年7月10日までに23のレベル2・レベル3措置（RTS・ITS・ガイドライン）を公表予定で、その大半が2026年7月10日期限。2026年Q2に11件、下半期に8件、2027年Q1に1件の市中協議を予定。"
+    },
+    {
+      "term": "OFAC SDN Modernization 2026",
+      "full": "OFAC SDN List Modernization Effort 2026",
+      "ja": "OFAC SDNリスト近代化（2026年）",
+      "category": "法律・規制",
+      "description": "米財務省OFACが2026年に開始した制裁リスト近代化の取組み。死亡した個人、解体された船舶、指定から10年以上経過した対象など、陳腐化した約76件のエントリーをSDN（特別指定国民・ブロック対象者）リストから削除した。リストの実効性・正確性を高める狙い。一方で2026年5月はイラン関連（Economic Furyキャンペーン）、シナロア・カルテルのフェンタニル関連、レバノンのヒズボラ関連など新規指定も活発に継続している。"
+    },
+    {
+      "term": "金融庁GL/FAQ改正2026",
+      "full": "金融庁AML/CFTガイドライン・FAQ改正（2026年3月31日）",
+      "ja": "金融庁ガイドライン・FAQ改正（令和8年3月31日適用）",
+      "category": "法律・規制",
+      "description": "金融庁は2026年3月31日にAML/CFTガイドライン本体とFAQを改正・同日適用。(1)ガイドライン本体は全機関共通の必須要件のみを残し、高度化の内容はFAQへ移設して構成を再編。(2)eKYCベンダー・スクリーニングシステム提供者・為替取引分析業者などへの外部委託について、委託先の態勢検証の仕組み整備を要求。(3)取引モニタリング・新技術・外部委託の3領域で新たな対応を追加。背景には預貯金口座の不正利用防止強化とFATF第5次審査メソドロジーへの対応がある。"
+    },
+    {
+      "term": "FATF Plenary June 2026",
+      "full": "FATF総会（2026年6月17-19日）",
+      "ja": "FATF総会（2026年6月）",
+      "category": "FATF",
+      "description": "メキシコ議長（Elisa de Anda Madrazo）下での最終総会。(1)グレーリストにボスニア・ヘルツェゴビナとイラクを追加、アルジェリアとナミビアを除外し計22か国に。(2)勧告6を改正し人道支援への例外を明確化。(3)仮想資産（VA/VASP）に関する第7次標的型更新およびDeFiに関する新報告書を承認。(4)次期英国議長の優先課題を承認し、インドのVivek Aggarwalを2026年7月就任の副議長に任命。"
+    },
+    {
+      "term": "FATF R.6改正2026",
+      "full": "FATF勧告6改正（人道支援例外・2026年6月）",
+      "ja": "勧告6改正（人道例外）",
+      "category": "FATF",
+      "description": "2026年6月総会で勧告6（テロ資金供与に関する標的型金融制裁）を改正。制裁措置が人道支援および基本的な人間のニーズに必要な資金・資産・物資・サービスの流れを妨げないよう、国連安保理決議2664号・2761号の人道例外を基準に組み込んだ。金融機関の制裁スクリーニング設計に影響。"
+    },
+    {
+      "term": "FATF DeFi報告書2026",
+      "full": "FATF DeFi標的型報告書（2026年）",
+      "ja": "DeFiのML/TF/PFリスク報告書",
+      "category": "仮想資産",
+      "description": "2026年6月総会で承認。分散型金融（DeFi）プラットフォームのマネロン・テロ資金供与・拡散金融リスクへのエクスポージャーを検証する新たな標的型報告書。同時に承認されたVA/VASPに関する第7次標的型更新（トラベルルール等の実装状況評価）と併せ、無許可VASP・アンホストウォレット監視の高度化を促す。"
+    },
+    {
+      "term": "FATF UK Presidency 2026",
+      "full": "FATF英国議長就任（2026年7月）",
+      "ja": "次期FATF議長＝英国",
+      "category": "FATF",
+      "description": "2026年7月よりメキシコ（Elisa de Anda Madrazo議長）から英国へFATF議長が交代。6月総会で英国議長の優先課題が承認された。副議長にはインドのVivek Aggarwalが任命。日本の第5次相互審査対応期間とも重なり、議長国の優先課題（技術革用の悪用対策等）が標準改正の方向性に影響。"
+    },
+    {
+      "term": "R.16 Guidance Consultation 2026",
+      "full": "FATF R.16送金透明性ガイダンス市中協議（2026年6月）",
+      "ja": "勧告16送金透明性ガイダンス市中協議",
+      "category": "FATF",
+      "description": "FATFが2026年6月24日に開始した、強化された勧告16（クロスボーダー送金の透明性）の実施を支援する新ガイダンス案の市中協議。デジタルウォレットやモバイルマネー等の新たな決済手段への勧告16の適用や、詐欺・誤送金防止ツールの導入を扱う。コメント期限は2026年8月21日、各国の実施期限は2030年末。2025年6月に合意された勧告16改正を踏まえたもの。"
+    },
+    {
+      "term": "FATF PPP & Data Protection Overview 2026",
+      "full": "官民連携・データ保護アレンジメントのグローバル概観（2026年7月）",
+      "ja": "FATF官民連携・データ保護グローバル概観",
+      "category": "FATF",
+      "description": "2026年6月総会で承認され、2026年7月に公表予定のFATF報告書。世界各国の情報共有モデルを整理し、データ保護要件と整合した実効的なインテリジェンス共有（actionable intelligence sharing）を支援することを目的とする。英国議長下の優先課題『情報共有』に対応する成果物。"
+    },
+    {
+      "term": "Tranche 2",
+      "full": "AML/CTF Reforms Tranche 2 (Australia)",
+      "ja": "豪州AML/CTF改革トランシェ2",
+      "category": "法律・規制",
+      "description": "2026年7月1日施行の豪州AML/CTF改革。従来対象外だった弁護士等の法律家・会計士・不動産業者・貴金属石商（DPMS）等をAUSTRACの監督対象に拡大。CDD・疑わしい取引報告・AMLプログラム整備・コンプライアンス責任者選任等の義務を課す。いわゆる『指定非金融業者・職業専門家（DNFBPs）』へのFATF基準適用を大きく前進させた例。"
+    },
+    {
+      "term": "継続的モニタリング",
+      "full": "Ongoing Monitoring of Business Relationship",
+      "ja": "取引関係の継続的モニタリング",
+      "category": "顧客管理",
+      "description": "顧客との取引関係を通じて取引・活動を継続的に監視し、顧客リスク評価やCDD情報を最新に保つプロセス。EU AMLAは2026年6月に継続的モニタリングに関するガイドライン案の市中協議を開始（2026年7月2日公聴会、意見募集は2026年9月3日まで）。日本の金融庁GLでも取引モニタリング・フィルタリングの継続的高度化が求められる。"
+    },
+    {
+      "term": "人道例外",
+      "full": "Humanitarian Exemption",
+      "ja": "人道例外（対象を特定した金融制裁）",
+      "category": "FATF",
+      "description": "対象を特定した金融制裁（TFS）が、人道支援や生活に不可欠な物資・サービスの提供を妨げないよう設ける例外規定。FATFは2026年6月の総会で勧告6（テロ資金供与に係るTFS）を改正し、人道例外を組み込んだ。国連安保理決議2664（2022年）の流れを踏まえた措置。"
+    }
+  ],
+  "fatf40": [
+    {
+      "number": 1,
+      "title": "リスク評価とリスクベース・アプローチ",
+      "summary": "各国はML/TF/PFリスクを特定・評価し、リスクに応じた措置を講じること。RBAがFATF基準の基盤。"
+    },
+    {
+      "number": 2,
+      "title": "国内関係当局間の協力と調整",
+      "summary": "各国はAML/CFT政策の策定・調整のため、国内関係機関間の協力メカニズムを確保すること。"
+    },
+    {
+      "number": 3,
+      "title": "マネー・ローンダリングの犯罪化",
+      "summary": "ウィーン条約・パレルモ条約に基づきMLを犯罪化すること。前提犯罪は広範に設定すること。"
+    },
+    {
+      "number": 4,
+      "title": "犯罪収益の没収と保全措置",
+      "summary": "犯罪収益・犯罪手段等の没収を可能にする法制度を整備し、保全措置を講じること。"
+    },
+    {
+      "number": 5,
+      "title": "テロ資金供与の犯罪化",
+      "summary": "テロ資金供与条約に基づきTFを犯罪化すること。テロ目的の資金収集・提供を処罰対象に。"
+    },
+    {
+      "number": 6,
+      "title": "テロリスト等に対する金融制裁",
+      "summary": "国連安保理決議に基づき、テロリスト等の資産を遅滞なく凍結する措置を実施すること。"
+    },
+    {
+      "number": 7,
+      "title": "大量破壊兵器拡散に対する金融制裁",
+      "summary": "国連安保理決議に基づき、WMD拡散に関与する者の資産凍結措置を遅滞なく実施すること。"
+    },
+    {
+      "number": 8,
+      "title": "非営利団体（NPO）",
+      "summary": "NPOのTF悪用リスクを特定・評価し、リスクに応じた措置でNPOセクターを保護すること。"
+    },
+    {
+      "number": 9,
+      "title": "金融機関の秘密保持法制",
+      "summary": "金融機関の秘密保持法がFATF勧告の実施を妨げないことを確保すること。"
+    },
+    {
+      "number": 10,
+      "title": "顧客デューディリジェンス（CDD）",
+      "summary": "金融機関は匿名口座を禁止し、CDD（本人確認・実質的支配者確認・取引目的確認等）を実施すること。"
+    },
+    {
+      "number": 11,
+      "title": "記録保存",
+      "summary": "取引記録を少なくとも5年間保存すること。CDD情報も取引関係終了後5年間保存。"
+    },
+    {
+      "number": 12,
+      "title": "PEP（重要な公的地位を有する者）",
+      "summary": "外国PEPとの取引には上級管理職の承認、資産源泉の確認等のEDD措置を適用すること。"
+    },
+    {
+      "number": 13,
+      "title": "コルレス銀行業務",
+      "summary": "コルレス銀行関係の構築時にはDDを実施し、相手銀行のAML/CFT体制を評価すること。"
+    },
+    {
+      "number": 14,
+      "title": "送金サービス",
+      "summary": "資金移転サービス業者に免許・登録を義務付け、AML/CFT措置を遵守させること。"
+    },
+    {
+      "number": 15,
+      "title": "新技術",
+      "summary": "新たな技術（暗号資産等）のML/TFリスクを評価し、適切な措置を講じること。VASPの規制を含む。"
+    },
+    {
+      "number": 16,
+      "title": "電信送金（トラベルルール）",
+      "summary": "電信送金に送金人・受取人の情報を付随させること。一定額以上の送金で詳細情報が必要。"
+    },
+    {
+      "number": 17,
+      "title": "第三者への依拠",
+      "summary": "CDDの一部を第三者に依拠する場合、最終的な責任は依拠する金融機関にあること。"
+    },
+    {
+      "number": 18,
+      "title": "内部管理・コンプライアンス",
+      "summary": "金融機関はAML/CFTプログラムを策定し、コンプライアンスオフィサー設置等の内部管理体制を構築すること。"
+    },
+    {
+      "number": 19,
+      "title": "高リスク国",
+      "summary": "FATFが特定した高リスク国との取引にはEDD措置を適用し、対抗措置を適用できること。"
+    },
+    {
+      "number": 20,
+      "title": "疑わしい取引の届出",
+      "summary": "ML/TFの疑いがある取引をFIUに速やかに届け出ること。届出を行ったことの守秘義務。"
+    },
+    {
+      "number": 21,
+      "title": "内部告発者保護と届出の秘密保持",
+      "summary": "STR届出者を法的責任から保護し、届出の事実を秘密に保持すること（Tipping Off禁止）。"
+    },
+    {
+      "number": 22,
+      "title": "指定非金融業者・職業専門家（DNFBP）のCDD",
+      "summary": "カジノ・不動産業者・貴金属商・弁護士・会計士等にCDD義務を課すこと。"
+    },
+    {
+      "number": 23,
+      "title": "DNFBPのSTR",
+      "summary": "DNFBPに疑わしい取引の届出義務を課すこと。"
+    },
+    {
+      "number": 24,
+      "title": "法人の実質的支配者",
+      "summary": "法人の実質的支配者情報の透明性を確保するため、正確な情報の取得・保管メカニズムを構築すること。"
+    },
+    {
+      "number": 25,
+      "title": "法的取極めの実質的支配者",
+      "summary": "信託等の法的取極めの実質的支配者情報の透明性を確保すること。受託者情報の登録・保管。"
+    },
+    {
+      "number": 26,
+      "title": "金融機関に対する規制・監督",
+      "summary": "金融機関のAML/CFT遵守について適切なリスクベースの監督を実施すること。"
+    },
+    {
+      "number": 27,
+      "title": "監督当局の権限",
+      "summary": "監督当局に金融機関への検査・制裁等の十分な権限を付与すること。"
+    },
+    {
+      "number": 28,
+      "title": "DNFBPの規制・監督",
+      "summary": "DNFBPのAML/CFT遵守についてリスクベースの監督・モニタリングを実施すること。"
+    },
+    {
+      "number": 29,
+      "title": "FIU（資金情報機関）",
+      "summary": "各国はSTRの受理・分析を行うFIUを設置すること。運用上の独立性と情報アクセスを確保。"
+    },
+    {
+      "number": 30,
+      "title": "捜査当局の責務",
+      "summary": "ML/TF/PFの捜査を担当する当局を指定し、十分な資源・権限を付与すること。"
+    },
+    {
+      "number": 31,
+      "title": "捜査・起訴における当局の権限",
+      "summary": "捜査当局にML/TF捜査のための広範な権限（おとり捜査、通信傍受等）を付与すること。"
+    },
+    {
+      "number": 32,
+      "title": "キャッシュ・クーリエ",
+      "summary": "現金・無記名証券の国境を越える物理的移動を探知するための申告・届出制度を導入すること。"
+    },
+    {
+      "number": 33,
+      "title": "統計",
+      "summary": "AML/CFTシステムの有効性・効率性に関する統計を維持すること。STR件数、訴追件数等。"
+    },
+    {
+      "number": 34,
+      "title": "ガイダンスとフィードバック",
+      "summary": "金融機関・DNFBPに対しAML/CFT措置のガイダンス・フィードバックを提供すること。"
+    },
+    {
+      "number": 35,
+      "title": "制裁",
+      "summary": "AML/CFT義務違反に対し、効果的・比例的・抑止力のある制裁を適用できること。"
+    },
+    {
+      "number": 36,
+      "title": "国際的な法的相互協力",
+      "summary": "ML/TF/PFに関する法的相互協力（MLA）を速やかに実施すること。"
+    },
+    {
+      "number": 37,
+      "title": "犯罪人引渡し等",
+      "summary": "ML/TFに関する犯罪人引渡しを速やかに実施すること。国籍要件等で拒否する場合は代替措置。"
+    },
+    {
+      "number": 38,
+      "title": "外国の凍結・没収要請",
+      "summary": "外国からの犯罪収益の凍結・没収要請に対応するための法的枠組みを整備すること。"
+    },
+    {
+      "number": 39,
+      "title": "没収資産の共有",
+      "summary": "没収した犯罪収益等を協力国と共有するための取極めを検討すること。"
+    },
+    {
+      "number": 40,
+      "title": "国際協力のその他の形態",
+      "summary": "監督当局・FIU・捜査当局間の迅速な国際協力を確保すること。情報交換の障壁を除去。"
+    }
+  ],
+  "regulations": [
+    {
+      "name": "犯罪収益移転防止法（犯収法）",
+      "jurisdiction": "日本",
+      "year": "2007",
+      "summary": "AML/CFTの中核法。特定事業者にCDD・STR・取引記録保存を義務付け。2024年改正で暗号資産規制強化。"
+    },
+    {
+      "name": "外国為替及び外国貿易法（外為法）",
+      "jurisdiction": "日本",
+      "year": "1949",
+      "summary": "経済制裁の根拠法。資産凍結措置、支払等の許可制を規定。北朝鮮・イラン等への制裁を実施。"
+    },
+    {
+      "name": "組織的犯罪処罰法",
+      "jurisdiction": "日本",
+      "year": "1999",
+      "summary": "ML罪・犯罪収益の没収・追徴を規定。2017年改正でテロ等準備罪（共謀罪）を新設。"
+    },
+    {
+      "name": "テロ資金提供処罰法",
+      "jurisdiction": "日本",
+      "year": "2002",
+      "summary": "テロ資金供与を犯罪化。2014年改正で対象行為を拡大し、FATF勧告5への対応を強化。"
+    },
+    {
+      "name": "Bank Secrecy Act（BSA）",
+      "jurisdiction": "米国",
+      "year": "1970",
+      "summary": "米国AMLの基本法。金融機関にCTR・SAR報告、記録保存、AMLプログラム整備を義務付け。"
+    },
+    {
+      "name": "USA PATRIOT Act",
+      "jurisdiction": "米国",
+      "year": "2001",
+      "summary": "9.11後のBSA強化法。CIP義務化、Section 314情報共有、シェルバンク禁止、コルレスDD強化。"
+    },
+    {
+      "name": "Anti-Money Laundering Act of 2020（AMLA）",
+      "jurisdiction": "米国",
+      "year": "2020",
+      "summary": "BSAの大幅改正。FinCENの権限強化、内部告発者報奨金制度、暗号資産への適用明確化。"
+    },
+    {
+      "name": "Corporate Transparency Act（CTA）",
+      "jurisdiction": "米国",
+      "year": "2021",
+      "summary": "法人の実質的支配者情報（BOI）のFinCENへの届出を義務化。ペーパーカンパニー悪用防止が目的。2025年3月改訂で米国国内企業・米国人の報告義務を全面除外。外国企業のみ届出義務継続。"
+    },
+    {
+      "name": "EU Anti-Money Laundering Regulation（AMLR）",
+      "jurisdiction": "EU",
+      "year": "2024",
+      "summary": "EU初の直接適用AML規則（2027年適用）。CDD統一基準、現金支払上限1万ユーロ、UBO登録等。"
+    },
+    {
+      "name": "6th Anti-Money Laundering Directive（6AMLD）",
+      "jurisdiction": "EU",
+      "year": "2024",
+      "summary": "第6次AML指令。FIUの権限強化、UBO登録の公開範囲、監督当局間の協力を規定。"
+    },
+    {
+      "name": "AMLA設立規則",
+      "jurisdiction": "EU",
+      "year": "2024",
+      "summary": "EU AML/CFT監督機関（AMLA）をフランクフルトに設立。高リスク金融機関の直接監督権限を付与。"
+    },
+    {
+      "name": "Markets in Crypto-Assets（MiCA）",
+      "jurisdiction": "EU",
+      "year": "2023",
+      "summary": "暗号資産の包括規制（2024年12月30日全面適用）。CASPの認可制、ステーブルコイン規制、消費者保護、AML義務を規定。既存事業者向けの経過措置は2026年7月1日に終了し、以降は全CASPがMiCA認可を要する。"
+    },
+    {
+      "name": "Digital Operational Resilience Act（DORA）",
+      "jurisdiction": "EU",
+      "year": "2023",
+      "summary": "金融機関のICTリスク管理規制（2025年適用）。サイバーレジリエンス、サードパーティ管理を規定。"
+    },
+    {
+      "name": "Transfer of Funds Regulation（TFR改正）",
+      "jurisdiction": "EU",
+      "year": "2023",
+      "summary": "送金時の情報付随義務を暗号資産移転にも拡大。VASPへのトラベルルール適用を規定。"
+    },
+    {
+      "name": "SWIFT Customer Security Programme（CSP）",
+      "jurisdiction": "国際",
+      "year": "2017",
+      "summary": "SWIFT加盟金融機関向けのサイバーセキュリティ基準。必須・推奨統制の遵守状況を年次で自己評価。"
+    },
+    {
+      "name": "個人情報保護法",
+      "jurisdiction": "日本",
+      "year": "2003",
+      "summary": "個人情報の取扱いを規定。AML/CFTにおけるデータ利活用との両立が実務上の課題。2022年改正施行。"
+    },
+    {
+      "name": "金融庁AML/CFTガイドライン改正",
+      "jurisdiction": "日本",
+      "year": "2026",
+      "summary": "2026年1月19日に改正案公表、同年3月31日に最終版を公表（FAQ更新含む）。チェックリスト型から有効性・アウトカム重視への転換、経営陣のアカウンタビリティ強化、AI・機械学習活用の取引モニタリング推進、STR申告精度の向上を求める内容。預貯金口座の不正利用等防止強化とFATF第5次対日相互審査（2028年オンサイト予定）への対応が主要目的。 GL本文はコア要求へスリム化され、『対応が期待される事項』はFAQへ実質移管（削除≠緩和）。新技術（AI等）活用は『対応が求められる事項』へ格上げ、団体顧客のグループ単位リスク評価・貿易金融の複合リスク評価・外部委託先管理・本人確認資料の真正性確認が明確化・強化された。"
+    },
+    {
+      "name": "FinCEN Investment Adviser AML Rule（延期）",
+      "jurisdiction": "米国",
+      "year": "2026",
+      "summary": "投資顧問業者（IA）へのAMLプログラム整備・SAR申告義務の適用開始を2026年1月から2028年1月へ2年延期。多様なビジネスモデルへの規則の適切な調整を検討するための猶予期間。トランプ政権の規制見直し方針を反映。"
+    },
+    {
+      "name": "GENIUS Act AML/CFT実施規則案（FinCEN/OFAC）",
+      "jurisdiction": "米国",
+      "year": "2026",
+      "summary": "2026年4月8日公表。GENIUS法に基づきFinCENとOFACが共同提案。ステーブルコイン発行者（PPSI）をBSA上の金融機関と位置付け、AML/CFTプログラム整備（リスク評価・内部統制・独立テスト・研修・米国在住コンプライアンスオフィサー）、SAR申告、制裁コンプライアンス、取引ブロック/凍結の技術的能力を義務付け。60日間のパブリックコメント募集。"
+    },
+    {
+      "name": "FinCEN AML/CFTプログラム要件規則案（NPRM）",
+      "jurisdiction": "米国",
+      "year": "2026",
+      "summary": "2026年4月7日公表。BSAに基づく全金融機関のAML/CFTプログラム要件を大幅改正。リスク評価プロセスの明示的義務化、有効性重視（技術的コンプライアンスから実効性への転換）、米国在住コンプライアンスオフィサー要件を追加。FDIC・OCC・NCUAと共同発出。パブリックコメント期限は2026年6月9日。最終規則後12か月の実施猶予期間。"
+    },
+    {
+      "name": "FATF閣僚宣言（2026年4月）",
+      "jurisdiction": "国際",
+      "year": "2026",
+      "summary": "2026年4月17日ワシントンD.C.で開催されたFATF閣僚会合で採択。詐欺（fraud）の世界的な急拡大への対応強化、AML/CFT/CPFツールキットの全面活用、組織的詐欺センター・法人悪用・仮想資産・AI等の新技術悪用の理解深化、リスクベース・アプローチの完全実施を国際的にコミット。次回閣僚会合は2028年。"
+    },
+    {
+      "name": "FATFステーブルコイン・アンホストウォレット標的型報告書",
+      "jurisdiction": "国際",
+      "year": "2026",
+      "summary": "2026年3月3日FATF公表（42ページ）。違法な暗号資産活動の大半がTether等のステーブルコインに集中し、P2Pプラットフォーム経由でアンホストウォレットへ移転されている実態を指摘。①セカンダリー市場のモニタリング、②VASP・DeFi管理者へのコンプライアンス要求、③官民協力強化等の推奨実務を提示。"
+    },
+    {
+      "name": "AMLA CDD規制技術基準（RTS草案）",
+      "jurisdiction": "EU",
+      "year": "2026",
+      "summary": "AMLAが2026年2月公表のCDDに関するRTS草案。標準・簡素・厳格CDDの情報・書類詳細、本人確認基準、リスク感応的継続モニタリング、電子的本人確認（eIDAS・EUDIウォレット等）の利用基準を規定。2026年3月24日に1,600超のステークホルダーが参加した公聴会を実施。パブリックコメント期限は2026年5月8日。"
+    },
+    {
+      "name": "JAFIC年次報告書（令和7年版）",
+      "jurisdiction": "日本",
+      "year": "2025",
+      "summary": "警察庁が2025年に公表したJAFIC犯罪収益移転防止年次報告書。2024年の疑わしい取引の届出件数が初めて100万件を突破し過去最高を記録。非金融特定事業者（不動産業者・宝石貴金属商等）からの届出が増加傾向にあるものの構成比は依然低水準。FIU情報の捜査機関での活用も上昇傾向。同時公表の犯罪収益移転危険度調査書（令和7年版）と併せて金融機関のリスク評価のベースライン情報。"
+    },
+    {
+      "name": "AMLA BWRAガイドライン草案",
+      "jurisdiction": "EU",
+      "year": "2026",
+      "summary": "AMLAが2026年4月16日にパブコン開始したビジネス全体のリスク評価（BWRA）に関するガイドライン草案。AMLR第10条(4)に基づき、義務事業者が事業モデル・顧客・商品・配送チャネル・地理的要素から生じるリスクを特定・評価する手法を定める。比例性を重視。コメント期限は2026年7月15日、最終ガイドラインは2026年Q4公表予定。公聴会は2026年5月28日にCETで開催。"
+    },
+    {
+      "name": "AMLAグループワイド要件RTS草案",
+      "jurisdiction": "EU",
+      "year": "2026",
+      "summary": "AMLAが2026年4月16日にパブコン開始したAMLR第16条(4)に基づくグループ全体のAML/CFT要件に関するRTS草案。グループポリシー・統制・手続き、子会社・支店間の情報共有、グループ・コンプライアンス機能等を規定。コメント期限2026年6月15日。AMLAは2026年9月30日までに欧州委員会へ提出予定。"
+    },
+    {
+      "name": "FinCEN内部告発者プログラム実施規則案（NPRM）",
+      "jurisdiction": "米国",
+      "year": "2026",
+      "summary": "FinCENが2026年4月1日に連邦官報公示。BSA・OFAC制裁・IEEPA・TWEA・キングピン法等の違反通報者に獎励金（回収制裁金100万ドル超の covered actions の10〜30%）を支払う制度。経営・監査・コンプライアンス部門の内部関係者は情報入手から120日間の待機期間が必要。コメント期限2026年6月1日。AML執行のパラダイムシフトとなる重要規則案。"
+    },
+    {
+      "name": "FATF第5次相互審査報告書（Italy/Austria/Singapore）",
+      "jurisdiction": "国際",
+      "year": "2026",
+      "summary": "2026年2月FATFプレナリー採択の第5次相互審査報告書。Italy報告書を2026年4月23日、Austria報告書（IMF主導）を2026年4月30日に公表。Singapore（FATF・APG共同審査）も同時期公表。技術的コンプライアンスと有効性（Immediate Outcomes）を統合評価する新ラウンドの初期事例として、日本（2028年オンサイト予定）の準備上の重要参考事例。"
+    },
+    {
+      "name": "AMLAリスクアセスメントモデル試験（2026年データ収集演習）",
+      "jurisdiction": "EU",
+      "year": "2026",
+      "summary": "AMLAが2026年3月に開始したリスクアセスメントモデルの試験・較正のためのデータ収集演習。EBAから引き継いだリスク評価モデルを試験・較正することで、2027年に直接監督対象として最大40の高リスク金融機関を選定する基盤を構築。参加機関は2026年4月22日までにデータ提出。AMLAは2026年中に各国監督当局と協働してリスク評価方法論と選定プロセスを試験し、2028年からの直接監督開始に向けて準備を進める。"
+    },
+    {
+      "name": "OFACイラン関連制裁指定（2026年5月1日）",
+      "jurisdiction": "米国",
+      "year": "2026",
+      "summary": "OFACが2026年5月1日に発出したイラン関連の新規SDN指定。同日付でIran-related General License（一般ライセンス）とIran-related OFAC Alertも同時公表。指定対象との既存取引のワインドダウン措置が時限的に認められる。直近では2026年4月28日にも対テロ・イラン関連の指定、4月30日にDRC関連指定、4月29日にロシア関連GLの修正が行われており、SDNリスト更新が高頻度化。"
+    },
+    {
+      "name": "FinCEN通知：2026 FIFAワールドカップ期間中の人身取引",
+      "jurisdiction": "米国",
+      "year": "2026",
+      "summary": "FinCENが2026年5月13日に発出。2026年FIFAワールドカップ（6/11〜7/19、米国・カナダ・メキシコ16都市開催）開催に伴う人身取引（性的・労働搾取）リスクを警戒し、ホスト都市周辺の金融機関に注意喚起。SAR申告時のキーフレーズは「FIN-2026-HT World Cup」。レッドフラッグには不自然に高額な旅費・現金・P2P送金・暗号資産・プリペイドカードによる支払等が含まれる。"
+    },
+    {
+      "name": "FinCEN IRGC関連アラート（2026年5月）",
+      "jurisdiction": "米国",
+      "year": "2026",
+      "summary": "FinCENが2026年5月11日に発出した、イラン革命防衛隊（IRGC）によるマネロンを阻止するための金融機関向けアラート。OFACもIRGCのイラン産原油対中販売・輸送関係者12個人/団体を指定、UAV・ミサイル調達関係者10個人/企業を指定。Economic Furyキャンペーン継続。"
+    },
+    {
+      "name": "AMLAホスト国・ホーム国監督協力RTS草案",
+      "jurisdiction": "EU",
+      "year": "2026",
+      "summary": "AMLAが2026年5月11日にパブコン開始。ホーム国（母国）監督当局とホスト国（受入国）監督当局の役割分担と協力モダリティに関する規制技術基準（RTS）草案。国境を越えた金融グループのAML/CFT監督における情報交換・共同検査・実効的な監督協力の枠組みを整備。"
+    },
+    {
+      "name": "AMLA公聴会（2026年5月20日・5月28日）",
+      "jurisdiction": "EU",
+      "year": "2026",
+      "summary": "AMLAが2026年5月に開催する2つの重要公聴会。①5月20日10:00-12:00 CET：グループワイド要件RTS草案（AMLR第16条(4)・第17条(3)）、②5月28日10:00-12:00 CET：BWRAガイドライン草案（AMLR第10条(4)）。OEのグループAML/CFT体制、第三国子会社への追加措置、リスク評価最低4要件を議論。"
+    },
+    {
+      "name": "OFACキューバGAESA制裁指定（2026年5月）",
+      "jurisdiction": "米国",
+      "year": "2026",
+      "summary": "OFACがキューバ軍事組織GAESAを大統領令14404に基づき制裁指定。キューバ経済の金融サービスセクターでの活動が理由。同時にAnia Guillermina Lastres Morera（指導者層）とCuba's Moa Nickel SA（金属・鉱業セクター）も指定。米国によるキューバ軍事政権・エリート層への制裁強化。"
+    },
+    {
+      "name": "ベネズエラ関連一般ライセンス58号",
+      "jurisdiction": "米国",
+      "year": "2026",
+      "summary": "OFACが2026年5月5日公表のベネズエラ関連GL58。「ベネズエラ政府との潜在的な債務再編に関連した一定のサービスを承認する」内容。債務再編交渉に関連するアドバイザリーサービス等を時限的に許可。"
+    },
+    {
+      "name": "FATFサイバー手段詐欺報告書（2026年2月）",
+      "jurisdiction": "国際",
+      "year": "2026",
+      "summary": "FATFが2026年2月24日公表の「サイバー手段を用いた詐欺・デジタル化とML/TF/PFリスク」報告書。英国では詐欺が全犯罪の40%超、シンガポールでは2年で61%増加。156法域（評価対象の90%）が詐欺を主要なマネロンリスクと特定。AI・ディープフェイク悪用、組織的詐欺センター、ロマンス詐欺等を分析し、FATF基準を活用した詐欺対策の高度化を各国に要請。"
+    },
+    {
+      "name": "FinCEN命令FIN-2026-R001（BO確認負担軽減）",
+      "jurisdiction": "米国",
+      "year": "2026",
+      "summary": "FinCENが2026年2月に発出。CDD規則の下で法人が新規口座を開設するたびにBO情報を繰り返し確認する負担を金融機関に対し軽減。BO確認義務自体は維持しつつ確認方法を緩和する点が特徴。"
+    },
+    {
+      "name": "AMLA単一プログラミング文書2026-2028",
+      "jurisdiction": "EU",
+      "year": "2026",
+      "summary": "AMLAが2026年2月公表の初の複数年計画。単一ルールブック完成・監督収斂・FIU協力強化を戦略目標とし、2027年7月10日までに23のレベル2/3措置を整備。単一ルールブックは2027年7月10日から全27加盟国に統一適用。"
+    },
+    {
+      "name": "FATFグレーリスト更新（2026年6月）",
+      "jurisdiction": "国際",
+      "year": "2026",
+      "summary": "2026年6月17-19日総会で増加監視対象国を更新。ボスニア・ヘルツェゴビナとイラクを追加、アルジェリアとナミビアを（オンサイト訪問成功を経て）除外。引き続き計22か国。日本のコルレス・貿易金融のジオリスク評価で参照すべきリスト。"
+    },
+    {
+      "name": "FATF勧告6改正（人道例外・2026年6月）",
+      "jurisdiction": "国際",
+      "year": "2026",
+      "summary": "テロ資金供与に係る標的型金融制裁を定める勧告6を改正し、国連安保理決議2664号・2761号の人道例外を組み込み。制裁措置が人道支援・基本的人間ニーズに必要な資金等の流れを阻害しないことを明確化。金融機関は制裁スクリーニングと人道送金の取扱基準を見直す必要。"
+    },
+    {
+      "name": "MiCA経過措置終了（2026年7月1日）",
+      "jurisdiction": "EU",
+      "year": "2026",
+      "summary": "2024年12月30日以前から各国法に基づき暗号資産サービスを提供してきた事業者の経過措置（グランドファザリング）が2026年7月1日にEU全域で終了。同日以降、MiCAライセンス未取得でEU顧客にサービス提供する事業者はEU法違反。ESMAは認可CASPに対し既存顧客の移行・オンボーディングを期限前に完了するよう要請。"
+    },
+    {
+      "name": "FATF勧告16送金透明性ガイダンス市中協議（2026年6月）",
+      "jurisdiction": "国際",
+      "year": "2026",
+      "summary": "2026年6月24日、FATFが強化された勧告16（クロスボーダー送金の透明性）実施支援ガイダンス案の市中協議を開始。デジタルウォレット・モバイルマネー等の新決済手段への適用、送金人・受取人情報の付随、詐欺・誤送金防止ツールを扱う。コメント期限2026年8月21日、各国の実施目標は2030年末。日本の電信送金・トラベルルール対応の前提となる国際基準の精緻化。"
+    },
+    {
+      "name": "金融庁「マネロン等及び金融犯罪対策の取組と課題」（2026年7月）",
+      "jurisdiction": "日本",
+      "year": "2026",
+      "summary": "金融庁が2026年7月に公表した年次報告。金融セクター分析結果概要、口座不正利用対策等に係るフォローアップアンケート結果を含む。2026年3月31日のGL・FAQ改正（コア要求へのスリム化、対応が期待される事項のFAQ移管）を踏まえ、基礎的態勢整備完了後の『次の段階』として有効性・アウトカム重視、AI/機械学習活用、口座不正利用防止の高度化を要請。FATF第5次対日相互審査（2028年オンサイト予定）への備えを促す。"
+    },
+    {
+      "name": "FATF新議長就任（ジャイルズ・トムソン／英国）",
+      "jurisdiction": "国際",
+      "year": "2026",
+      "summary": "2026年7月1日、英国のジャイルズ・トムソンがFATF議長に就任（任期2026年7月〜2028年6月）。重点課題は(1)世界的な詐欺（フロード）蔓延への国際的対応強化、(2)リスクベース・アプローチとリスクベース監督の実装強化、(3)官民連携（PPP）・情報共有の強化。英国が2年間のプレジデンシーを担う。"
+    },
+    {
+      "name": "AMLA継続的モニタリング・ガイドライン（市中協議）",
+      "jurisdiction": "EU",
+      "year": "2026",
+      "summary": "EU AMLAが2026年6月2日に市中協議を開始した『取引関係の継続的モニタリング』に関するガイドライン案。義務事業者による取引・活動の継続的監視の実装方法を定める。2026年7月2日に公聴会を開催、意見募集は2026年9月3日まで。あわせてAMLAは金融インテリジェンスのEU域内流通を促進する3つの基準を最終化し、グループ全体のポリシー・手続・統制の最低要件に関するRTS草案も2026年7月10日までに策定予定。"
+    },
+    {
+      "name": "GENIUS Act最終規則の策定期限（2026年7月18日）",
+      "jurisdiction": "米国",
+      "year": "2026",
+      "summary": "FinCEN/OFACが2026年4月に提案した決済用ステーブルコイン発行者（PPSI）向けAML/CFT・制裁遵守規則。GENIUS Actは最終規則を2026年7月18日までに発出することを義務付け。施行日は2027年1月18日または最終規則発出後120日のいずれか早い方。PPSIをBSA上の金融機関と定義し、リスクベースのAML/CFTプログラム、疑わしい取引報告（SAR）、記録保存・トラベルルール、取引の凍結・拒否等の技術的能力、OFAC5要素に基づく制裁遵守プログラムを要求。市中意見の締切は2026年6月9日であった。"
+    },
+    {
+      "name": "豪州AML/CTF改革トランシェ2施行（2026年7月1日）",
+      "jurisdiction": "国際",
+      "year": "2026",
+      "summary": "2026年7月1日、豪州のAML/CTF改革（トランシェ2）が施行。弁護士等の法律家・会計士・不動産業者・貴金属石商（DPMS）等の非金融業者・職業専門家を新たにAUSTRACの監督対象に追加。AMLプログラム整備、コンプライアンス責任者選任、職員研修、CDD、疑わしい取引報告を義務付け。FATF勧告のDNFBPs基準適用を大きく前進。"
+    },
+    {
+      "name": "FinCEN補足アラート：財政的燃料窃盗・燃料密輸（2026年6月）",
+      "jurisdiction": "米国",
+      "year": "2026",
+      "summary": "FinCENが2026年6月に発出した補足アラート。燃料密輸・税逃れを伴う『財政的燃料窃盗（fiscal fuel theft）』スキームに関する赤旗指標を提示し、金融機関に検知・SAR報告を要請。あわせて同月、人身取引、不正就労スキーム、イラン革命防衛隊（IRGC）関連の制裁回避に関する注意喚起と、ロシア・キューバ・ブラジル関連ネットワークへの制裁措置を実施。"
+    }
+  ],
+  "comparisons": [
+    {
+      "aspect": "中核法",
+      "japan": "犯収法（2007年）",
+      "eu": "AMLR（2024年採択、2027年適用）",
+      "us": "BSA（1970年）+ AMLA 2020"
+    },
+    {
+      "aspect": "監督機関",
+      "japan": "金融庁・JAFIC（警察庁）",
+      "eu": "AMLA（2025年設立）+ 各国当局",
+      "us": "FinCEN（財務省）・OCC・FRB・FDIC"
+    },
+    {
+      "aspect": "FATF評価",
+      "japan": "第4次相互審査（2021年）：重点フォローアップ（強化観察）。勧告24・25等に不備指摘。2026年3月31日に金融庁ガイドライン改正（有効性重視・経営陣アカウンタビリティ強化）を公表。2028年に第5次オンサイト審査予定。",
+      "eu": "加盟国ごとに評価。ドイツ（2022年）等で重点フォローアップの事例あり。",
+      "us": "第4次相互審査（2016年）：通常フォローアップ。法人透明性（旧勧告24）に不備指摘 → CTA制定。"
+    },
+    {
+      "aspect": "サイバー法制",
+      "japan": "FISC安全対策基準、サイバーセキュリティ基本法。金融庁ガイドラインで監督。",
+      "eu": "DORA（2025年適用）。金融機関のICTリスク管理を包括規制。NIS2指令も関連。",
+      "us": "NIST CSF（任意だが事実上の標準）、GLBA Safeguards Rule。州法（NY DFS等）も重要。"
+    },
+    {
+      "aspect": "暗号資産規制",
+      "japan": "資金決済法で暗号資産交換業を登録制（2017年〜）。犯収法の特定事業者に含む。世界に先駆けて法制化。",
+      "eu": "MiCA（2023年発効、段階適用）。CASP認可制、ステーブルコイン規制。TFR改正でトラベルルール適用。",
+      "us": "統一連邦法なし。SEC・CFTC・FinCENが個別に規制。州法（NY BitLicense等）も適用。"
+    },
+    {
+      "aspect": "最大罰金事例",
+      "japan": "行政処分（業務改善命令・業務停止命令）が中心。AML不備での罰金額は欧米に比べ少額。",
+      "eu": "BNPパリバ：約89億ドル（2014年、米国での制裁違反も含む）。ダンスケ銀行事件は約20億ドル。",
+      "us": "TDバンク：約31億ドル（2024年）。過去にはHSBC 19億ドル（2012年）等の大型案件。"
+    },
+    {
+      "aspect": "実質的支配者",
+      "japan": "犯収法で特定事業者にUBO確認義務。25%超の議決権保有者等。中央登録制度は未整備（検討中）。",
+      "eu": "AMLR/6AMLDでUBO中央登録簿を義務化。正当な利益を有する者にアクセス権。しきい値25%。",
+      "us": "CTA（2021年）でFinCENへのBOI届出を義務化。ただし2025年3月改訂で米国国内企業・米国人は全面除外。外国企業のみ届出義務継続（登録後30日以内等）。"
+    },
+    {
+      "aspect": "ステーブルコイン規制",
+      "japan": "改正資金決済法（2023年施行）で電子決済手段として規制。発行は銀行・資金移動業者・信託会社等に限定し、裏付資産の分別管理・償還を義務付け。仲介者は電子決済手段等取引業として登録制。",
+      "eu": "MiCA（2023年）でe-money token/asset-referenced tokenとして規制。2026年7月1日に経過措置終了し完全適用。発行者に認可・準備資産・償還権を要求。TFR改正でトラベルルール適用。",
+      "us": "GENIUS Act（2025年成立）で決済用ステーブルコイン発行者（PPSI）を規制。FinCEN/OFACがAML/CFT・制裁遵守規則を提案（最終規則は2026年7月18日期限）。PPSIをBSA上の金融機関と定義。"
+    }
+  ]
 }
