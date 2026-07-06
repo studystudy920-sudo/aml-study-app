@@ -61,7 +61,14 @@
     {"term": "Integration", "full": "Integration", "ja": "統合", "category": "その他", "description": "マネロンの第3段階。洗浄された資金を合法経済に戻す過程。不動産購入・事業投資等に利用。"},
     {"term": "AML", "full": "Anti-Money Laundering", "ja": "資金洗浄防止", "category": "リスク管理", "description": "マネー・ローンダリングを防止するための法規制・手続き・施策の総称。"},
     {"term": "CFT", "full": "Combating the Financing of Terrorism", "ja": "テロ資金供与対策", "category": "リスク管理", "description": "テロ資金供与を防止・抑止するための法規制・手続き・施策の総称。"},
-    {"term": "CPF", "full": "Counter-Proliferation Financing", "ja": "拡散金融対策", "category": "リスク管理", "description": "大量破壊兵器の拡散に関する資金供与を防止するための措置。FATF第4次相互審査で重点項目。"}
+    {"term": "CPF", "full": "Counter-Proliferation Financing", "ja": "拡散金融対策", "category": "リスク管理", "description": "大量破壊兵器の拡散に関する資金供与を防止するための措置。FATF第4次相互審査で重点項目。"},
+    {"term": "CSIRT", "full": "Computer Security Incident Response Team", "ja": "シーサート（インシデント対応チーム）", "category": "サイバー", "description": "サイバーインシデントの検知・分析・対応を担う専門チーム。不正取引検知でもシステム対策本部を立ち上げて対応を統括し、記録・会議体設営・ベンダー接続等の事務局機能も担う。"},
+    {"term": "コンティンジェンシープラン", "full": "Contingency Plan", "ja": "緊急時対応計画・代替手段", "category": "リスク管理", "description": "システム停止・障害時に業務を継続するための代替手段や緊急時手順。個人IBはコールセンター/窓口、法人IBは全店窓口/部署誘導等が各業務のコンティンジェンシーマニュアルに定められている。"},
+    {"term": "システム対策本部", "full": "System Response HQ", "ja": "システム対策本部", "category": "組織・機関", "description": "サイバー/システムインシデント発生時にCSIRTが立ち上げる対応本部。被害の度合い（レベル4・5、金額基準）に応じて危機対策本部へ格上げする。事前に対応用のTeamsチャネルが用意されている。"},
+    {"term": "危機対策本部", "full": "Crisis Management HQ", "ja": "危機対策本部", "category": "組織・機関", "description": "被害の度合い・金額が大きい重大インシデント時に立ち上げる全社的な対策本部。サイバーセキュリティ管理マニュアルのプロセスマップに立ち上げ基準・フローが定められる。"},
+    {"term": "プロセスマップ", "full": "Process Map", "ja": "対応プロセス図", "category": "リスク管理", "description": "サイバーセキュリティ管理マニュアルに定められた、エスカレーション・対策本部立ち上げ・当局連絡等の一連の対応手順を示した図。不正取引検知もこのプロセスに沿って対応する。"},
+    {"term": "IDS/IPS", "full": "Intrusion Detection/Prevention System", "ja": "侵入検知・防御システム", "category": "サイバー", "description": "不正な通信や攻撃の兆候を検知（IDS）・防御（IPS）する仕組み。IBでは委託先ベンダーが24時間365日で監視・解析し、金融機関はその結果を受領して第二線的にレビューする。"},
+    {"term": "予防的停止", "full": "Preventive Suspension", "ja": "予防的なサービス停止", "category": "サイバー", "description": "他行でも被害が拡大している状況等で、被害発生前にサービスを止める措置。被害前の事前招集・記録の要否は明確でなく、あらかじめ整理しておくべきグレーゾーンとされる。"}
   ],
   "fatf40": [
     {"number": 1, "title": "リスク評価とリスクベース・アプローチ", "summary": "各国はML/TF/PFリスクを特定・評価し、リスクに応じた措置を講じること。RBAがFATF基準の基盤。"},
