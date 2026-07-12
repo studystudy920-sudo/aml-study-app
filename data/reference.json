@@ -734,6 +734,34 @@
       "ja": "人道例外（対象を特定した金融制裁）",
       "category": "FATF",
       "description": "対象を特定した金融制裁（TFS）が、人道支援や生活に不可欠な物資・サービスの提供を妨げないよう設ける例外規定。FATFは2026年6月の総会で勧告6（テロ資金供与に係るTFS）を改正し、人道例外を組み込んだ。国連安保理決議2664（2022年）の流れを踏まえた措置。"
+    },
+    {
+      "term": "Fed AML NPRM 2026",
+      "full": "Federal Reserve AML/CFT Program Proposed Rule (July 2026)",
+      "ja": "FRB AML/CFTプログラム規則案（2026年7月）",
+      "category": "米国",
+      "description": "米連邦準備制度理事会（FRB）が2026年7月9日に連邦官報で公表した、FRB監督下銀行のAML/CFTプログラム要件の簡素化規則案。FinCENの2026年4月NPRM（プロセス偏重から実効性・リスクベースへの転換）と各連邦当局の規則を整合させる狙い。コメント期限は2026年9月8日。米国のAML/CFT態勢が「効果重視」へ大きく舵を切る動きの一環。"
+    },
+    {
+      "term": "FATF TF Social Media Report 2026",
+      "full": "Detecting and Disrupting Terrorist Financing Through Social Media, Messaging and Streaming Platforms (2026)",
+      "ja": "FATFテロ資金供与・SNS報告書（2026年）",
+      "category": "組織・法制",
+      "description": "2026年6月プレナリー後にFATFが公表したテロ資金供与（TF）に関する新報告書。テロ組織がSNS・インスタントメッセージング・ストリーミング配信を悪用して資金を調達・移転・秘匿する手口を分析し、金融機関・VASP・決済サービス業者・FIU・法執行機関・民間向けに実務的な検知・対応策を提示する。"
+    },
+    {
+      "term": "AMLA RTS Package July 2026",
+      "full": "AMLA RTS/ITS/Guidelines Package to European Commission (10 July 2026)",
+      "ja": "AMLA規制技術基準パッケージ（2026年7月10日提出）",
+      "category": "EU",
+      "description": "AMLAが2026年7月10日までに欧州委員会へ提出した計23本のRTS・ITS・ガイドラインの最終ドラフト・パッケージ。CDD（AMLR28条）、取引・関係の識別基準（AMLR19条）、違反分類・制裁（AMLD6）、直接監督のための機関間協力ITS（AMLA-R15条）等をカバーし、EU単一ルールブック具体化の中核マイルストーン。AMLRは2027年7月10日適用、直接監督は2028年から40の主要金融機関を対象に開始。"
+    },
+    {
+      "term": "Star Sydney NICC 2026",
+      "full": "The Star Sydney AML Penalty (NSW Independent Casino Commission, 2026)",
+      "ja": "スター・シドニーAML制裁（豪NICC・2026年）",
+      "category": "国際",
+      "description": "オーストラリアのNSW独立カジノ委員会（NICC）が2026年7月、カジノ運営のThe Star Sydneyに対し1,000万豪ドルの制裁金と、金融犯罪リスク管理技術への追加500万豪ドル投資を命じた事案。顧客リスク評価・EDD・継続的顧客モニタリング・排除管理の複数の不備が指摘された。カジノ等特定非金融業者（DNFBP）のAML態勢不備が高額制裁につながる典型例。"
     }
   ],
   "fatf40": [
@@ -1232,6 +1260,18 @@
       "jurisdiction": "米国",
       "year": "2026",
       "summary": "FinCENが2026年6月に発出した補足アラート。燃料密輸・税逃れを伴う『財政的燃料窃盗（fiscal fuel theft）』スキームに関する赤旗指標を提示し、金融機関に検知・SAR報告を要請。あわせて同月、人身取引、不正就労スキーム、イラン革命防衛隊（IRGC）関連の制裁回避に関する注意喚起と、ロシア・キューバ・ブラジル関連ネットワークへの制裁措置を実施。"
+    },
+    {
+      "name": "FRB AML/CFTプログラム規則案（NPRM・2026年7月）",
+      "jurisdiction": "米国",
+      "year": "2026",
+      "summary": "米連邦準備制度理事会が2026年7月9日に連邦官報で公表した、FRB監督下銀行向けAML/CFTプログラム要件の簡素化規則案。FinCEN2026年4月NPRM（リスクベース・実効性重視への転換）と整合させる。コメント期限2026年9月8日。"
+    },
+    {
+      "name": "AMLA規制技術基準パッケージ（欧州委員会提出・2026年7月10日）",
+      "jurisdiction": "EU",
+      "year": "2026",
+      "summary": "AMLAが2026年7月10日期限で欧州委員会へ提出した計23本のRTS・ITS・ガイドライン最終ドラフト。CDD・取引/関係識別基準・違反分類・制裁・直接監督協力等をカバーし、EU単一ルールブック具体化の中核。AMLR適用は2027年7月10日、直接監督は2028年開始。"
     }
   ],
   "comparisons": [
