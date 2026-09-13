@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aml-study-v21';
+const CACHE_NAME = 'aml-study-v22';
 const ASSETS = [
   './',
   './index.html',
